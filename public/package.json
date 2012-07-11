@@ -1,0 +1,22 @@
+{
+  "author": "Marco Süß <marco.suess@about-local.com> (http://about-local.com)",
+  "name": "sphere",
+  "description": "AboutLocal web app",
+  "version": "0.0.0",
+  "engines": {
+    "node": "~0.8.1"
+  },
+  "dependencies": {
+      "nib": "0.5.0"
+  },
+  "devDependencies": {},
+  "directories": {
+    "lib": "./lib"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ]
+}
