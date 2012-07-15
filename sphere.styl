@@ -5,7 +5,7 @@
  * Grid - Configuration
  */
 
-font-size = 16
+font-size = 15
 EM = font-size*1 em
 
 column = 53
@@ -232,6 +232,10 @@ a
     -o-transition color duration ease-in-out
     transition color duration ease-in-out
 
+img.bordered
+    border:4px solid white
+    box-shadow 0 0 5px 0 #ccc
+
 a.details
     font-weight semibold
     font-style italic
@@ -266,7 +270,6 @@ footer
     padding-bottom lines2
     font-size 12px
     header
-        font-size 15px
         font-weight semibold
     *
         color #b1b2b3
@@ -419,6 +422,8 @@ button, input[type="button"]
     margin-left 9px
     padding-left gutter - 10px
     border-width 1px 0 1px 1px
+    padding-top lines1
+    padding-bottom lines1
 
 @media only screen and (max-width: 992px)
     body
@@ -451,12 +456,11 @@ button, input[type="button"]
         margin-right (-1 * gutter) - 1px
         border-right 1px solid #ccc
 
+h2
+    font-height 22
+    font-weight semibold
 
 .company-profile
-    font-size 15px
-    h2
-        font-height 22
-        font-weight semibold
     header
         margin-bottom lines1
         h1
@@ -661,10 +665,27 @@ button, input[type="button"]
             margin (lines1/2) 0
         p
             color gray3
-            font-size 15px
             strong
                 font-weight semibold
                 color black
         a.details
             display block
             line-height lines2
+
+.support-sidebar
+    p
+        color gray3
+    .phone-number, .email
+        display block
+        font-size 19px
+        line-height lines2
+        font-weight semibold
+    .contact
+        height lines5
+        margin-top lines1
+        *
+            float left
+        img.hand-writing
+            margin-top lines2
+        .hand-writing, p
+            margin-left (gutter/2px)
