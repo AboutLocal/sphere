@@ -27,6 +27,16 @@ if root.Meteor.is_client
     homepage: "www.local-dog-care.de"
     email: "mail@local-dog-care.de"
 
+  root.Template.companyProfile.events =
+    "click button": -> (
+      console.log("button!")
+      createPieChart "#pie", 75
+    )
+
+  root.Template.companyProfile.invokeAfterLoad = ->
+    Meteor.defer ->
+      #console.log "ready."
+
 
   createPieChart = (containerSelector, percentValue) ->
 

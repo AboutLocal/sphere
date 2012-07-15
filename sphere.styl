@@ -65,6 +65,7 @@ cols(cols)
  */
 
 line-height = 20
+line-height-px = 20px
 LEM = line-height/font-size em
 
 font-height(fsize)
@@ -193,6 +194,18 @@ clearfix()
         clear both
         height 0
 
+bar-chart(barWidth, barHeight, borderWidth=3px)
+    border borderWidth solid gray5
+    height barHeight - (borderWidth*2)
+    width barWidth - (borderWidth*2)
+    .value
+        font-size 0
+        line-height 0
+        height barHeight - (borderWidth*2) - 2px
+        default-gradient()
+        border 1px solid #72ad16
+        background-color green2 * 1.3
+
 *
     font-size font-size px
     font-family "myriad-pro", sans-serif
@@ -207,6 +220,28 @@ body
     -webkit-font-smoothing antialiased
     background #f8f8f8
     color gray1
+
+a
+    color blue2
+    text-decoration none
+    cursor pointer
+    duration = 0.1s
+
+    -webkit-transition color duration ease-in-out
+    -moz-transition color duration ease-in-out
+    -o-transition color duration ease-in-out
+    transition color duration ease-in-out
+
+a.details
+    font-weight semibold
+    font-style italic
+    &:after
+        content "▾"
+        font-style normal
+        margin-left 0.3em
+
+.grid-wrapper
+    clearfix()
 
 #top-nav
     background gray1
@@ -224,6 +259,49 @@ body
         vertical-align baseline
         color white
 
+footer
+    background gray1
+    margin-top lines4
+    padding-top lines1
+    padding-bottom lines2
+    font-size 12px
+    header
+        font-size 15px
+        font-weight semibold
+    *
+        color #b1b2b3
+    a:hover
+        color white
+    ul
+        float left
+        width cols2
+        &.social-media
+            width cols3
+    ul + ul, ul + address
+        margin-left gutter px
+    /*li
+        margin-bottom (lines1/3)*/
+    address
+        display block
+        float left
+        white-space nowrap
+    .vcard
+        .fn, .region, .country-name
+            display none
+    .email, .tel, .adr
+        padding-left 20px
+        background transparent none 0 1px no-repeat
+    .email
+        background-image url(img/footer-email.gif)
+    .tel
+        background-image url(img/footer-tel.gif)
+    .adr
+        //margin-top (lines1/2)
+        background-image url(img/footer-pin.gif)
+        background-position 1px 1px
+    .street-address + div
+        margin-top: (-1*lines1/4)
+        margin-bottom: (lines1/4)
 
 .grid-wrapper
     //width cols12 - ((gutter/EM)/2)
@@ -257,7 +335,7 @@ input, input[type="text"], button
     border-radius 3px
     border 1px solid #bfbfbf
     font-size (13/EM)
-    padding 0 1em
+    padding 0 13px
     min-height line-height px
     outline none
     box-sizing content-box
@@ -269,6 +347,14 @@ input, input[type="text"], button
 input[type="text"]:focus
     border-color green3
 
+default-gradient()
+    box-shadow inset 0 1px 0 0 rgba(255,255,255,0.2)
+    background-image -moz-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.1) 100%) /* FF3.6+ */
+    background-image -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.1)), color-stop(100%,rgba(0,0,0,0.1))) /* Chrome,Safari4+ */
+    background-image -webkit-linear-gradient(top, rgba(255,255,255,0.1) 0%,rgba(0,0,0,0.1) 100%) /* Chrome10+,Safari5.1+ */
+    background-image -o-linear-gradient(top, rgba(255,255,255,0.1) 0%,rgba(0,0,0,0.1) 100%) /* Opera 11.10+ */
+    background-image -ms-linear-gradient(top, rgba(255,255,255,0.1) 0%,rgba(0,0,0,0.1) 100%) /* IE10+ */
+    background-image linear-gradient(to bottom, rgba(255,255,255,0.1) 0%,rgba(0,0,0,0.1) 100%) /* W3C */
 
 button, input[type="button"]
     //pie()
@@ -314,23 +400,25 @@ button, input[type="button"]
 
 .content-left, .content-right
     background white
-    border (1/EM) solid #ccc
+    border 1px solid #ccc
     margin-top lines3
-    box-shadow 0 0 (5/EM) 0 #ccc
+    box-shadow 0 0 5px 0 #ccc
 
 
 .content-left
-    width cols8 - (1/EM)
+    width cols8
     float left
-    border-width (1/EM) (1/EM) (1/EM) 0
+    border-width 1px 1px 1px 0
     padding-top lines1
+    padding-bottom lines1
+    padding-right gutter px
 
 .content-right
-    width cols4 - (1/EM)
+    width cols4 - 1px - gutter px
     float left
-    margin-left (10 / EM)
-    padding-left (gutter/EM) - (10/EM)
-    border-width (1/EM) 0 (1/EM) (1/EM)
+    margin-left 9px
+    padding-left gutter - 10px
+    border-width 1px 0 1px 1px
 
 @media only screen and (max-width: 992px)
     body
@@ -346,26 +434,29 @@ button, input[type="button"]
             padding-left 0*/
 @media only screen and (min-width: 937px)
     .content-left
-        padding-left (gutter/EM)
-        margin-left (-1 * (gutter/EM)) - (1/EM)
-        border-left (1/EM) solid #ccc
+        padding-left gutter px
+        margin-left (-1 * gutter) - 1px
+        border-left 1px solid #ccc
     .content-right
-        padding-right (gutter/EM)
-        margin-right (-1 * (gutter/EM)) - (1/EM)
-        border-right (1/EM) solid #ccc
+        padding-right gutter px
+        margin-right (-1 * gutter) - 1px
+        border-right 1px solid #ccc
 .ie
     .content-left
-        padding-left (gutter/EM)
-        margin-left (-1 * (gutter/EM)) - (1/EM)
-        border-left (1/EM) solid #ccc
+        padding-left gutter px
+        margin-left (-1 * gutter px) - 1px
+        border-left 1px solid #ccc
     .content-right
-        padding-right (gutter/EM)
-        margin-right (-1 * (gutter/EM)) - (1/EM)
-        border-right (1/EM) solid #ccc
+        padding-right gutter px
+        margin-right (-1 * gutter) - 1px
+        border-right 1px solid #ccc
 
 
 .company-profile
     font-size 15px
+    h2
+        font-height 22
+        font-weight semibold
     header
         margin-bottom lines1
         h1
@@ -373,8 +464,27 @@ button, input[type="button"]
             font-weight semibold
         p
             font-height 15
+        .input-wrapper, button.export
+            float right
+        button.export
+            margin-right -2px
+            margin-top -1px
+        button
+            width cols1 + gutter - 2px - 4px
+            padding 0
+        .input-wrapper
+            margin-top 6px
+            width cols3
+            margin-right -5px
+            input
+                width cols2 - 3px - 13px*2
+                margin-right 5px
+    .average-numbers
+        width cols5
+        float left
+        margin-right gutter px
     section.iq
-        margin-top lines2
+        margin lines2 0 lines1 0
         clearfix()
         div
             float left
@@ -383,14 +493,178 @@ button, input[type="button"]
             *
                 display block
         figure
-            font-size (83/EM)
+            font-size 83px
             line-height lines3
-            //outline 1px solid black
         label
             font-weight semibold
-            //outline 1px solid black
             margin-top lines2
+            font-size 22px
         span
             font-size 12px
             height lines1
-
+    section.ratings, section.popularity
+        clearfix()
+        label
+            display block
+            width cols2
+            margin-right gutter px
+            font-size 17px
+            font-weight semibold
+        label, .bar-chart
+            float left
+        .bar-chart
+            border 3px solid gray5
+            height line-height - 6px
+            width cols2
+            margin-right 6px
+            .value
+                font-size 0
+                line-height 0
+                height line-height - 6px - 2px
+                default-gradient()
+                border 1px solid #72ad16
+                background-color green2 * 1.3
+    section.popularity
+        margin-top (line-height/2px)
+    section.address
+        white-space nowrap
+        margin-top lines2
+        .org
+            display none
+        label
+            width 58px
+            display inline-block
+    section.marketing, section.customer-feedback
+        margin-top lines2
+        clearfix()
+    section.marketing
+        border-top 1px dotted gray5
+        padding-top lines2 - 1px
+        .web, .ads, .coupons, .interaction
+            margin-top lines1
+            width cols2
+            float left
+            //outline 1px solid red
+            h3
+                font-size 17px
+                font-weight semibold
+                line-height lines2 - 2px
+                text-align center
+                margin-bottom lines1
+            h3, .details-description
+                border 1px solid transparent
+            .details-description
+                border-bottom-width 0px
+            .value
+                text-align center
+                font-size 30px
+                font-weight semibold
+                margin-bottom lines1
+            .pie
+                height lines4
+                margin-bottom (lines1/2)
+            p
+                font-size 12px
+                line-height (lines1/1.5) px
+                text-align center
+                height lines3
+                padding-top (lines1/2)
+            a
+                display block
+                text-align center
+                padding-bottom (line-height/2px)
+            div.details
+                display none
+            &.active
+                h3, .details-description
+                    default-gradient()
+                    background-color gray1
+                    border-color black
+                h3, p, a
+                    color white
+                .details-description:after
+                    content "a"
+                    font-size 0
+                    line-height 0
+                    height 0
+                    width 0
+                    border-left cols1 + (gutter/2) solid transparent
+                    border-right cols1 + (gutter/2) solid transparent
+                    border-top (line-height-px/2) solid gray1
+                    border-top (line-height-px/2) solid rgba(57, 61, 64, 0.99999999999)
+                    position absolute
+                    z-index 100
+                    -moz-transform:scale(1.01);
+                div.details
+                    display block
+                    //outline 1px solid gray5
+                    margin-top (line-height/2px) - 1
+                    //background gray5*1.05
+                    background #f8f8f8
+                    margin-left -1px*gutter
+                    padding-left gutter px
+                    padding-right gutter px
+                    width cols8
+                    border-top 1px solid gray5
+                    border-bottom 1px solid gray5
+                    padding-top lines2 - 1px
+                    padding-bottom lines2 - 1px
+                    &:before
+                        content "a"
+                        font-size 0
+                        line-height 0
+                        height 0
+                        width 0
+                        border-left cols1 + (gutter/2) solid transparent
+                        border-right cols1 + (gutter/2) solid transparent
+                        border-top (line-height-px/2) solid white
+                        position absolute
+                        z-index 99
+                        margin-top -1px * lines2 - 1px
+                        -moz-transform:scale(1.01);
+                    & h2:before
+                        content "a"
+                        font-size 0
+                        line-height 0
+                        height 0
+                        width 0
+                        border-left cols1 + (gutter/2) solid transparent
+                        border-right cols1 + (gutter/2) solid transparent
+                        border-top (line-height-px/2) solid gray5
+                        position absolute
+                        z-index 98
+                        //margin-top 1px
+                        margin-top -1px * lines2
+                        -moz-transform:scale(1.01);
+        .web, .ads, .coupons
+            margin-right gutter px
+    section.customer-feedback
+        h3, .value, p, a.details
+            text-align center
+        h2
+            margin-bottom lines1
+        .ratings, .popularity
+            float left
+            width cols4
+        .ratings
+            margin-right gutter px
+        h3, .value
+            font-size 19px
+            font-weight semibold
+        h3
+            line-height lines2
+        .value
+            strong
+                font-weight bold
+        .bar-chart
+            bar-chart(cols4, lines1)
+            margin (lines1/2) 0
+        p
+            color gray3
+            font-size 15px
+            strong
+                font-weight semibold
+                color black
+        a.details
+            display block
+            line-height lines2
