@@ -47,6 +47,23 @@
     </p>
   </nav>
   <div class="grid-wrapper">
+    <header class="page-description">
+      <a class="close">Schließen</a>
+      <h1>Ein Firmenprofil im Detail</h1>
+      <p>
+        Auf dem Firmenprofil finden Sie alle Informationen zu den
+        Online-Aktivitäten des ausgewählten Unternehmens.
+      </p>
+    </header>
+    <nav class="profile-navigation">
+      <div class="back-to-search">
+        <a class="back">Zurück zu den Suchergebnissen</a>
+      </div>
+      <div class="switch-profiles">
+        <a class="back">Vorheriges Profil</a>
+        <a class="next">nächstes Profil</a>
+      </div>
+    </nav>
     <div class="content-left">
       <div class="inner">
         {{> companyProfile}}
@@ -57,6 +74,17 @@
         {{> support}}
       </div>
     </aside>
+  </div>
+  <div class="grid-wrapper">
+    <nav class="profile-navigation bottom">
+      <div class="back-to-search">
+        <a class="back">Zurück zu den Suchergebnissen</a>
+      </div>
+      <div class="switch-profiles">
+        <a class="back">Vorheriges Profil</a>
+        <a class="next">nächstes Profil</a>
+      </div>
+    </nav>
   </div>
 
   <footer>
@@ -262,7 +290,7 @@
         </div>
       </section>
       <section class="marketing">
-        <h2>Marketingaktivitäten</h2>
+        <h2>Marketingaktivitäten <small class="not-yet-available">&nbsp;&nbsp;History anzeigen</small></h2>
         <div class="web active">
           <h3>
             Web-Auftritte

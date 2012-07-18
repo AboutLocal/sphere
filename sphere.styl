@@ -212,7 +212,11 @@ bar-chart(barWidth, barHeight, borderWidth=3px)
     font-weight normal
     text-rendering optimizeLegibility
     -webkit-font-smoothing antialiased
+
+small, big
+    line-height line-height px
 body
+    padding-top 48px
     font-size font-size px
     font-family "myriad-pro", sans-serif
     line-height line-height px
@@ -253,11 +257,16 @@ a.details
 
 #top-nav
     background gray1
+    position fixed
+    width 100%
+    top 0
+    z-index 100
+    gradient-color = #f8f8f8
+    box-shadow 0 1px 0 0 #3a3d40, 0 2px 0 0 #323233, 0 lines1 lines1 gradient-color, 0 lines1 + 20px 50px gradient-color
     .grid-wrapper
         line-height (45 / EM)
         height (45/EM)
         padding-top (3/EM)
-    box-shadow 0 1px 0 0 #3a3d40, 0 2px 0 0 #323233
     .logo
         width (148/EM)
         height (24/EM)
@@ -269,7 +278,6 @@ a.details
 
 footer
     background gray1
-    margin-top lines4
     padding-top lines1
     padding-bottom lines2
     font-size 12px
@@ -319,7 +327,9 @@ footer
     height 9999px
     width 100%
     position absolute
+    top 0
     display none
+    z-index 1000
 
 #grid-overlay
     background url(grid-overlay.png) 50% 0 repeat-y
@@ -408,7 +418,6 @@ button, input[type="button"]
 .content-left, .content-right
     background white
     border 1px solid #ccc
-    margin-top lines3
     box-shadow 0 0 5px 0 #ccc
 
 
@@ -460,9 +469,79 @@ button, input[type="button"]
         margin-right (-1 * gutter) - 1px
         border-right 1px solid #ccc
 
+a.close
+    font-size 0
+    color gray3
+    width 0
+    &:before
+        font-size 18 px
+        font-weight bold
+        content "×"
+    &:hover
+        color black
+
+a.back, a.next
+    &:before, &:after
+        font-size 7px
+        vertical-align middle
+    &:before
+        margin-right 1px
+    &:after
+        margin-left 1px
+
+a.back
+    &:before
+        content "◀"
+a.next
+    &:after
+        content "▶"
+
 h2
     font-height 22
     font-weight semibold
+    small
+        font-size 15px
+
+.page-description
+    margin-top lines2 + (lines1/2)
+    padding-left cols1 + gutter
+    padding-top lines1
+    background url(img/screen-big.gif) 0 (lines1/1.5) no-repeat
+    padding-bottom (lines1/2) + lines1
+    h1
+        font-size 30px
+        margin-bottom (lines1/2)
+    p
+        font-size 17px
+    .close
+        display block
+        float right
+        margin-right 10px
+
+
+.profile-navigation
+    margin-bottom (lines1/2)
+    clear both
+    &.bottom
+        margin-top lines9 + (lines1/2) - 1px
+    font-size 12px
+    a
+        color gray1
+        &:hover
+            color black
+    div
+        height 20px
+        font-weight semibold
+        &.back-to-search
+            float left
+            width cols9 + gutter
+        a.next
+            float right
+            &:after
+                margin-left 3px
+        a.back
+            &:before
+                margin-right 3px
 
 .company-profile
     header
@@ -601,7 +680,7 @@ h2
                     border-top (line-height-px/2) solid gray1
                     border-top (line-height-px/2) solid rgba(57, 61, 64, 0.99999999999)
                     position absolute
-                    z-index 100
+                    z-index 10
                     -moz-transform:scale(1.01);
                 div.details
                     display block
@@ -627,7 +706,7 @@ h2
                         border-right cols1 + (gutter/2) solid transparent
                         border-top (line-height-px/2) solid white
                         position absolute
-                        z-index 99
+                        z-index 9
                         margin-top -1px * lines2 - 1px
                         -moz-transform:scale(1.01);
                     & h2:before
@@ -640,7 +719,7 @@ h2
                         border-right cols1 + (gutter/2) solid transparent
                         border-top (line-height-px/2) solid gray5
                         position absolute
-                        z-index 98
+                        z-index 8
                         //margin-top 1px
                         margin-top -1px * lines2
                         -moz-transform:scale(1.01);
