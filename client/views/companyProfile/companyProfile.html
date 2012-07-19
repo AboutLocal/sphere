@@ -1,0 +1,182 @@
+<template name="companyProfile">
+  <article class="company-profile">
+    {{#with currentProfile}}
+      <header>
+        <span class="input-wrapper">
+          <input value="deine mudda"/><button>Speichern</button>
+        </span>
+        <h1>{{name}}</h1>
+        <button class="export">Exportieren</button>
+        <p>{{sector}}</p>
+      </header>
+      <p class="budget not-yet-available">Online-Werbebudget: <strong>xxx €</strong> <span>geschätzt</span></p>
+      <div class="average-numbers">
+        <section class="iq">
+          <div>
+            <label>IQ</label>
+            <span>Internet Score, max. 100</span>
+          </div>
+          <div>
+            <figure>{{iq}}</figure>
+            <span>Early Adopter</span>
+          </div>
+        </section>
+        <section class="ratings">
+          <label>Bewertungen</label>
+          <div class="bar-chart">
+            <div class="value">{{averageRating}}</div>
+          </div>
+          <figure>{{averageRating}}</figure>
+        </section>
+        <section class="popularity not-yet-available">
+          <label>Popularität</label>
+          <div class="bar-chart">
+            <div class="value">14</div>
+          </div>
+          <figure>14</figure>
+        </section>
+      </div>
+      <section class="address">
+        <h2>Unternehmensdaten</h2>
+        <address class="vcard">
+          <div class="org">{{name}}</div>
+          <div class="addr">
+            <div class="street-address">
+              {{street}}
+            </div>
+            <div>
+              <span class="postal-code">
+                {{zip}}
+              </span>
+              <span class="locality">
+                {{city}}
+              </span>
+            </div>
+          </div>
+        </address>
+        <div>
+          <label>Tel:</label>
+          <span class="tel">
+            {{phone}}
+          </span>
+        </div>
+        <div>
+          <label>Fax:</label>
+          <span class="fax">
+            {{fax}}
+          </span>
+        </div>
+        <div>
+          <label>Web:</label>
+          <a class="url" href="http://{{homepage}}" target="_blank">
+            {{homepage}}
+          </a>
+        </div>
+        <div>
+          <label>E-Mail:</label>
+          <a class="email" href="mailto:{{email}}">
+            {{email}}
+          </a>
+        </div>
+      </section>
+      <section class="marketing">
+        <h2>Marketingaktivitäten <small class="not-yet-available">&nbsp;&nbsp;History anzeigen</small></h2>
+        <div class="web active">
+          <h3>
+            Web-Auftritte
+          </h3>
+          <div class="value">
+            34
+          </div>
+          <div class="pie">
+          </div>
+          <div class="details-description">
+            <p>
+              Web&shy;seite, Branchen&shy;bücher, Bewertungs&shy;portale, Social Media
+            </p>
+            <a class="details">Details</a>
+          </div>
+          <div class="details">
+            <h2>Webseite</h2>
+          </div>
+        </div>
+        <div class="ads">
+          <h3>
+            Online-Anzeigen
+          </h3>
+          <div class="value">
+            34
+          </div>
+          <div class="pie">
+          </div>
+          <div class="details-description">
+            <p>
+              Bezahlte Werbe&shy;anzeigen z.B. auf Such&shy;maschinen oder Facebook
+            </p>
+            <a class="details">Details</a>
+          </div>
+        </div>
+        <div class="coupons">
+          <h3>
+            Gutscheine
+          </h3>
+          <div class="value">
+            34
+          </div>
+          <div class="pie">
+          </div>
+          <div class="details-description">
+            <p>
+              Gutschein-Webseiten, Group Buying Aktionen und Gutschein-Apps
+            </p>
+            <a class="details">Details</a>
+          </div>
+        </div>
+        <div class="interaction">
+          <h3>
+            Interaktion
+          </h3>
+          <div class="value">
+            34
+          </div>
+          <div class="pie">
+          </div>
+          <div class="details-description">
+            <p>
+              Interaktion mit Kunden über Social Media Anwendungen
+            </p>
+            <a class="details">Details</a>
+          </div>
+        </div>
+      </section>
+      <section class="customer-feedback">
+        <h2>Kundenfeedback</h2>
+        <div class="ratings">
+          <h3>Bewertungen</h3>
+          <div class="value"><strong>{{averageRating}}</strong> ∕ 5</div>
+          <div class="bar-chart">
+            <div class="value">{{averageRating}}</div>
+          </div>
+          <p>
+            <strong>{{averageRating}} Sterne</strong> von 5
+          </p>
+          <p>
+            <strong>2812 Kundenbewertungen</strong>
+          </p>
+          <p>
+            Bewertet auf <strong>2 Portalen</strong>
+          </p>
+          <a class="details">Details</a>
+        </div>
+        <div class="popularity not-yet-available">
+          <h3>Popularität</h3>
+          <div class="value"><strong>{{averageRating}}</strong> ∕ 5</div>
+          <div class="bar-chart">
+            <div class="value">{{averageRating}}</div>
+          </div>
+        </div>
+      </section>
+    {{/with}}
+  </article>
+  {{invokeAfterLoad}}
+</template>
