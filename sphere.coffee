@@ -145,6 +145,7 @@ if root.Meteor.is_client
 
 if root.Meteor.is_server
 
+  ###
   require = root.__meteor_bootstrap__.require
   path = require "path"
   fs = require "fs"
@@ -168,6 +169,7 @@ if root.Meteor.is_server
   console.log nib
   stylus = require "stylus"
   stylus().use nib()
+  ###
 
   Meteor.startup ->
     # code to run on server at startup
