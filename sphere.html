@@ -15,8 +15,6 @@
   <script>
       jQuery(function ($) {
           $(document).keydown(function (e) {
-              console.log(e);
-              console.log(String.fromCharCode(e.which));
               /*if (!e.ctrlKey) {
                   return;
               }*/
@@ -39,12 +37,13 @@
   <div id="grid-overlay"></div>
   <div id="baseline-grid-overlay"></div>
   <nav id="top-nav">
-    <p class="grid-wrapper">
-        <img class="logo" src="/img/logo-top.gif">
+    <div class="grid-wrapper">
+      <img class="logo" src="/img/logo-top.gif">
       <span>
         asdf
       </span>
-    </p>
+      {{> navLoggedOut}}
+    </div>
   </nav>
   <div class="grid-wrapper">
     <header class="page-description">
@@ -168,6 +167,31 @@
   <!--[if lt IE 9]></div><![endif]-->
 
 </body>
+
+<template name="loginForm">
+  <form id="dropdown-login-form" method="POST">
+    <label for="email">E-Mail-Adresse</label>
+    <input type="text" name="email" value="{{ username }}">
+    <label for="password">Passwort</label>
+    <input type="password" name="password" value="{{ password }}">
+    <label class="checkbox">
+      <input type="checkbox"> Zugangsdaten merken
+    </label>
+    <p class="error"></p>
+    <button>Einloggen</button>
+  </form>
+</template>
+
+<template name="navLoggedOut">
+  <ul class="nav-right">
+    <li class="tour">Tour</li>
+    <li class="home">Home</li>
+    <li class="login">
+      <a>Login</a>
+    </li>
+  </ul>
+  {{> loginForm}}
+</template>
 
 <template name="hello">
   <h1>Hello World!</h1>

@@ -2,6 +2,7 @@
 root = global ? window
 
 if root.Meteor.is_client
+
   root.Template.hello.greeting = ->
     "Welcome to sphere."
 
@@ -36,6 +37,87 @@ if root.Meteor.is_client
   root.Template.companyProfile.invokeAfterLoad = ->
     Meteor.defer ->
       #console.log "ready."
+
+  root.Template.navLoggedOut.events =
+    "click .login": ->
+      dropdown = $("#dropdown-login-form")
+      if dropdown.hasClass "visible"
+        dropdown.removeClass "visible"
+      else
+        dropdown.addClass "visible"
+        dropdown.find("input").first().focus()
+
+  root.Template.loginForm.userName = ->
+    ""
+  root.Template.loginForm.password = ->
+    ""
+
+  isLoggingIn = false
+
+  root.Template.loginForm.events =
+    "submit form": (evt) ->
+      evt.preventDefault()
+
+      return if isLoggingIn
+      isLoggingIn = true
+
+      form = evt.target
+      username = form[0].value
+      password = form[1].value
+      rememberMe = form[2].value
+
+      #console.log evt
+
+      hasError = false
+
+      if not username
+        form[0].className = "error"
+        hasError = true
+      if not password
+        form[1].className = "error"
+        hasError = true
+
+      return if hasError
+
+      future = Rpc.login username, password
+
+      spinner = new Spinner
+        lines: 9
+        length: 0
+        width: 2
+        radius: 4
+        rotate: 0
+        color: "#fff"
+        speed: 1.0
+        trail: 60
+        shadow: false
+        hwaccel: true
+        className: "spinner"
+        zIndex: 2e9
+        top: "auto"
+        left: "auto"
+
+      button = $ "button", form
+      oldText = button.text()
+      button.text("Bitte warten…")
+
+      spinner.spin()
+      button.prepend spinner.el
+
+      errorElement = Sizzle("p", form)[0]
+      errorElement.style.display = "none"
+
+      future.done ->
+        $(form).removeClass "visible"
+
+      future.fail (error) ->
+        errorElement.innerText = error.reason
+        errorElement.style.display = "block"
+
+      future.always ->
+        spinner.stop()
+        button.text(oldText)
+        isLoggingIn = true
 
 
   createPieChart = (containerSelector, percentValue) ->

@@ -7,3 +7,5 @@ coffeescript
 stylus
 d3
 jquery
+spin
+jquery-cookie

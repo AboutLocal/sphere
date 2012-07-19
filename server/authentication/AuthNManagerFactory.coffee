@@ -68,6 +68,7 @@ class AuthNManagerFactory
       query = {}
       query[settings.usernameField] = username
       user = AuthUsers.findOne query
+      return unless user?
       if isUserPasswordCorrect user, password
         return getSessionTokenForUser user
       return
