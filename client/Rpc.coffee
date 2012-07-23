@@ -8,9 +8,27 @@ class Rpc
         AuthN.setSessionToken(sessionToken)
         promise.resolve()
     return promise
-  @track = (sessionToken, evt) ->
-    tries = 5
-    tryCall = () ->
-      Meteor.call "trackEvent", sessionToken, evt, (error) ->
-        return if not error?
-        tryCall() if tries-- > 0
+  @track = (() ->
+    q = []
+    timeoutId = null
+    isRunning = false
+    console.log "built queue"
+    (evt) ->
+      evt.timestamp = Date.now()
+      q.push evt
+      return if isRunning
+      tries = 5
+      window.clearTimeout timeoutId if timeoutId?
+      timeoutId = window.setTimeout (() ->
+        isRunning = true
+        evts = q
+        q = []
+        tryCall = () ->
+          Meteor.call "trackEvents", AuthN.getSessionToken(), evts, (error) ->
+            if error? && tries-- > 0
+              tryCall()
+            else
+              isRunning = false
+        tryCall()
+      ), 500
+  )()

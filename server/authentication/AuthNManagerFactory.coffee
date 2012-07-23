@@ -26,7 +26,7 @@ class AuthNManagerFactory
       return
 
     getUserBySessionToken = (sessionToken) ->
-      session = getUserBySessionToken sessionToken
+      session = getUserSessionBySessionToken sessionToken
       return unless session?
 
       AuthUsers.findOne _id: session.userId
