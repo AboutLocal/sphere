@@ -63,3 +63,25 @@ Meteor.methods
     if not result?
       throw new Meteor.Error 412, "Unable to logout: session token not matching a user"
     result
+
+
+  ###
+  Tracking
+  ###
+  trackEvent: (sessionToken, evt) ->
+    user = if @is_simulation then Users.findOne() else AuthN.getUserBySessionToken sessionToken
+    throw new Meteor.Error(403, "You are not logged in") unless user?
+    try
+      userId = TrackedEvents.insert
+        _.extend({
+          evt
+        }, {
+          timestamp: Date.now()
+          userId: user._id
+          name: evt.name
+        })
+      return true
+    catch e
+      console.error "Could not create trackedEvent: ", e
+
+    return false
