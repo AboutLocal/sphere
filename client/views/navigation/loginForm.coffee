@@ -56,14 +56,16 @@
       errorElement.style.display = "none"
 
       future.done ->
+        button.text("Fertig!")
+        setTimeout (() -> button.text(oldText)), 200
         $(form).removeClass "visible"
 
       future.fail (error) ->
+        button.text(oldText)
         errorElement.innerText = error.reason
         errorElement.style.display = "block"
 
       future.always ->
         spinner.stop()
-        button.text(oldText)
         isLoggingIn = false
 )()

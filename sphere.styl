@@ -262,24 +262,35 @@ a.details
         color white
     background gray1
 
+.ie #dropdown-login-form
+    display none
+    &.visible
+        display block
+
+transition()
+    -webkit-transition arguments
+    -moz-transition arguments
+    -ms-transition arguments
+    -o-transition arguments
+    transition arguments
+
 #dropdown-login-form
     opacity 0
     top 40px
     duration = 0.1s
-    -webkit-transition all duration ease-in-out
-    -moz-transition all duration ease-in-out
-    -o-transition all duration ease-in-out
-    transition all duration ease-in-out
+    pointer-events none
+    transition opacity duration ease-in-out, top duration ease-in-out
     &.visible
         top 70px
         opacity 1
         z-index 100
+        pointer-events auto
     position fixed
     width 200px
-    z-index -1
+    z-index 0
     right 100px
     padding 20px
-    padding-bottom 10px
+    padding-bottom 6px
     border-radius 5px
     font-size 14px
     font-weight semibold
@@ -287,13 +298,13 @@ a.details
     box-shadow 0 0 10px black
     *
         line-height lines1
-    label, input[type="text"], input[type="password"], button
+    label, input[type="text"], input[type="password"], button, a
         display block
         box-sizing border-box
         width 100%
     input[type="text"], input[type="password"]
         color black
-    label.checkbox
+    label.checkbox, a
         font-size 12px
         //padding (lines1/2) 0
     input
@@ -301,6 +312,7 @@ a.details
     button
         color white
         font-size 13px
+        margin-bottom 6px
     &:before
         content "a"
         font-size 0
@@ -319,6 +331,12 @@ a.details
         display none
         color red1
         margin-bottom 10px
+    a
+        font-style italic
+        &:before
+            font-style normal
+            content "⟩ "
+            font-weight bold
 
 #top-nav
     position fixed
@@ -344,6 +362,11 @@ a.details
         font-weight semibold
         li
             display inline-block
+            /*transition background-color 200ms ease-in-out
+            &:hover
+                background black
+                a
+                    color white*/
 
 footer
     padding-top lines1
@@ -411,7 +434,7 @@ footer
     display inline-block
 
 
-input, input[type="text"], input[type="password"], button
+input[type="button"], input[type="text"], input[type="password"], button
     margin 0
     border-radius 3px
     border 1px solid #bfbfbf
