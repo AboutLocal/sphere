@@ -72,6 +72,8 @@ Meteor.methods
     user = if @is_simulation then Users.findOne() else AuthN.getUserBySessionToken sessionToken
     throw new Meteor.Error(403, "You are not logged in") unless user?
     try
+      # TODO don't use extend anymore once the data structure is settled upon,
+      # it's a security hole!
       userId = TrackedEvents.insert
         _.extend({
           evt
