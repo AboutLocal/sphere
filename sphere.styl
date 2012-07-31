@@ -887,3 +887,164 @@ h2
             margin-top lines2
         .hand-writing, p
             margin-left (gutter/2px)
+
+
+
+
+
+
+/********************************************
+*********************************************
+Anfang der Styles für die Homepage und die Tour
+*********************************************
+*********************************************
+**/
+
+//TOUR und HOMEPAGE
+
+.whitebg
+	background-color:#f8f8f8; 
+	background-image: -moz-linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px, #f7f7f7 42px, #ffffff 70px); 
+	background-image: -webkit-linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 42px, #ffffff 70px); 
+	background-image: -o-linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 42px, #ffffff 70px); 
+	background-image: -ms-linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 42px, #ffffff 70px); 
+	background-image: linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 42px, #ffffff 70px)
+
+.aktion
+	rand-padding = 3px
+	padding-left rand-padding
+	padding-right rand-padding
+	background-color rgb(215,138,0)
+	font-size 10px
+	font-weight semibold
+	color white
+	display inline
+	position relative
+	top -10px
+	padding-top 0px
+
+
+
+//HOMEPAGE
+
+.homepage-bg
+	bottompadding = 17
+	padding-bottom bottompadding px
+	margin-bottom line - bottompadding + 3 px
+
+.greeting
+	font-size 15px
+	padding-top lines2
+
+	.headline
+		margin-top lines2+2 px
+		margin-bottom 5px
+	
+	.screens
+		float right
+
+	.bold
+		font-weight bold
+	
+	.semi-bold
+		font-weight semibold
+
+	.testzugang
+		line-height lines2
+		font-size 17.5px
+		margin-top 0.25 * line
+		width cols5
+		
+	.haken
+		height lines2
+		padding-left cols1
+		background url("img/homepage/haken.png") no-repeat 0% 50%
+
+.functions
+	padding-top lines2
+	background-color #f8f8f8
+
+	li
+		width cols4
+		margin-right gutter px
+		float left
+	
+	.lastItem /*! IE8 kennt kein :lastChild */
+		margin-right 0px
+	
+	h4
+		font-size 19px
+		height lines3
+		padding-left cols1
+
+		span
+			padding-top line
+			display block
+		
+	.function-description
+		height lines3
+		margin-bottom line
+	
+	a
+		color blue2
+		font-size 14px
+		font-weight semibold
+		font-style italic
+		duration = 0.1s
+		transition color duration ease-in-out
+    
+		&:after
+			content " ⟩"
+			font-style normal
+			font-weight bold
+
+		&:hover
+			color green2 * 1.3
+	
+
+	.headline-pfeil
+		background url("img/homepage/pfeil.png") no-repeat 0% 50%
+	
+	.headline-kunden
+		background url("img/homepage/kunden.png") no-repeat 0% 50%
+	
+	.headline-deal
+		background url("img/homepage/deal.png") no-repeat 0% 50%
+	
+//TOUR
+
+.tour-bg
+	padding-bottom 70px
+
+.tour-navigation
+	font-size 15px
+	padding-top lines2
+	margin-left auto
+	margin-right auto
+	
+	ul
+		display inline
+	
+	li
+		display inline-block
+		pad = 37px
+		padding-right pad
+		padding-left pad
+	
+	.marker
+		display block
+		margin-left auto
+		margin-right auto
+		padding-bottom 10px
+	
+	.pfeil
+		vertical-align middle
+		
+
+/********************************************
+*********************************************
+Ende der Styles für die Homepage und die Tour
+*********************************************
+*********************************************
+**/
+
