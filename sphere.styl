@@ -220,7 +220,6 @@ body
     font-size font-size px
     font-family "myriad-pro", sans-serif
     line-height line-height px
-    text-rendering optimizeLegibility
     -webkit-font-smoothing antialiased
     background #f8f8f8
     color gray1
@@ -891,11 +890,11 @@ myGray3 = #f0f0f0
 
 .whitebg
 	background-color:#f8f8f8; 
-	background-image: -moz-linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px, #f7f7f7 42px, #ffffff 70px); 
-	background-image: -webkit-linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 42px, #ffffff 70px); 
-	background-image: -o-linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 42px, #ffffff 70px); 
-	background-image: -ms-linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 42px, #ffffff 70px); 
-	background-image: linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 42px, #ffffff 70px)
+	background-image: -moz-linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px, #f7f7f7 41px, #ffffff 70px); 
+	background-image: -webkit-linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 41px, #ffffff 70px); 
+	background-image: -o-linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 41px, #ffffff 70px); 
+	background-image: -ms-linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 41px, #ffffff 70px); 
+	background-image: linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 41px, #ffffff 70px)
 
 .aktion
 	rand-padding = 3px
@@ -1017,9 +1016,14 @@ myGray3 = #f0f0f0
 	
 	li
 		display inline-block
-		pad = 65 px
+		pad = 51 px
 		padding-right pad
 		padding-left pad
+	
+	link-top-padding = 25px
+	a.tour-slider
+		color gray1
+		padding-top link-top-padding
 	
 	.marker
 		display block
@@ -1039,10 +1043,13 @@ myGray3 = #f0f0f0
 		vertical-align bottom
 		width cols1
 		display inline-block
+		padding-top line
 		
 	.pfeil-container-rechts
 		text-align right
 	
+.slideshow
+	height 33 * line
 
 .tour-seite
 	padding-top lines2
@@ -1058,7 +1065,7 @@ myGray3 = #f0f0f0
 		padding-right bildPadding
 		padding-top bildPadding
 		border solid myGray2 1px
-		box-shadow 0px 1px 2px 1px myGray3
+		box-shadow 0px 1px 2px 1px rgba(0,0,0,0.06)
 		font-style italic
 		color gray2
 		font-size 16px
@@ -1074,6 +1081,10 @@ myGray3 = #f0f0f0
 			textPadding = line / 2 px
 			padding-top textPadding
 			padding-bottom textPadding
+
+	.overlay-screenbox
+		margin-top -62px
+		margin-left 40px
 	
 	.beschreibung-box
 		float right
@@ -1098,6 +1109,7 @@ myGray3 = #f0f0f0
 
 		li
 			font-size 17px
+			font-weight semibold
 			list-style-type none
 			background url('img/tour/haken.png') no-repeat 0% 0%
 			padding-left 30px
@@ -1110,8 +1122,6 @@ myGray3 = #f0f0f0
 		
 	.infoBild
 		background url("img/tour/infoBild.png") no-repeat 0% 50%
-
-
 
 		
 

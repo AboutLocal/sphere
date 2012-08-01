@@ -1,58 +1,73 @@
 <template name="tour">
 	<div class="whitebg tour-bg">
 		<div class="tour-navigation grid-wrapper">
-			<div class="pfeil-container">
-				<img src="img/tour/pfeil-links.png" alt="Pfeil nach links" class="pfeil">
-			</div>
+			<a href="#" class="pfeil-links tour-slider">
+				<div class="pfeil-container">
+					<img src="img/tour/pfeil-links.png" alt="Pfeil nach links" class="pfeil">
+				</div>
+			</a>
 			<div class="ul-container">
-				<ul>
-					<li>
-					<img src="img/tour/marker.png" alt="Marker" class="marker">
-					Firmenprofile
-					</li>
-					<li>
-					Filter
-					</li>
-					<li>
-					Export
-					</li>
-					<li>
-					Deal-Daten
-					<span class="aktion">
-					SPECIAL
-					</span>
-					</li>
+				<ul class="direktlinks">
+					&nbsp;
+					<a href="#" class="tour-slider">
+						&nbsp;
+						<li>
+							<img src="img/tour/marker.png" alt="Marker" class="marker">
+							Firmenprofile
+						</li>
+					</a>
+					&nbsp;
+					<a href="#" class="tour-slider">
+						&nbsp;
+						<li>
+						Filter
+						</li>
+					</a>
+					&nbsp;
+					<a href="#" class="tour-slider">
+						&nbsp;
+						<li>
+						Export
+						</li>
+					</a>
+					&nbsp;
+					<a href="#" class="tour-slider">
+						&nbsp;
+						<li>
+							Gutschein-Daten
+							<span class="aktion">
+								SPECIAL
+							</span>
+						</li>
+					</a>
+					&nbsp;
 				</ul>
 			</div>
-			<div class="pfeil-container pfeil-container-rechts">
-				<img src="img/tour/pfeil-rechts.png" alt="Pfeil nach rechts" class="pfeil">
-			</div>
+			<a href="#" class="pfeil-rechts tour-slider">
+				<div class="pfeil-container pfeil-container-rechts">
+					<img src="img/tour/pfeil-rechts.png" alt="Pfeil nach rechts" class="pfeil">
+				</div>
+			</a>
 		</div>
 	</div>
+<div class="slideshow grid-wrapper">
 	<div class="tour-seite grid-wrapper">
-		<div class="screen-box">
-			<img src="img/homepage/screens3.png" alt="Beispiel Screen">
-			<p>
-				Deal-Daten als Exceldatei exportiert
-			</p>
-		</div>
 		<div class="beschreibung-box">
 			<h2>
-				Deal-Daten Special
+				Ausf&uuml;hrliche Firmenprofile
 			</h2>
 			<p>
-				Nutzen Sie unsere Umfangreiche Deal-Datenbank
-				um den Hype-Markt „Daily Deals“ zu analysieren oder um selbst Gutscheine anzubieten.
+				Zu jedem Unternehmen in unserer Datenbank gibt es eine Profilseite mit ausf&uuml;hrlichen Informationen.
 			</p>
 			<ul>
 				<li>
-					Über 200.000 Deals in Deutschland inkl. Unternehmen und Anzahl verkaufter Deals
+					Stammdaten
 				</li>
 				<li>
-					Deals von 19 verschiedenen Deal-Plattformen
+					Detaillierte Auflistung der Werbeaktivit&auml;ten
 				</li>
 				<li>
-					Inklusive Branchenzuteilung für aussagekräftige Analysen
+					Kundenbewertungen und Social Media Interaktion
 				</li>
 			</ul>
 			<button class="mehrInfo button">
@@ -61,7 +76,118 @@
 				</div>
 			</button>
 		</div>
-	<br><br>
+		<div class="screen-box">
+			<img src="img/tour/profile-screen.png" alt="Ausschnitt aus unseren Firmenprofilen">
+			<p>
+				Ausschnitt aus unseren Firmenprofilen
+			</p>
+		</div>
 	</div>
+	<div class="tour-seite grid-wrapper">
+		<div class="beschreibung-box">
+			<h2>
+				Zahlreiche Such- und Filterm&ouml;glichkeiten
+			</h2>
+			<p>
+				&Uuml;ber Such- und Filtereinstellungen k&ouml;nnen pr&auml;zise Zielgruppen definiert werden.
+			</p>
+			<ul>
+				<li>
+					6 Filtereinstellungen erm&ouml;glichen genaue Eingrenzung der Unternehmen nach Branche, Region und Internet-Aktivit&auml;t
+				</li>
+				<li>
+					Filterm&ouml;glichkeit nach einzelnen Quellen erm&ouml;glicht umfangreiche Wettbewerbsbeobachtung
+				</li>
+				<li>
+					Finden Sie einzelne Kunden durch unsere direkte Unternehmenssuche
+				</li>
+			</ul>
+			<button class="mehrInfo button">
+				<div class="infoBild button-bild">
+					weitere Informationen
+				</div>
+			</button>
+		</div>
+		<div class="screen-box">
+			<img src="img/tour/filter-screen.png" alt="Unsere Filterfunktion">
+			<p>
+				Unsere Filterfunktion
+			</p>
+		</div>
+	</div>
+	<div class="tour-seite grid-wrapper">
+		<div class="beschreibung-box">
+			<h2>
+				Markierungs- und Export-
+				<br>
+				funktionen
+			</h2>
+			<p>
+				Markieren Sie einzelne Unternehmen als Lead oder als Kunde und nutzen Sie die Exportfunktion um die Daten weiterzuverarbeiten.
+			</p>
+			<ul>
+				<li>
+					Einteilen von Unternehmen in verschiedene Listen f&uuml;r bessere &Uuml;bersicht
+				</li>
+				<li>
+					Export von ganzen Unternehmenslisten oder einzelnen Firmenprofilen
+				</li>
+				<li>
+					Export CSV-Datenformat f&uuml;r die schnelle Integration ins eigene CRM-System. Weitere Formate auf Anfrage!
+				</li>
+			</ul>
+			<button class="mehrInfo button">
+				<div class="infoBild button-bild">
+					weitere Informationen
+				</div>
+			</button>
+		</div>
+		<div class="screen-box">
+			<img src="img/tour/export-screen.png" alt="Export-Optionen">
+			<p>
+				&nbsp;
+			</p>
+		</div>
+		<div class="screen-box overlay-screenbox">
+				<img src="img/tour/export-screen2.png" alt="Exportierte Exceldatei">
+			<p>
+				Exportierte Exceldatei
+			</p>
+		</div>
+	</div>
+	<div class="tour-seite grid-wrapper">
+		<div class="beschreibung-box">
+			<h2>
+				Gutschein-Daten Special
+			</h2>
+			<p>
+				Identifizieren Sie neue &amp; alte Werbekunden &uuml;ber unsere umfangreiche Datenbank mit Gutscheinkampagnen von Groupon, DailyDeal und Co.
+			</p>
+			<ul>
+				<li>
+					&Uuml;ber 150.000 Gutscheinaktionen in Deutschland inkl. Unternehmen und Anzahl verkaufter Gutscheine
+				</li>
+				<li>
+					Anbieteradressen von 19 verschiedenen Gutschein-Plattformen
+				</li>
+				<li>
+					Weitere Details wie Branchenzugeh&ouml;rigkeit und zus&auml;tzliche Angebotsinformationen
+				</li>
+			</ul>
+			<button class="mehrInfo button">
+				<div class="infoBild button-bild">
+					weitere Informationen
+				</div>
+			</button>
+		</div>
+		<div class="screen-box">
+			<img src="img/tour/deal-screen.png" alt="Gutschein-Daten als Exceldatei exportiert">
+			<p>
+				Gutschein-Daten als Exceldatei exportiert
+			</p>
+		</div>
+	</div>
+</div>
+{{invokeAfterLoad}}
 </template>
 
