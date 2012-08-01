@@ -1,33 +1,67 @@
 <template name="tour">
 	<div class="whitebg tour-bg">
 		<div class="tour-navigation grid-wrapper">
-			<img src="img/tour/pfeil-links.png" alt="Pfeil nach links" class="pfeil">
+			<div class="pfeil-container">
+				<img src="img/tour/pfeil-links.png" alt="Pfeil nach links" class="pfeil">
+			</div>
+			<div class="ul-container">
+				<ul>
+					<li>
+					<img src="img/tour/marker.png" alt="Marker" class="marker">
+					Firmenprofile
+					</li>
+					<li>
+					Filter
+					</li>
+					<li>
+					Export
+					</li>
+					<li>
+					Deal-Daten
+					<span class="aktion">
+					SPECIAL
+					</span>
+					</li>
+				</ul>
+			</div>
+			<div class="pfeil-container pfeil-container-rechts">
+				<img src="img/tour/pfeil-rechts.png" alt="Pfeil nach rechts" class="pfeil">
+			</div>
+		</div>
+	</div>
+	<div class="tour-seite grid-wrapper">
+		<div class="screen-box">
+			<img src="img/homepage/screens3.png" alt="Beispiel Screen">
+			<p>
+				Deal-Daten als Exceldatei exportiert
+			</p>
+		</div>
+		<div class="beschreibung-box">
+			<h2>
+				Deal-Daten Special
+			</h2>
+			<p>
+				Nutzen Sie unsere Umfangreiche Deal-Datenbank
+				um den Hype-Markt „Daily Deals“ zu analysieren oder um selbst Gutscheine anzubieten.
+			</p>
 			<ul>
 				<li>
-				<img src="img/tour/marker.png" alt="Marker" class="marker">
-				Einleitung
+					Über 200.000 Deals in Deutschland inkl. Unternehmen und Anzahl verkaufter Deals
 				</li>
 				<li>
-				Firmenprofile
+					Deals von 19 verschiedenen Deal-Plattformen
 				</li>
 				<li>
-				Filter
-				</li>
-				<li>
-				Export
-				</li>
-				<li>
-				Live-Updates
-				</li>
-				<li>
-				Deal-Daten
-				<span class="aktion">
-				SPECIAL
-				</span>
+					Inklusive Branchenzuteilung für aussagekräftige Analysen
 				</li>
 			</ul>
-			<img src="img/tour/pfeil-rechts.png" alt="Pfeil nach rechts" class="pfeil">
+			<button class="mehrInfo button">
+				<div class="infoBild button-bild">
+					weitere Informationen
+				</div>
+			</button>
 		</div>
+	<br><br>
 	</div>
 </template>
 

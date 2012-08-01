@@ -883,6 +883,10 @@ Anfang der Styles für die Homepage und die Tour
 *********************************************
 **/
 
+myGray1 = #d9d9d9
+myGray2 = #cdcdcd
+myGray3 = #f0f0f0
+
 //TOUR und HOMEPAGE
 
 .whitebg
@@ -905,6 +909,14 @@ Anfang der Styles für die Homepage und die Tour
 	position relative
 	top -10px
 	padding-top 0px
+
+.button
+	line-height lines2
+	font-size 17.5px
+
+.button-bild
+	height lines2
+	padding-left cols1
 
 
 
@@ -933,14 +945,11 @@ Anfang der Styles für die Homepage und die Tour
 		font-weight semibold
 
 	.testzugang
-		line-height lines2
-		font-size 17.5px
-		margin-top 0.25 * line
 		width cols5
+		margin-top 0.25 * line
+
 		
 	.haken
-		height lines2
-		padding-left cols1
 		background url("img/homepage/haken.png") no-repeat 0% 50%
 
 .functions
@@ -960,7 +969,7 @@ Anfang der Styles für die Homepage und die Tour
 		height lines3
 		padding-left cols1
 
-		span
+		span:not(.aktion)
 			padding-top line
 			display block
 		
@@ -997,20 +1006,18 @@ Anfang der Styles für die Homepage und die Tour
 //TOUR
 
 .tour-bg
-	padding-bottom 70px
+	padding-bottom 3 * line px
 
 .tour-navigation
 	font-size 15px
-	padding-top lines2
-	margin-left auto
-	margin-right auto
+	padding-top line
 	
 	ul
 		display inline
 	
 	li
 		display inline-block
-		pad = 37px
+		pad = 65 px
 		padding-right pad
 		padding-left pad
 	
@@ -1019,9 +1026,93 @@ Anfang der Styles für die Homepage und die Tour
 		margin-left auto
 		margin-right auto
 		padding-bottom 10px
+		
 	
-	.pfeil
-		vertical-align middle
+	.ul-container
+		width cols12 - cols1 * 2 - 10 px
+		display inline-block
+		text-align center
+		vertical-align bottom
+
+
+	.pfeil-container
+		vertical-align bottom
+		width cols1
+		display inline-block
+		
+	.pfeil-container-rechts
+		text-align right
+	
+
+.tour-seite
+	padding-top lines2
+	background-color #f8f8f8
+
+	img
+		border solid myGray1 1px
+	
+	.screen-box
+		display inline-block
+		bildPadding = 7 px
+		padding-left bildPadding
+		padding-right bildPadding
+		padding-top bildPadding
+		border solid myGray2 1px
+		box-shadow 0px 1px 2px 1px myGray3
+		font-style italic
+		color gray2
+		font-size 16px
+		font-weight semibold
+		background-color #f7f7f7 
+		background-image -moz-linear-gradient(bottom , #f7f7f7, #ffffff 50.0%,#ffffff 100.0%)
+		background-image -webkit-linear-gradient(bottom , #f7f7f7, #ffffff 50.0%,#ffffff 100.0%)
+		background-image -o-linear-gradient(bottom , #f7f7f7, #ffffff 50.0%,#ffffff 100.0%)
+		background-image -ms-linear-gradient(bottom , #f7f7f7, #ffffff 50.0%,#ffffff 100.0%)
+		background-image  linear-gradient(bottom , #f7f7f7, #ffffff 50.0%,#ffffff 100.0%)
+		
+		p
+			textPadding = line / 2 px
+			padding-top textPadding
+			padding-bottom textPadding
+	
+	.beschreibung-box
+		float right
+		width cols5
+		padding-top lines2
+		
+		h2
+			font-size 30px
+			color gray1
+			line-height lines2
+		
+		p
+			font-size 16px
+			padding-bottom line * 1.5
+			padding-top line * 0.5
+			
+		verticalFix = 3px
+		ul
+			margin-top - verticalFix
+			margin-left -10px
+
+
+		li
+			font-size 17px
+			list-style-type none
+			background url('img/tour/haken.png') no-repeat 0% 0%
+			padding-left 30px
+			padding-bottom line
+			&:first-child
+				padding-top verticalFix
+		
+	.mehrInfo
+		width cols4
+		
+	.infoBild
+		background url("img/tour/infoBild.png") no-repeat 0% 50%
+
+
+
 		
 
 /********************************************
