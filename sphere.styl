@@ -885,6 +885,7 @@ Anfang der Styles für die Homepage und die Tour
 myGray1 = #d9d9d9
 myGray2 = #cdcdcd
 myGray3 = #f0f0f0
+myGray4 = #cacbcc
 
 //TOUR und HOMEPAGE
 
@@ -910,13 +911,15 @@ myGray3 = #f0f0f0
 	padding-top 0px
 
 .button
-	line-height lines2
+	line-height 37px
 	font-size 17.5px
+	padding-right 0px
 
 .button-bild
-	height lines2
-	padding-left cols1
+	padding-left 15px
 
+.haken
+	background url("img/homepage/haken.png") no-repeat 0% 50%
 
 
 //HOMEPAGE
@@ -946,13 +949,13 @@ myGray3 = #f0f0f0
 	.testzugang
 		width cols5
 		margin-top 0.25 * line
+		padding-left 2px
 
 		
-	.haken
-		background url("img/homepage/haken.png") no-repeat 0% 50%
 
 .functions
 	padding-top lines2
+	padding-bottom lines4
 	background-color #f8f8f8
 
 	li
@@ -1001,7 +1004,223 @@ myGray3 = #f0f0f0
 	
 	.headline-deal
 		background url("img/homepage/deal.png") no-repeat 0% 50%
+
+.partner
+	border-bottom 3px solid gray1
+	padding-bottom line - 3 px
+
+	h3
+		font-size 22px
+		
+		strong
+			font-weight semibold
+
+.graueLinie
+	padding-top ( line-height - 1 ) px
+	padding-bottom line
+	border-bottom 1px solid myGray4
 	
+	
+	.portrait
+		padding 4px
+		box-shadow 0px 0px 5px 0px gray1
+	
+	.portrait-container
+		width cols2
+		display inline-block
+		vertical-align middle
+	
+	.zitat
+		width cols10
+		font-size 25px
+		font-style italic
+		font-weight light
+		vertical-align middle
+		display inline-block
+		line-height 25px
+		&:before
+			content "»"
+		&:after
+			content "«"
+	
+	.zitatautor
+		font-size 14px
+		font-style normal
+		color gray1
+		float right
+		font-weight 500
+
+.aktiv-werden
+	text-align center
+	padding-top lines4
+	padding-bottom lines2
+
+	h3
+		font-size 25px
+		padding-bottom line
+		
+		strong
+			font-weight semibold
+	
+	h4
+		font-size 19px
+		font-weight semibold
+		padding-bottom lines2
+	
+	.aktivwerden-button
+	 width cols7
+	 text-align left
+
+.overlay-outer
+	background-color #000
+	position fixed
+	opacity .5
+	filter unquote('Alpha(opacity=50)')
+	top 0
+	left 0
+	width 100%
+	height 100%
+	z-index 100
+
+.overlay-inner
+	z-index 101
+	position fixed
+	top 0
+	left 0
+	width 100%
+	height 100%
+	text-align center
+
+.conversionbox-outer
+	border-radius 6px 6px 6px 6px
+	border solid 8px #47494b
+	background-color white
+	display inline-block
+	text-align left
+	margin-top lines5
+	width ( 7 * (column + gutter) ) px
+	background-color:#f8f8f8;
+	
+	.close
+		float right
+		padding 3px
+	
+	.conversion-header
+		padding-top 15px	
+		padding-bottom 50px	
+		margin-bottom -15px
+	
+	.info-icon
+		background url("img/tour/info-icon.png") no-repeat 0% 50%
+	
+	.tel-icon
+		background url("img/homepage/tel.png") no-repeat 0% 50%
+	
+	.headline-conversionbox
+		font-size 19px
+		line-height lines2
+		padding-left 35px
+		margin-left (column + gutter) px
+		font-weight semibold
+		
+
+.conversionbox-inner
+	margin-left (column + gutter) px
+	margin-right (column + gutter) px
+	
+	.telefon
+		padding-top line
+		
+		.zeile1
+			font-size 17px
+
+		.telNr
+			font-size 25px
+			line-height 50px
+
+		.zeile3
+			font-size 17px
+			font-style italic
+	
+	.portrait-mark
+		text-align center
+		font-size 12px
+		float right
+	
+	.photo-mark
+		padding 4px
+		box-shadow 0px 0px 5px 0px gray1
+		
+	h4
+		font-size 17px
+		padding-top line
+		font-weight semibold
+	
+	.formular-zeile
+		margin-top 20px
+	
+		label
+			font-size 16px
+			font-weight semibold
+			display inline-block
+			padding-top 3px
+	
+		.formular-feld
+			float right
+			hintergrundFarbe = #e6e6e6
+			border 3px solid hintergrundFarbe
+			background-color hintergrundFarbe
+			border-radius 3px 3px 3px 3px
+
+		
+		input
+			width 240px
+			padding-left 13 px
+			padding-right 13 px
+			
+	.checkbox-box
+		padding-bottom 10px
+		
+		input
+			float left
+			margin-left 0px
+
+		.checkboxLabel
+			display inline-block
+			width 365px
+		
+		strong
+			font-weight bold
+	
+	
+	.newsletterbox
+		float right
+		width 278px
+		padding-top line
+		
+		.newsletterLabel
+			display inline-block
+			float right
+			width 252px
+	
+	.rueckrufButton
+		width 278px
+		line-height 27px
+		font-size 14.5px
+		float right
+		margin-bottom lines2
+		padding-left 2px
+		margin-top line
+
+	.rueckrufBild
+		background url("img/homepage/telButton.png") no-repeat 0% 50%
+		padding-left 10px
+
+	.infoBild
+		background url("img/tour/info.png") no-repeat 0% 50%
+		padding-left 10px
+
+
 //TOUR
 
 .tour-bg
@@ -1048,8 +1267,12 @@ myGray3 = #f0f0f0
 	.pfeil-container-rechts
 		text-align right
 	
+	.pfeil-links
+		visibility hidden
+	
 .slideshow
 	height 33 * line
+	margin-bottom 30px
 
 .tour-seite
 	padding-top lines2
@@ -1083,7 +1306,7 @@ myGray3 = #f0f0f0
 			padding-bottom textPadding
 
 	.overlay-screenbox
-		margin-top -62px
+		margin-top -102px
 		margin-left 40px
 	
 	.beschreibung-box
@@ -1114,14 +1337,19 @@ myGray3 = #f0f0f0
 			background url('img/tour/haken.png') no-repeat 0% 0%
 			padding-left 30px
 			padding-bottom line
+			line-height 25px
+
 			&:first-child
 				padding-top verticalFix
 		
 	.mehrInfo
 		width cols4
+		padding-left 3px
+
+		
 		
 	.infoBild
-		background url("img/tour/infoBild.png") no-repeat 0% 50%
+		background url("img/tour/mehrInfo.png") no-repeat 0% 50%
 
 		
 
