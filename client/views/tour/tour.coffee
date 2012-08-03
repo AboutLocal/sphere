@@ -1,5 +1,4 @@
 direktlink_Finder= (i,el) ->
-	console.log $(".direktlinks")[0].childNodes[2*i+1]
 	return $(".direktlinks")[0].childNodes[2*i+1]
 
 startSlideShow= () ->
@@ -61,6 +60,16 @@ Template.tour.events =
     	$('.pfeil-rechts')[0].style.visibility="hidden"
     else
     	$('.pfeil-rechts')[0].style.visibility="visible"
+
     
-        
+  "click .close-link": (evt) ->
+    hideOverlay()
+    evt.preventDefault()
+
     
+  "click .open-link": (evt) ->
+    showOverlay()
+    evt.preventDefault()
+    
+    
+

@@ -1054,7 +1054,7 @@ myGray4 = #cacbcc
 	text-align center
 	padding-top lines4
 	padding-bottom lines2
-
+	
 	h3
 		font-size 25px
 		padding-bottom line
@@ -1068,8 +1068,15 @@ myGray4 = #cacbcc
 		padding-bottom lines2
 	
 	.aktivwerden-button
-	 width cols7
-	 text-align left
+		background transparent no-repeat top left
+		height 58px
+		width 600px
+		display inline-block
+		background-image url('/img/homepage/button.png')
+		
+		&:hover
+			background-image url('/img/homepage/button-hover.png')
+				
 
 .overlay-outer
 	background-color #000
@@ -1081,6 +1088,7 @@ myGray4 = #cacbcc
 	width 100%
 	height 100%
 	z-index 100
+	display none
 
 .overlay-inner
 	z-index 101
@@ -1090,6 +1098,7 @@ myGray4 = #cacbcc
 	width 100%
 	height 100%
 	text-align center
+	display none
 
 .conversionbox-outer
 	border-radius 6px 6px 6px 6px
@@ -1204,13 +1213,12 @@ myGray4 = #cacbcc
 			width 252px
 	
 	.rueckrufButton
-		width 278px
+		width 271px
 		line-height 27px
 		font-size 14.5px
-		float right
-		margin-bottom lines2
 		padding-left 2px
 		margin-top line
+		margin-bottom line
 
 	.rueckrufBild
 		background url("img/homepage/telButton.png") no-repeat 0% 50%
@@ -1219,6 +1227,10 @@ myGray4 = #cacbcc
 	.infoBild
 		background url("img/tour/info.png") no-repeat 0% 50%
 		padding-left 10px
+	
+	.abschicken-box
+		text-align right
+		padding-bottom 20px
 
 
 //TOUR
@@ -1274,9 +1286,11 @@ myGray4 = #cacbcc
 	height 33 * line
 	margin-bottom 30px
 
+slideAbstand = 300
 .tour-seite
 	padding-top lines2
 	background-color #f8f8f8
+	width (12 * (column + gutter) - gutter + slideAbstand ) px
 
 	img
 		border solid myGray1 1px
@@ -1313,6 +1327,7 @@ myGray4 = #cacbcc
 		float right
 		width cols5
 		padding-top lines2
+		margin-right slideAbstand px
 		
 		h2
 			font-size 30px
