@@ -1,33 +1,284 @@
 <template name="tour">
 	<div class="whitebg tour-bg">
 		<div class="tour-navigation grid-wrapper">
-			<img src="img/tour/pfeil-links.png" alt="Pfeil nach links" class="pfeil">
-			<ul>
-				<li>
-				<img src="img/tour/marker.png" alt="Marker" class="marker">
-				Einleitung
-				</li>
-				<li>
-				Firmenprofile
-				</li>
-				<li>
-				Filter
-				</li>
-				<li>
-				Export
-				</li>
-				<li>
-				Live-Updates
-				</li>
-				<li>
-				Deal-Daten
-				<span class="aktion">
-				SPECIAL
-				</span>
-				</li>
-			</ul>
-			<img src="img/tour/pfeil-rechts.png" alt="Pfeil nach rechts" class="pfeil">
+			<a href="#" class="pfeil-links tour-slider">
+				<div class="pfeil-container">
+					<img src="img/tour/pfeil-links.png" alt="Pfeil nach links" class="pfeil">
+				</div>
+			</a>
+			<div class="ul-container">
+				<ul class="direktlinks">
+					&nbsp;
+					<a href="#" class="tour-slider">
+						&nbsp;
+						<li>
+							<img src="img/tour/marker.png" alt="Marker" class="marker">
+							Firmenprofile
+						</li>
+					</a>
+					&nbsp;
+					<a href="#" class="tour-slider">
+						&nbsp;
+						<li>
+						Filter
+						</li>
+					</a>
+					&nbsp;
+					<a href="#" class="tour-slider">
+						&nbsp;
+						<li>
+						Export
+						</li>
+					</a>
+					&nbsp;
+					<a href="#" class="tour-slider">
+						&nbsp;
+						<li>
+							Gutschein-Daten
+							<span class="aktion">
+								SPECIAL
+							</span>
+						</li>
+					</a>
+					&nbsp;
+				</ul>
+			</div>
+			<a href="#" class="pfeil-rechts tour-slider">
+				<div class="pfeil-container pfeil-container-rechts">
+					<img src="img/tour/pfeil-rechts.png" alt="Pfeil nach rechts" class="pfeil">
+				</div>
+			</a>
 		</div>
 	</div>
+<div class="slideshow grid-wrapper">
+	<div class="tour-seite grid-wrapper">
+		<div class="beschreibung-box">
+			<h2>
+				Ausf&uuml;hrliche Firmenprofile
+			</h2>
+			<p>
+				Zu jedem Unternehmen in unserer Datenbank gibt es eine Profilseite mit ausf&uuml;hrlichen Informationen.
+			</p>
+			<ul>
+				<li>
+					Stammdaten
+				</li>
+				<li>
+					Detaillierte Auflistung der Werbeaktivit&auml;ten
+				</li>
+				<li>
+					Kundenbewertungen und Social Media Interaktion
+				</li>
+			</ul>
+			<a href="#" class="open-link">
+				<button class="mehrInfo button">
+					<div class="infoBild button-bild">
+						weitere Informationen
+					</div>
+				</button>
+			</a>
+		</div>
+		<div class="screen-box">
+			<img src="img/tour/profile-screen.png" alt="Ausschnitt aus unseren Firmenprofilen">
+			<p>
+				Ausschnitt aus unseren Firmenprofilen
+			</p>
+		</div>
+	</div>
+	<div class="tour-seite grid-wrapper">
+		<div class="beschreibung-box">
+			<h2>
+				Zahlreiche Such- und Filterm&ouml;glichkeiten
+			</h2>
+			<p>
+				&Uuml;ber Such- und Filtereinstellungen k&ouml;nnen pr&auml;zise Zielgruppen definiert werden.
+			</p>
+			<ul>
+				<li>
+					6 Filtereinstellungen erm&ouml;glichen genaue Eingrenzung der Unternehmen nach Branche, Region und Internet-Aktivit&auml;t
+				</li>
+				<li>
+					Filterm&ouml;glichkeit nach einzelnen Quellen erm&ouml;glicht umfangreiche Wettbewerbsbeobachtung
+				</li>
+				<li>
+					Finden Sie einzelne Kunden durch unsere direkte Unternehmenssuche
+				</li>
+			</ul>
+			<a href="#" class="open-link">
+				<button class="mehrInfo button">
+					<div class="infoBild button-bild">
+						weitere Informationen
+					</div>
+				</button>
+			</a>
+		</div>
+		<div class="screen-box">
+			<img src="img/tour/filter-screen.png" alt="Unsere Filterfunktion">
+			<p>
+				Unsere Filterfunktion
+			</p>
+		</div>
+	</div>
+	<div class="tour-seite grid-wrapper">
+		<div class="beschreibung-box">
+			<h2>
+				Markierungs- und Export-
+				<br>
+				funktionen
+			</h2>
+			<p>
+				Markieren Sie einzelne Unternehmen als Lead oder als Kunde und nutzen Sie die Exportfunktion um die Daten weiterzuverarbeiten.
+			</p>
+			<ul>
+				<li>
+					Einteilen von Unternehmen in verschiedene Listen f&uuml;r bessere &Uuml;bersicht
+				</li>
+				<li>
+					Export von ganzen Unternehmenslisten oder einzelnen Firmenprofilen
+				</li>
+				<li>
+					Export CSV-Datenformat f&uuml;r die schnelle Integration ins eigene CRM-System. Weitere Formate auf Anfrage!
+				</li>
+			</ul>
+			<a href="#" class="open-link">
+				<button class="mehrInfo button">
+					<div class="infoBild button-bild">
+						weitere Informationen
+					</div>
+				</button>
+			</a>
+		</div>
+		<div class="screen-box">
+			<img src="img/tour/export-screen.png" alt="Export-Optionen">
+			<p>
+				&nbsp;
+			</p>
+		</div>
+		<div class="screen-box overlay-screenbox">
+				<img src="img/tour/export-screen2.png" alt="Exportierte Exceldatei">
+			<p>
+				Exportierte Exceldatei
+			</p>
+		</div>
+	</div>
+	<div class="tour-seite grid-wrapper">
+		<div class="beschreibung-box">
+			<h2>
+				Gutschein-Daten Special
+			</h2>
+			<p>
+				Identifizieren Sie neue &amp; alte Werbekunden &uuml;ber unsere umfangreiche Datenbank mit Gutscheinkampagnen von Groupon, DailyDeal und Co.
+			</p>
+			<ul>
+				<li>
+					&Uuml;ber 150.000 Gutscheinaktionen in Deutschland inkl. Unternehmen und Anzahl verkaufter Gutscheine
+				</li>
+				<li>
+					Anbieteradressen von 19 verschiedenen Gutschein-Plattformen
+				</li>
+				<li>
+					Weitere Details wie Branchenzugeh&ouml;rigkeit und zus&auml;tzliche Angebotsinformationen
+				</li>
+			</ul>
+			<a href="#" class="open-link">
+				<button class="mehrInfo button">
+					<div class="infoBild button-bild">
+						weitere Informationen
+					</div>
+				</button>
+			</a>
+		</div>
+		<div class="screen-box">
+			<img src="img/tour/deal-screen.png" alt="Gutschein-Daten als Exceldatei exportiert">
+			<p>
+				Gutschein-Daten als Exceldatei exportiert
+			</p>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+  <div class="overlay-outer">
+  </div>
+  <div class="overlay-inner">
+  	<div class="conversionbox-outer">
+			<a href="#" class="close-link">
+				<img src="/img/close.png" alt="Close-Button" class="close">
+			</a>
+			<div class="whitebg conversion-header">
+				<h4 class="headline-conversionbox info-icon">
+					Fordern Sie weitere Informationen an
+				</h4>
+			</div>
+			<form class="conversionbox-inner">  		
+				<div class="checkbox-box">
+					<input type="checkbox" name="newsletter" id="newsletter" value="yes">
+					<label for="newsletter" class="checkboxLabel">
+						Ich m&ouml;chte <strong>aktuelle Informationen</strong> von AboutLocal erhalten.
+					</label>
+				</div>
+				<div class="checkbox-box">
+					<input type="checkbox" name="rueckruf" id="rueckruf" value="yes">
+					<label for="rueckruf" class="checkboxLabel">
+						Ich m&ouml;chte <strong>einen R&uuml;ckruf</strong> von AboutLocal erhalten.
+					</label>
+				</div>
+				<div class="formular-zeile">
+					<label for="name">
+						Name
+					</label>
+					<span class="formular-feld">
+						<input type="text" name="name" id="name">
+					</span>
+				</div>
+				<div class="formular-zeile">
+					<label for="telefon">
+						Telefon
+					</label>
+					<span class="formular-feld">
+						<input type="text" name="telefon" id="telefon">
+					</span>
+				</div>
+				<div class="formular-zeile">
+					<label for="mail">
+						E-Mail
+					</label>
+					<span class="formular-feld">
+						<input type="text" name="mail" id="mail">
+					</span>
+				</div>
+				<div class="formular-zeile">
+					<label for="unternehmen">
+						Unternehmen
+					</label>
+					<span class="formular-feld">
+						<input type="text" id="unternehmen" name="unternehmen">
+					</span>
+				</div>
+				<div class="abschicken-box">
+					<button class="rueckrufButton button">
+						<div class="infoBild button-bild">
+							weitere Informationen anfordern
+						</div>
+					</button>
+					<br>
+					<a href="#" class="close-link">
+						abbrechen
+					</a>
+				</div>
+			</div>  		
+  	</div>
+  </div>
+
+
+
+
+
+{{invokeAfterLoad}}
 </template>
 

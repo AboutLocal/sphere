@@ -220,7 +220,6 @@ body
     font-size font-size px
     font-family "myriad-pro", sans-serif
     line-height line-height px
-    text-rendering optimizeLegibility
     -webkit-font-smoothing antialiased
     background #f8f8f8
     color gray1
@@ -900,15 +899,20 @@ Anfang der Styles für die Homepage und die Tour
 *********************************************
 **/
 
+myGray1 = #d9d9d9
+myGray2 = #cdcdcd
+myGray3 = #f0f0f0
+myGray4 = #cacbcc
+
 //TOUR und HOMEPAGE
 
 .whitebg
 	background-color:#f8f8f8; 
-	background-image: -moz-linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px, #f7f7f7 42px, #ffffff 70px); 
-	background-image: -webkit-linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 42px, #ffffff 70px); 
-	background-image: -o-linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 42px, #ffffff 70px); 
-	background-image: -ms-linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 42px, #ffffff 70px); 
-	background-image: linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 42px, #ffffff 70px)
+	background-image: -moz-linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px, #f7f7f7 41px, #ffffff 70px); 
+	background-image: -webkit-linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 41px, #ffffff 70px); 
+	background-image: -o-linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 41px, #ffffff 70px); 
+	background-image: -ms-linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 41px, #ffffff 70px); 
+	background-image: linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 41px, #ffffff 70px)
 
 .aktion
 	rand-padding = 3px
@@ -923,6 +927,16 @@ Anfang der Styles für die Homepage und die Tour
 	top -10px
 	padding-top 0px
 
+.button
+	line-height 37px
+	font-size 17.5px
+	padding-right 0px
+
+.button-bild
+	padding-left 15px
+
+.haken
+	background url("img/homepage/haken.png") no-repeat 0% 50%
 
 
 //HOMEPAGE
@@ -950,18 +964,15 @@ Anfang der Styles für die Homepage und die Tour
 		font-weight semibold
 
 	.testzugang
-		line-height lines2
-		font-size 17.5px
-		margin-top 0.25 * line
 		width cols5
+		margin-top 0.25 * line
+		padding-left 2px
+
 		
-	.haken
-		height lines2
-		padding-left cols1
-		background url("img/homepage/haken.png") no-repeat 0% 50%
 
 .functions
 	padding-top lines2
+	padding-bottom lines4
 	background-color #f8f8f8
 
 	li
@@ -977,7 +988,7 @@ Anfang der Styles für die Homepage und die Tour
 		height lines3
 		padding-left cols1
 
-		span
+		span:not(.aktion)
 			padding-top line
 			display block
 		
@@ -1010,35 +1021,368 @@ Anfang der Styles für die Homepage und die Tour
 	
 	.headline-deal
 		background url("img/homepage/deal.png") no-repeat 0% 50%
+
+.partner
+	border-bottom 3px solid gray1
+	padding-bottom line - 3 px
+
+	h3
+		font-size 22px
+		
+		strong
+			font-weight semibold
+
+.graueLinie
+	padding-top ( line-height - 1 ) px
+	padding-bottom line
+	border-bottom 1px solid myGray4
 	
+	
+	.portrait
+		padding 4px
+		box-shadow 0px 0px 5px 0px gray1
+	
+	.portrait-container
+		width cols2
+		display inline-block
+		vertical-align middle
+	
+	.zitat
+		width cols10
+		font-size 25px
+		font-style italic
+		font-weight light
+		vertical-align middle
+		display inline-block
+		line-height 25px
+		&:before
+			content "»"
+		&:after
+			content "«"
+	
+	.zitatautor
+		font-size 14px
+		font-style normal
+		color gray1
+		float right
+		font-weight 500
+
+.aktiv-werden
+	text-align center
+	padding-top lines4
+	padding-bottom lines2
+	
+	h3
+		font-size 25px
+		padding-bottom line
+		
+		strong
+			font-weight semibold
+	
+	h4
+		font-size 19px
+		font-weight semibold
+		padding-bottom lines2
+	
+	.aktivwerden-button
+		background transparent no-repeat top left
+		height 58px
+		width 600px
+		display inline-block
+		background-image url('/img/homepage/button.png')
+		
+		&:hover
+			background-image url('/img/homepage/button-hover.png')
+				
+
+.overlay-outer
+	background-color #000
+	position fixed
+	opacity .5
+	filter unquote('Alpha(opacity=50)')
+	top 0
+	left 0
+	width 100%
+	height 100%
+	z-index 100
+	display none
+
+.overlay-inner
+	z-index 101
+	position fixed
+	top 0
+	left 0
+	width 100%
+	height 100%
+	text-align center
+	display none
+
+.conversionbox-outer
+	border-radius 6px 6px 6px 6px
+	border solid 8px #47494b
+	background-color white
+	display inline-block
+	text-align left
+	margin-top lines5
+	width ( 7 * (column + gutter) ) px
+	background-color:#f8f8f8;
+	
+	.close
+		float right
+		padding 3px
+	
+	.conversion-header
+		padding-top 15px	
+		padding-bottom 50px	
+		margin-bottom -15px
+	
+	.info-icon
+		background url("img/tour/info-icon.png") no-repeat 0% 50%
+	
+	.tel-icon
+		background url("img/homepage/tel.png") no-repeat 0% 50%
+	
+	.headline-conversionbox
+		font-size 19px
+		line-height lines2
+		padding-left 35px
+		margin-left (column + gutter) px
+		font-weight semibold
+		
+
+.conversionbox-inner
+	margin-left (column + gutter) px
+	margin-right (column + gutter) px
+	
+	.telefon
+		padding-top line
+		
+		.zeile1
+			font-size 17px
+
+		.telNr
+			font-size 25px
+			line-height 50px
+
+		.zeile3
+			font-size 17px
+			font-style italic
+	
+	.portrait-mark
+		text-align center
+		font-size 12px
+		float right
+	
+	.photo-mark
+		padding 4px
+		box-shadow 0px 0px 5px 0px gray1
+		
+	h4
+		font-size 17px
+		padding-top line
+		font-weight semibold
+	
+	.formular-zeile
+		margin-top 20px
+	
+		label
+			font-size 16px
+			font-weight semibold
+			display inline-block
+			padding-top 3px
+	
+		.formular-feld
+			float right
+			hintergrundFarbe = #e6e6e6
+			border 3px solid hintergrundFarbe
+			background-color hintergrundFarbe
+			border-radius 3px 3px 3px 3px
+
+		
+		input
+			width 240px
+			padding-left 13 px
+			padding-right 13 px
+			
+	.checkbox-box
+		padding-bottom 10px
+		
+		input
+			float left
+			margin-left 0px
+
+		.checkboxLabel
+			display inline-block
+			width 365px
+		
+		strong
+			font-weight bold
+	
+	
+	.newsletterbox
+		float right
+		width 278px
+		padding-top line
+		
+		.newsletterLabel
+			display inline-block
+			float right
+			width 252px
+	
+	.rueckrufButton
+		width 271px
+		line-height 27px
+		font-size 14.5px
+		padding-left 2px
+		margin-top line
+		margin-bottom line
+
+	.rueckrufBild
+		background url("img/homepage/telButton.png") no-repeat 0% 50%
+		padding-left 10px
+
+	.infoBild
+		background url("img/tour/info.png") no-repeat 0% 50%
+		padding-left 10px
+	
+	.abschicken-box
+		text-align right
+		padding-bottom 20px
+
+
 //TOUR
 
 .tour-bg
-	padding-bottom 70px
+	padding-bottom 3 * line px
 
 .tour-navigation
 	font-size 15px
-	padding-top lines2
-	margin-left auto
-	margin-right auto
+	padding-top line
 	
 	ul
 		display inline
 	
 	li
 		display inline-block
-		pad = 37px
+		pad = 51 px
 		padding-right pad
 		padding-left pad
+	
+	link-top-padding = 25px
+	a.tour-slider
+		color gray1
+		padding-top link-top-padding
 	
 	.marker
 		display block
 		margin-left auto
 		margin-right auto
 		padding-bottom 10px
+		
 	
-	.pfeil
-		vertical-align middle
+	.ul-container
+		width cols12 - cols1 * 2 - 10 px
+		display inline-block
+		text-align center
+		vertical-align bottom
+
+
+	.pfeil-container
+		vertical-align bottom
+		width cols1
+		display inline-block
+		padding-top line
+		
+	.pfeil-container-rechts
+		text-align right
+	
+	.pfeil-links
+		visibility hidden
+	
+.slideshow
+	height 33 * line
+	margin-bottom 30px
+
+slideAbstand = 300
+.tour-seite
+	padding-top lines2
+	background-color #f8f8f8
+	width (12 * (column + gutter) - gutter + slideAbstand ) px
+
+	img
+		border solid myGray1 1px
+	
+	.screen-box
+		display inline-block
+		bildPadding = 7 px
+		padding-left bildPadding
+		padding-right bildPadding
+		padding-top bildPadding
+		border solid myGray2 1px
+		box-shadow 0px 1px 2px 1px rgba(0,0,0,0.06)
+		font-style italic
+		color gray2
+		font-size 16px
+		font-weight semibold
+		background-color #f7f7f7 
+		background-image -moz-linear-gradient(bottom , #f7f7f7, #ffffff 50.0%,#ffffff 100.0%)
+		background-image -webkit-linear-gradient(bottom , #f7f7f7, #ffffff 50.0%,#ffffff 100.0%)
+		background-image -o-linear-gradient(bottom , #f7f7f7, #ffffff 50.0%,#ffffff 100.0%)
+		background-image -ms-linear-gradient(bottom , #f7f7f7, #ffffff 50.0%,#ffffff 100.0%)
+		background-image  linear-gradient(bottom , #f7f7f7, #ffffff 50.0%,#ffffff 100.0%)
+		
+		p
+			textPadding = line / 2 px
+			padding-top textPadding
+			padding-bottom textPadding
+
+	.overlay-screenbox
+		margin-top -102px
+		margin-left 40px
+	
+	.beschreibung-box
+		float right
+		width cols5
+		padding-top lines2
+		margin-right slideAbstand px
+		
+		h2
+			font-size 30px
+			color gray1
+			line-height lines2
+		
+		p
+			font-size 16px
+			padding-bottom line * 1.5
+			padding-top line * 0.5
+			
+		verticalFix = 3px
+		ul
+			margin-top - verticalFix
+			margin-left -10px
+
+
+		li
+			font-size 17px
+			font-weight semibold
+			list-style-type none
+			background url('img/tour/haken.png') no-repeat 0% 0%
+			padding-left 30px
+			padding-bottom line
+			line-height 25px
+
+			&:first-child
+				padding-top verticalFix
+		
+	.mehrInfo
+		width cols4
+		padding-left 3px
+
+		
+		
+	.infoBild
+		background url("img/tour/mehrInfo.png") no-repeat 0% 50%
+
 		
 
 /********************************************
