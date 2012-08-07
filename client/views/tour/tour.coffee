@@ -60,7 +60,7 @@ moveMarkerTo= (currentTarget) ->
 Template.tour.invokeAfterLoad = ->
   Meteor.defer () ->
     
-    slideName="deal-slide" # diesen Parameter aus GET auslesen
+    slideName="profile-slide" # diesen Parameter aus GET auslesen
     
     if $('div.'+slideName).length > 0 and $('a.'+slideName).length > 0
       slideIndex=myIndexOf( $('.slideshow')[0].childNodes, $('div.'+slideName)[0] )
@@ -88,4 +88,7 @@ Template.tour.events =
     evt.preventDefault()
     
     
+  "click .rueckrufButton": (evt) ->
+    evt.preventDefault()
+    rueckrufAnfordern()
 
