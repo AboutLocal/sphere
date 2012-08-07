@@ -345,17 +345,32 @@ transition()
     gradient-color = #f8f8f8
     box-shadow 0 1px 0 0 #3a3d40, 0 2px 0 0 #323233, 0 lines1 lines1 gradient-color, 0 lines1 + 20px 50px gradient-color
     .grid-wrapper
-        line-height (45 / EM)
-        height (45/EM)
-        padding-top (3/EM)
+        line-height (43 / EM)
+        height (43/EM)
+        padding-top (5/EM)
     .logo
         width (148/EM)
         height (24/EM)
         vertical-align top
-        margin-top (11/EM)
-    span
-        vertical-align baseline
+        margin-top 9px
+        margin-right 14px
+    span, a
+        //vertical-align baseline
+        display inline-block
+        box-sizing border-box
+        padding-top 1px
+    .selected-group, .companies-count
+        font-weight semibold
         color white
+    .selected-group
+        font-size 18px
+        padding-left 24px
+        margin-right 20px
+        &.current-search
+            background url(img/nav-search.gif) 0 50% no-repeat
+        &:after
+            content "▾"
+            margin-left 0.3em
     .nav-right
         float right
         font-weight semibold
@@ -366,6 +381,8 @@ transition()
                 background black
                 a
                     color white*/
+    .companies-count
+        font-size 20px
 
 footer
     padding-top lines1

@@ -63,3 +63,30 @@ Meteor.methods
     if not result?
       throw new Meteor.Error 412, "Unable to logout: session token not matching a user"
     result
+
+
+  ###
+  Tracking
+  ###
+  trackEvents: (sessionToken, evts) ->
+    console.log "tracking", evts, "for", sessionToken
+    return if @is_simulation
+    user = if @is_simulation then Users.findOne() else AuthN.getUserBySessionToken sessionToken
+    console.log user
+    throw new Meteor.Error(403, "You are not logged in") unless user?
+    console.log("authenticated")
+    try
+      # TODO don't use extend anymore once the data structure is settled upon,
+      # it's a security hole!
+      console.log("iterating")
+      console.log(evts)
+      _.each evts, (evt) ->
+        console.log(evt)
+        evt.userId = user._id
+        console.log(user._id)
+        eventId = TrackedEvents.insert evt
+      return true
+    catch e
+      console.error "Could not create trackedEvent: ", e
+
+    return false
