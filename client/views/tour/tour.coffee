@@ -59,6 +59,7 @@ moveMarkerTo= (currentTarget) ->
 
 Template.tour.invokeAfterLoad = ->
   Meteor.defer () ->
+    startOverlaySlideshow()
     
     slideName="profile-slide" # diesen Parameter aus GET auslesen
     

@@ -26,7 +26,9 @@ rueckrufAnfordern= () ->
 rueckrufAnfordern_Callback= (error,result) ->
   if error
     console.log("Fehler beim Speichern des Rückrufs!")
+    $('.overlay-slideshow').cycle(2) #Fehlermeldung anzeigen
   else
     console.log("Rückruf erfolgreich gespeichert")
+    $('.overlay-slideshow').cycle(1) #Erfolgsmeldung anzeigen
 
 

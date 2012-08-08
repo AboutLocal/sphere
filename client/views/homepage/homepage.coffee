@@ -1,5 +1,6 @@
 Template.homepage.invokeAfterLoad = ->
   Meteor.defer () ->
+	    startOverlaySlideshow()
     	$('.zitat-slideshow').cycle( {
 	    fx: 'fade'
 	    speed: 400

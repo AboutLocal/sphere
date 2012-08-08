@@ -345,32 +345,17 @@ transition()
     gradient-color = #f8f8f8
     box-shadow 0 1px 0 0 #3a3d40, 0 2px 0 0 #323233, 0 lines1 lines1 gradient-color, 0 lines1 + 20px 50px gradient-color
     .grid-wrapper
-        line-height (43 / EM)
-        height (43/EM)
-        padding-top (5/EM)
+        line-height (45 / EM)
+        height (45/EM)
+        padding-top (3/EM)
     .logo
         width (148/EM)
         height (24/EM)
         vertical-align top
-        margin-top 9px
-        margin-right 14px
-    span, a
-        //vertical-align baseline
-        display inline-block
-        box-sizing border-box
-        padding-top 1px
-    .selected-group, .companies-count
-        font-weight semibold
+        margin-top (11/EM)
+    span
+        vertical-align baseline
         color white
-    .selected-group
-        font-size 18px
-        padding-left 24px
-        margin-right 20px
-        &.current-search
-            background url(img/nav-search.gif) 0 50% no-repeat
-        &:after
-            content "▾"
-            margin-left 0.3em
     .nav-right
         float right
         font-weight semibold
@@ -381,8 +366,6 @@ transition()
                 background black
                 a
                     color white*/
-    .companies-count
-        font-size 20px
 
 footer
     padding-top lines1
@@ -938,6 +921,10 @@ myGray4 = #cacbcc
 .haken
   background url("img/homepage/haken.png") no-repeat 0% 50%
 
+.portrait
+  padding 4px
+  box-shadow 0px 0px 5px 0px gray1
+  background-color #ffffff
 
 //HOMEPAGE
 
@@ -1075,11 +1062,6 @@ myGray4 = #cacbcc
   padding-bottom line
   border-bottom 1px solid myGray4
   
-  .portrait
-    padding 4px
-    box-shadow 0px 0px 5px 0px gray1
-    background-color #ffffff
-  
   .portrait-container
     margin-right 20px
     display inline-block
@@ -1163,9 +1145,20 @@ overlay-duration = 0.2s
     height 100%
     transition opacity overlay-duration ease 0s, height 0s ease 0s
     
+.overlay-slideshow
+  position fixed
+  top 0px
+  left 0px
+  width 100%
+  margin-top -800px
+  z-index 101
+  transition margin-top overlay-duration
+
+  &.visible
+    margin-top 0px
 
 .overlay-inner
-  z-index 101
+  z-index 102
   position fixed
   top 0
   left 0
@@ -1174,18 +1167,13 @@ overlay-duration = 0.2s
   text-align center
   //display none
   display block
-  margin-top -800px
-  transition margin-top overlay-duration
-
-  &.visible
-    margin-top 0px
 
 .conversionbox-outer
   border-radius 6px 6px 6px 6px
   border solid 8px rgba(31,33,35,0.7)
   display inline-block
   text-align left
-  margin-top lines5
+  margin-top 70px
   width ( 7 * (column + gutter) ) px
 
 .conversionbox
@@ -1219,11 +1207,19 @@ overlay-duration = 0.2s
 
 .vielen-dank-box
   text-align center
+  font-size 17px
   
   p
     font-size 18px
     line-height 25px
     margin-bottom lines2
+    
+  h2
+    
+.fehlermeldung-box
+  text-align center
+  font-size 17px
+  margin-bottom 25px
   
 .conversionbox-inner
   margin-left (column + gutter) px
@@ -1251,6 +1247,7 @@ overlay-duration = 0.2s
       float right
   
   .portrait-mark-danke
+      margin-top 30px
       margin-bottom 30px
   
   .photo-mark
@@ -1510,11 +1507,30 @@ slideAbstand = 300
   .handwriting
     font-size 18px
     line-height lines2
-    margin-bottom lines3
-    font-family "Handwriting Dakota", "myriad-pro", sans-serif
+    margin-bottom lines2
+    margin-top line
   
+  .google-map
+    text-align center
+    
+    a
+      font-size 10px
+      line-height 19px
+      font-family Arial, sans-serif
+      
+  
+  .map-container
+    display inline-block
+    padding-bottom 0px
+
+  .map_canvas
+    height 320px
+    width 450px
+    display inline-block
+
   .adresse
-    margin-bottom lines4
+    margin-top line
+    margin-bottom lines3
 
 
 /********************************************
