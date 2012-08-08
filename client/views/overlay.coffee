@@ -19,3 +19,4 @@ startOverlaySlideshow= () ->
   for slide in $('.overlay-inner')
     slide.style.backgroundColor='' #im IE ist die backgroundColor sind #f8f8f8
 
+
