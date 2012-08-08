@@ -63,7 +63,7 @@
     
       startOverlaySlideshow()
       
-      slideName="profile-slide" # diesen Parameter aus GET auslesen
+      slideName=window.location.pathname.split('tour/')[1].split('/')[0] #"domain.tld/tour/SLIDENAME/" -> slidename herausparsen
       
       if $('div.'+slideName).length > 0 and $('a.'+slideName).length > 0
         slideIndex=myIndexOf( $('.slideshow')[0].childNodes, $('div.'+slideName)[0] )
