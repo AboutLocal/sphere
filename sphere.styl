@@ -206,6 +206,14 @@ bar-chart(barWidth, barHeight, borderWidth=3px)
         border 1px solid #72ad16
         background-color green2 * 1.3
 
+user-select(value)
+    -webkit-touch-callout: value;
+    -webkit-user-select: value;
+    -khtml-user-select: value;
+    -moz-user-select: value;
+    -ms-user-select: value;
+    user-select: value;
+
 *
     font-size font-size px
     font-family "myriad-pro", sans-serif
@@ -343,24 +351,66 @@ transition()
     top 0
     z-index 100
     gradient-color = #f8f8f8
-    box-shadow 0 1px 0 0 #3a3d40, 0 2px 0 0 #323233, 0 lines1 lines1 gradient-color, 0 lines1 + 20px 50px gradient-color
+    box-shadow inset 0 -1px 0 0 #333334, inset 0 -2px 0 0 #3a3d40, 0 5px 0 0 rgba(255,255,255,0.5), 0 6px 6px 0 rgba(0,0,0,0.18)
+    user-select none
+    cursor default
+    bar-height = 50px
     .grid-wrapper
-        line-height (45 / EM)
-        height (45/EM)
-        padding-top (3/EM)
+        line-height bar-height
+        height bar-height
     .logo
         width (148/EM)
         height (24/EM)
-        vertical-align top
-        margin-top (11/EM)
-    span
+        margin-bottom -5px
+    span, .nav-right a, a.selected-group
         vertical-align baseline
+        display inline-block
+    .selected-group, .companies-count
+        font-weight semibold
         color white
     .nav-right
         float right
         font-weight semibold
+        font-size 0
+        height bar-height
+        li.rule
+            height 42px
+            border-left 1px solid #818485
+            width 0
+            padding 0
+            font-size 0
+            vertical-align top
+            margin-top 4px
         li
+            font-size 16px
+            padding-top 2px
+            height bar-height
             display inline-block
+            box-sizing border-box
+            transition background-color 250ms ease-in-out
+            link-padding = 10px
+            &:hover
+                background-color black
+            &.tour
+                a
+                    background url(img/looking-glass.png) link-padding 50% no-repeat
+                    padding-left 31px + link-padding
+            &.home
+                a
+                    background url(img/home.png) link-padding 50% no-repeat
+                    padding-left 24px + link-padding
+            &.login
+                margin-right: -1 * link-padding
+                a
+                    background url(img/key.png) link-padding 50% no-repeat
+                    padding-left 31px + link-padding
+            a
+                transition opacity 150ms ease-in-out
+                color white
+                opacity .5
+                padding 0 link-padding
+                &:hover
+                    opacity 1
             /*transition background-color 200ms ease-in-out
             &:hover
                 background black
@@ -457,7 +507,7 @@ input[type="text"], input[type="password"]
 
 input[type="text"], input[type="password"]
     &:focus
-        border-color green3
+        border-color gray2
 
 default-gradient()
     box-shadow inset 0 1px 0 0 rgba(255,255,255,0.2)
