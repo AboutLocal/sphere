@@ -4,12 +4,16 @@
     routes:
       "": "main"
       "tour": "tour"
+      "kontakt": "contact"
 
     main: () ->
       Session.set("currentPage", "homepage")
 
     tour: () ->
       Session.set("currentPage", "tour")
+
+    contact: () ->
+      Session.set("currentPage", "kontakt")
 
   router = new Router
 

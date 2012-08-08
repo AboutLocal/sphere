@@ -1,2 +1,4 @@
 .meteor/local
-public/gitignore
+node_modules
+public/node_modules
+*~

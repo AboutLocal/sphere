@@ -368,15 +368,6 @@ transition()
     .selected-group, .companies-count
         font-weight semibold
         color white
-    .selected-group
-        font-size 18px
-        padding-left 24px
-        margin-right 20px
-        &.current-search
-            background url(img/nav-search.gif) 0 50% no-repeat
-        &:after
-            content "▾"
-            margin-left 0.3em
     .nav-right
         float right
         font-weight semibold
@@ -425,8 +416,6 @@ transition()
                 background black
                 a
                     color white*/
-    .companies-count
-        font-size 20px
 
 footer
     padding-top lines1
@@ -518,7 +507,7 @@ input[type="text"], input[type="password"]
 
 input[type="text"], input[type="password"]
     &:focus
-        border-color green3
+        border-color gray2
 
 default-gradient()
     box-shadow inset 0 1px 0 0 rgba(255,255,255,0.2)
@@ -951,542 +940,648 @@ myGray4 = #cacbcc
 //TOUR und HOMEPAGE
 
 .whitebg
-	background-color:#f8f8f8; 
-	background-image: -moz-linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px, #f7f7f7 41px, #ffffff 70px); 
-	background-image: -webkit-linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 41px, #ffffff 70px); 
-	background-image: -o-linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 41px, #ffffff 70px); 
-	background-image: -ms-linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 41px, #ffffff 70px); 
-	background-image: linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 41px, #ffffff 70px)
+  background-color:#f8f8f8; 
+  background-image: -moz-linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px, #f7f7f7 41px, #ffffff 70px); 
+  background-image: -webkit-linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 41px, #ffffff 70px); 
+  background-image: -o-linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 41px, #ffffff 70px); 
+  background-image: -ms-linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 41px, #ffffff 70px); 
+  background-image: linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 41px, #ffffff 70px)
 
 .aktion
-	rand-padding = 3px
-	padding-left rand-padding
-	padding-right rand-padding
-	background-color rgb(215,138,0)
-	font-size 10px
-	font-weight semibold
-	color white
-	display inline
-	position relative
-	top -10px
-	padding-top 0px
+  rand-padding = 3px
+  padding-left rand-padding
+  padding-right rand-padding
+  background-color rgb(215,138,0)
+  font-size 10px
+  font-weight semibold
+  color white
+  display inline
+  position relative
+  top -10px
+  padding-top 0px
 
 .button
-	line-height 37px
-	font-size 17.5px
-	padding-right 0px
+  line-height 37px
+  font-size 17.5px
+  padding-right 0px
 
 .button-bild
-	padding-left 15px
+  padding-left 15px
 
 .haken
-	background url("img/homepage/haken.png") no-repeat 0% 50%
+  background url("img/homepage/haken.png") no-repeat 0% 50%
 
+.portrait
+  padding 4px
+  box-shadow 0px 0px 5px 0px gray1
+  background-color #ffffff
 
 //HOMEPAGE
 
 .homepage-bg
-	bottompadding = 17
-	padding-bottom bottompadding px
-	margin-bottom line - bottompadding + 3 px
+  bottompadding = 17
+  padding-bottom bottompadding px
+  margin-bottom line - bottompadding + 3 px
 
 .greeting
-	font-size 15px
-	padding-top lines2
+  font-size 15px
+  padding-top lines2
 
-	.headline
-		margin-top lines2+2 px
-		margin-bottom 5px
-	
-	.screens
-		float right
+  .headline
+    margin-top lines2+2 px
+    margin-bottom 5px
+  
+  .screens
+    float right
 
-	.bold
-		font-weight bold
-	
-	.semi-bold
-		font-weight semibold
+  .bold
+    font-weight bold
+  
+  .semi-bold
+    font-weight semibold
 
-	.testzugang
-		width cols5
-		margin-top 0.25 * line
-		padding-left 2px
+  .testzugang
+    width cols5
+    margin-top 0.25 * line
+    padding-left 2px
 
-		
+    
 
 .functions
-	padding-top lines2
-	padding-bottom lines4
-	background-color #f8f8f8
+  padding-top lines2
+  padding-bottom lines4
+  background-color #f8f8f8
 
-	li
-		width cols4
-		margin-right gutter px
-		float left
-	
-	.lastItem /*! IE8 kennt kein :lastChild */
-		margin-right 0px
-	
-	h4
-		font-size 19px
-		height lines3
-		padding-left 45px
-		font-weight semibold
+  li
+    width cols4
+    margin-right gutter px
+    float left
+  
+  .lastItem /*! IE8 kennt kein :lastChild */
+    margin-right 0px
+  
+  h4
+    font-size 19px
+    height lines3
+    padding-left 45px
+    font-weight semibold
 
-		.function-headline
-			padding-top line
-			display block
-		
-	.function-description
-		height lines3
-		margin-bottom line
-	
-	a
-		color blue2
-		font-size 14px
-		font-weight semibold
-		font-style italic
-		duration = 0.1s
-		transition color duration ease-in-out
+    .function-headline
+      padding-top line
+      display block
     
-		&:after
-			content " ⟩"
-			font-style normal
-			font-weight bold
+  .function-description
+    height lines3
+    margin-bottom line
+  
+  a
+    color blue2
+    font-size 14px
+    font-weight semibold
+    font-style italic
+    duration = 0.1s
+    transition color duration ease-in-out
+    
+    &:after
+      content " ⟩"
+      font-style normal
+      font-weight bold
 
-		&:hover
-			color green2 * 1.3
-	
+    &:hover
+      color green2 * 1.3
+  
 
-	.headline-pfeil
-		background url("img/homepage/pfeil.png") no-repeat 0% 50%
-	
-	.headline-kunden
-		background url("img/homepage/kunden.png") no-repeat 0% 50%
-	
-	.headline-deal
-		background url("img/homepage/deal.png") no-repeat 0% 50%
+  .headline-pfeil
+    background url("img/homepage/pfeil.png") no-repeat 0% 50%
+  
+  .headline-kunden
+    background url("img/homepage/kunden.png") no-repeat 0% 50%
+  
+  .headline-deal
+    background url("img/homepage/deal.png") no-repeat 0% 50%
 
 .partner
-	border-bottom 3px solid gray1
-	padding-bottom line - 3 px
+  border-bottom 3px solid gray1
+  padding-bottom line - 3 px
 
-	h3
-		font-size 22px
-		
-		strong
-			font-weight semibold
+  h3
+    font-size 22px
+    
+    strong
+      font-weight semibold
 
-.seitwert-logo
-	background transparent no-repeat top left
-	height 49px
-	width 169px
-	display inline-block
-	background-image url('/img/homepage/partner-logos.png')
-	
-	&:hover
-		background-position 0 -65px
-	
-.adSearchEngine-logo
-	background transparent no-repeat top left
-	height 49px
-	width 169px
-	display inline-block
-	background-image url('/img/homepage/partner-logos.png')
-	
-	&:hover
-		background-position 0 -65px
-	
-.seitwert-logo
-	background transparent no-repeat top left
-	height 49px
-	width 169px
-	display inline-block
-	background-image url('/img/homepage/partner-logos.png')
-	
-	&:hover
-		background-position 0 -65px
-	
+.partner-box
+  text-align center
+  margin-top 12px
+
+  .partner-link
+    margin-right 100px
+
+  .seitwert-logo
+    background transparent no-repeat left top
+    height 49px
+    width 169px
+    display inline-block
+    background-image url('/img/homepage/partner-logos.png')
+  
+    &:hover
+      background-position 0 -65px
+  
+  .adSearchEngine-logo
+    background transparent no-repeat -169px 0px
+    height 65px
+    width 81px
+    display inline-block
+    background-image url('/img/homepage/partner-logos.png')
+  
+    &:hover
+      background-position -169px -65px
+  
+  .semrush-logo
+    background transparent no-repeat -250px 0px
+    height 50px
+    width 117px
+    display inline-block
+    background-image url('/img/homepage/partner-logos.png')
+  
+    &:hover
+      background-position -250px -65px
+  
 .graueLinie
-	padding-top ( line-height - 1 ) px
-	padding-bottom line
-	border-bottom 1px solid myGray4
-	
-	.portrait
-		padding 4px
-		box-shadow 0px 0px 5px 0px gray1
-	
-	.portrait-container
-		width cols2
-		display inline-block
-		vertical-align middle
-	
-	.zitat-box
-		display inline-block
-		vertical-align middle
-		width cols10
-		line-height 30px
-		
-	
-	.zitat
-		font-size 23px
-		font-style italic
-		font-weight light
-		&:before
-			content "»"
-		&:after
-			content "«"
-	
-	.zitatautor
-		font-size 14px
-		font-style normal
-		color gray1
-		//float right
-		font-weight 500
-		//position absolute
-		padding-left 10px
-		display inline-block
+  padding-top ( line-height - 1 ) px
+  padding-bottom line
+  border-bottom 1px solid myGray4
+  
+  .portrait-container
+    margin-right 20px
+    display inline-block
+    vertical-align middle
+  
+  .zitat-box
+    display inline-block
+    vertical-align middle
+    width cols10
+    line-height 30px
+    
+  
+  .zitat
+    font-size 23px
+    font-style italic
+    font-weight light
+    &:before
+      content "»"
+    &:after
+      content "«"
+  
+  .zitatautor
+    font-size 14px
+    font-style normal
+    color gray1
+    //float right
+    font-weight 500
+    //position absolute
+    padding-left 10px
+    display inline-block
 
 .aktiv-werden
-	text-align center
-	padding-top lines4
-	padding-bottom lines2
-	
-	h3
-		font-size 25px
-		padding-bottom line
-		
-		strong
-			font-weight semibold
-	
-	h4
-		font-size 19px
-		font-weight semibold
-		padding-bottom lines2
-	
-	.aktivwerden-button
-		background transparent no-repeat top left
-		height 58px
-		width 596px
-		display inline-block
-		background-image url('/img/homepage/button.png')
-		
-		&:hover
-			background-position 0 -58px
-				
-		&:active
-			background-position 0 -116px
-				
+  text-align center
+  padding-top lines4
+  padding-bottom lines2
+  
+  h3
+    font-size 25px
+    padding-bottom line
+    
+    strong
+      font-weight semibold
+  
+  h4
+    font-size 19px
+    font-weight semibold
+    padding-bottom lines2
+  
+  .aktivwerden-button
+    background transparent no-repeat top left
+    height 58px
+    width 596px
+    display inline-block
+    background-image url('/img/homepage/button.png')
+    
+    &:hover
+      background-position 0 -58px
+        
+    &:active
+      background-position 0 -116px
+        
 
 overlay-duration = 0.2s
 .overlay-outer
-	background-color #000
-	position fixed
-	//opacity .5
-	//filter unquote('Alpha(opacity=50)')
-	top 0
-	left 0
-	width 100%
-	z-index 100
-	transition opacity overlay-duration ease 0s, height 0s ease overlay-duration
-	opacity 0
-	filter unquote('Alpha(opacity=0)')
-	height 0%
-	
-	&.visible
-		opacity .5
-		filter unquote('Alpha(opacity=50)')
-		height 100%
-		transition opacity overlay-duration ease 0s, height 0s ease 0s
-		
+  background-color #000
+  position fixed
+  //opacity .5
+  //filter unquote('Alpha(opacity=50)')
+  top 0
+  left 0
+  width 100%
+  z-index 100
+  transition opacity overlay-duration ease 0s, height 0s ease overlay-duration
+  opacity 0
+  filter unquote('Alpha(opacity=0)')
+  height 0%
+  
+  &.visible
+    opacity .5
+    filter unquote('Alpha(opacity=50)')
+    height 100%
+    transition opacity overlay-duration ease 0s, height 0s ease 0s
+    
+.overlay-slideshow
+  position fixed
+  top 0px
+  left 0px
+  width 100%
+  margin-top -800px
+  z-index 101
+  transition margin-top overlay-duration
+
+  &.visible
+    margin-top 0px
 
 .overlay-inner
-	z-index 101
-	position fixed
-	top 0
-	left 0
-	width 100%
-	height 0px
-	text-align center
-	//display none
-	display block
-	margin-top -800px
-	transition margin-top overlay-duration
-
-	&.visible
-		margin-top 0px
+  z-index 102
+  position fixed
+  top 0
+  left 0
+  width 100%
+  //height 0px
+  text-align center
+  //display none
+  display block
 
 .conversionbox-outer
-	border-radius 6px 6px 6px 6px
-	border solid 8px rgba(31,33,35,0.7)
-	display inline-block
-	text-align left
-	margin-top lines5
-	width ( 7 * (column + gutter) ) px
+  border-radius 6px 6px 6px 6px
+  border solid 8px rgba(31,33,35,0.7)
+  display inline-block
+  text-align left
+  margin-top 70px
+  width ( 7 * (column + gutter) ) px
 
 .conversionbox
-	background-color white
-	display inline-block
-	background-color:#f8f8f8;
-	width ( 7 * (column + gutter) ) px
-	
-	.close
-		float right
-		padding 3px
-	
-	.conversion-header
-		padding-top 15px	
-		padding-bottom 50px	
-		margin-bottom -15px
-	
-	.info-icon
-		background url("img/tour/info-icon.png") no-repeat 0% 50%
-	
-	.tel-icon
-		background url("img/homepage/tel.png") no-repeat 0% 50%
-	
-	.headline-conversionbox
-		font-size 19px
-		line-height lines2
-		padding-left 35px
-		margin-left (column + gutter) px
-		font-weight semibold
-		
+  background-color white
+  display inline-block
+  background-color:#f8f8f8;
+  width ( 7 * (column + gutter) ) px
+  
+  .close
+    float right
+    padding 3px
+  
+  .conversion-header
+    padding-top 15px  
+    padding-bottom 50px  
+    margin-bottom -15px
+  
+  .info-icon
+    background url("img/tour/info-icon.png") no-repeat 0% 50%
+  
+  .tel-icon
+    background url("img/homepage/tel.png") no-repeat 0% 50%
+  
+  .headline-conversionbox
+    font-size 19px
+    line-height lines2
+    padding-left 35px
+    margin-left (column + gutter) px
+    font-weight semibold
+    
 
+.vielen-dank-box
+  text-align center
+  font-size 17px
+  
+  p
+    font-size 18px
+    line-height 25px
+    margin-bottom lines2
+    
+  h2
+    
+.fehlermeldung-box
+  text-align center
+  font-size 17px
+  margin-bottom 25px
+  
 .conversionbox-inner
-	margin-left (column + gutter) px
-	margin-right (column + gutter) px
-	
-	.telefon
-		padding-top line
-		
-		.zeile1
-			font-size 17px
+  margin-left (column + gutter) px
+  margin-right (column + gutter) px
+  
+  .telefon
+    padding-top line
+    
+    .zeile1
+      font-size 17px
 
-		.telNr
-			font-size 25px
-			line-height 50px
+    .telNr
+      font-size 25px
+      line-height 50px
 
-		.zeile3
-			font-size 17px
-			font-style italic
-	
-	.portrait-mark
-		text-align center
-		font-size 12px
-		float right
-	
-	.photo-mark
-		padding 4px
-		box-shadow 0px 0px 5px 0px gray1
-		
-	h4
-		font-size 17px
-		padding-top line
-		font-weight semibold
-	
-	.formular-zeile
-		margin-top 20px
-	
-		label
-			font-size 16px
-			font-weight semibold
-			display inline-block
-			padding-top 3px
-	
-		.formular-feld
-			float right
-			hintergrundFarbe = #e6e6e6
-			border 3px solid hintergrundFarbe
-			background-color hintergrundFarbe
-			border-radius 3px 3px 3px 3px
+    .zeile3
+      font-size 17px
+      font-style italic
+  
+  .portrait-mark
+    text-align center
+    font-size 12px
+  
+  .portrait-mark-formular
+      float right
+  
+  .portrait-mark-danke
+      margin-top 30px
+      margin-bottom 30px
+  
+  .photo-mark
+    padding 4px
+    box-shadow 0px 0px 5px 0px gray1
+    
+  h2
+    font-style italic
+    font-size 25px
+    line-height lines4
+  
+  h4
+    font-size 17px
+    padding-top line
+    font-weight semibold
+  
+  .formular-zeile
+    margin-top 20px
+  
+    label
+      font-size 16px
+      font-weight semibold
+      display inline-block
+      padding-top 3px
+  
+    .formular-feld
+      float right
+      hintergrundFarbe = #e6e6e6
+      border 3px solid hintergrundFarbe
+      background-color hintergrundFarbe
+      border-radius 3px 3px 3px 3px
 
-		
-		input
-			width 240px
-			padding-left 13 px
-			padding-right 13 px
-			
-	.checkbox-box
-		padding-bottom 10px
-		
-		input
-			float left
-			margin-left 0px
+    
+    input
+      width 240px
+      padding-left 13 px
+      padding-right 13 px
+      
+  .checkbox-box
+    padding-bottom 10px
+    
+    input
+      float left
+      margin-left 0px
 
-		.checkboxLabel
-			display inline-block
-			width 365px
-		
-		strong
-			font-weight bold
-	
-	
-	.newsletterbox
-		float right
-		width 278px
-		padding-top line
-		
-		.newsletterLabel
-			display inline-block
-			float right
-			width 252px
-	
-	.rueckrufButton
-		width 271px
-		line-height 27px
-		font-size 14.5px
-		padding-left 2px
-		margin-top line
-		margin-bottom line
+    .checkboxLabel
+      display inline-block
+      width 365px
+    
+    strong
+      font-weight bold
+  
+  
+  .newsletterbox
+    float right
+    width 278px
+    padding-top line
+    
+    .newsletterLabel
+      display inline-block
+      float right
+      width 252px
+  
+  .rueckrufButton
+    width 271px
+    line-height 27px
+    font-size 14.5px
+    padding-left 2px
+    margin-top line
+    margin-bottom line
 
-	.rueckrufBild
-		background url("img/homepage/telButton.png") no-repeat 0% 50%
-		padding-left 10px
+  .rueckrufBild
+    background url("img/homepage/telButton.png") no-repeat 0% 50%
+    padding-left 10px
 
-	.infoBild
-		background url("img/tour/info.png") no-repeat 0% 50%
-		padding-left 10px
-	
-	.abschicken-box
-		text-align right
-		padding-bottom 20px
+  .infoBild
+    background url("img/tour/info.png") no-repeat 0% 50%
+    padding-left 10px
+  
+  .abschicken-box
+    text-align right
+    padding-bottom 20px
 
 
 //TOUR
 
 .tour-bg
-	padding-bottom 3 * line px
+  padding-bottom 3 * line px
 
 .tour-navigation
-	font-size 15px
-	padding-top line
-	
-	ul
-		display inline
-	
-	li
-		display inline-block
-		pad = 51 px
-		padding-right pad
-		padding-left pad
-	
-	link-top-padding = 25px
-	a.tour-slider
-		color gray1
-		padding-top link-top-padding
-	
-	.marker
-		display block
-		margin-left auto
-		margin-right auto
-		padding-bottom 10px
-		
-	
-	.ul-container
-		width cols12 - cols1 * 2 - 10 px
-		display inline-block
-		text-align center
-		vertical-align bottom
+  font-size 15px
+  padding-top line
+  
+  ul
+    display inline
+  
+  li
+    display inline-block
+    pad = 51 px
+    padding-right pad
+    padding-left pad
+  
+  link-top-padding = 25px
+  a.tour-slider
+    color gray1
+    padding-top link-top-padding
+  
+  .marker
+    display block
+    margin-left auto
+    margin-right auto
+    padding-bottom 10px
+    
+  
+  .ul-container
+    width cols12 - cols1 * 2 - 10 px
+    display inline-block
+    text-align center
+    vertical-align bottom
 
 
-	.pfeil-container
-		vertical-align bottom
-		width cols1
-		display inline-block
-		padding-top line
-		
-	.pfeil-container-rechts
-		text-align right
-	
-	.pfeil-links
-		visibility hidden
-	
+  .pfeil-container
+    vertical-align bottom
+    width cols1
+    display inline-block
+    padding-top line
+    
+  .pfeil-container-rechts
+    text-align right
+  
+  .pfeil-links
+    visibility hidden
+  
 .slideshow
-	height 33 * line
-	margin-bottom 30px
+  height 33 * line
+  margin-bottom 30px
 
 slideAbstand = 300
 .tour-seite
-	padding-top lines2
-	background-color #f8f8f8
-	width (12 * (column + gutter) - gutter + slideAbstand ) px
+  padding-top lines2
+  background-color #f8f8f8
+  width (12 * (column + gutter) - gutter + slideAbstand ) px
 
-	img
-		border solid myGray1 1px
-	
-	.screen-box
-		display inline-block
-		bildPadding = 7 px
-		padding-left bildPadding
-		padding-right bildPadding
-		padding-top bildPadding
-		border solid myGray2 1px
-		box-shadow 0px 1px 2px 1px rgba(0,0,0,0.06)
-		font-style italic
-		color gray2
-		font-size 16px
-		font-weight semibold
-		background-color #f7f7f7 
-		background-image -moz-linear-gradient(bottom , #f7f7f7, #ffffff 50.0%,#ffffff 100.0%)
-		background-image -webkit-linear-gradient(bottom , #f7f7f7, #ffffff 50.0%,#ffffff 100.0%)
-		background-image -o-linear-gradient(bottom , #f7f7f7, #ffffff 50.0%,#ffffff 100.0%)
-		background-image -ms-linear-gradient(bottom , #f7f7f7, #ffffff 50.0%,#ffffff 100.0%)
-		background-image  linear-gradient(bottom , #f7f7f7, #ffffff 50.0%,#ffffff 100.0%)
-		
-		p
-			textPadding = line / 2 px
-			padding-top textPadding
-			padding-bottom textPadding
+  img
+    border solid myGray1 1px
+  
+  .screen-box
+    display inline-block
+    bildPadding = 7 px
+    padding-left bildPadding
+    padding-right bildPadding
+    padding-top bildPadding
+    border solid myGray2 1px
+    box-shadow 0px 1px 2px 1px rgba(0,0,0,0.06)
+    font-style italic
+    color gray2
+    font-size 16px
+    font-weight semibold
+    background-color #f7f7f7 
+    background-image -moz-linear-gradient(bottom , #f7f7f7, #ffffff 50.0%,#ffffff 100.0%)
+    background-image -webkit-linear-gradient(bottom , #f7f7f7, #ffffff 50.0%,#ffffff 100.0%)
+    background-image -o-linear-gradient(bottom , #f7f7f7, #ffffff 50.0%,#ffffff 100.0%)
+    background-image -ms-linear-gradient(bottom , #f7f7f7, #ffffff 50.0%,#ffffff 100.0%)
+    background-image  linear-gradient(bottom , #f7f7f7, #ffffff 50.0%,#ffffff 100.0%)
+    
+    p
+      textPadding = line / 2 px
+      padding-top textPadding
+      padding-bottom textPadding
 
-	.overlay-screenbox
-		margin-top -102px
-		margin-left 40px
-	
-	.beschreibung-box
-		float right
-		width cols5
-		padding-top lines2
-		margin-right slideAbstand px
-		
-		h2
-			font-size 30px
-			color gray1
-			line-height lines2
-		
-		p
-			font-size 16px
-			padding-bottom line * 1.5
-			padding-top line * 0.5
-			
-		verticalFix = 3px
-		ul
-			margin-top - verticalFix
-			margin-left -10px
+  .overlay-screenbox
+    margin-top -102px
+    margin-left 40px
+  
+  .beschreibung-box
+    float right
+    width cols5
+    padding-top lines2
+    margin-right slideAbstand px
+    
+    h2
+      font-size 30px
+      color gray1
+      line-height lines2
+    
+    p
+      font-size 16px
+      padding-bottom line * 1.5
+      padding-top line * 0.5
+      
+    verticalFix = 3px
+    ul
+      margin-top - verticalFix
+      margin-left -10px
 
 
-		li
-			font-size 17px
-			font-weight semibold
-			list-style-type none
-			background url('img/tour/haken.png') no-repeat 0% 0%
-			padding-left 30px
-			padding-bottom line
-			line-height 25px
+    li
+      font-size 17px
+      font-weight semibold
+      list-style-type none
+      background url('img/tour/haken.png') no-repeat 0% 0%
+      padding-left 30px
+      padding-bottom line
+      line-height 25px
 
-			&:first-child
-				padding-top verticalFix
-		
-	.mehrInfo
-		width cols4
-		padding-left 3px
+      &:first-child
+        padding-top verticalFix
+    
+  .mehrInfo
+    width cols4
+    padding-left 3px
 
-		
-		
-	.infoBild
-		background url("img/tour/mehrInfo.png") no-repeat 0% 50%
+    
+    
+  .infoBild
+    background url("img/tour/mehrInfo.png") no-repeat 0% 50%
 
-		
+
+//KONTAKT
+
+.kontakt
+  font-size 15px
+  padding-top lines3
+  text-align center
+
+  h2
+    font-size 25px
+    line-height lines2
+  
+  h4
+    font-size 19px
+    font-weight semibold
+    margin-top 10px
+    margin-bottom lines3
+  
+  strong
+    font-weight semibold
+
+  .telefonnummer
+    font-size 30px
+    font-weight semibold
+    line-height lines2
+
+  .oder
+    color gray3
+    font-size 17px
+    margin-top 5px
+    margin-bottom 25px
+  
+  .mail-bild
+    margin-bottom 3px
+  
+  a
+    font-size 22px
+    font-weight semibold
+  
+  .handwriting
+    font-size 18px
+    line-height lines2
+    margin-bottom lines2
+    margin-top line
+  
+  .google-map
+    text-align center
+    
+    a
+      font-size 10px
+      line-height 19px
+      font-family Arial, sans-serif
+      
+  
+  .map-container
+    display inline-block
+    padding-bottom 0px
+
+  .map_canvas
+    height 320px
+    width 450px
+    display inline-block
+
+  .adresse
+    margin-top line
+    margin-bottom lines3
+
 
 /********************************************
 *********************************************
