@@ -95,7 +95,9 @@
 </head>
 
 <body>
+</body>
 
+<template name="layout">
   <!--[if lt IE 9]><div class="ie"><![endif]-->
 
   <div id="grid-overlay"></div>
@@ -103,13 +105,12 @@
 
   {{> navigation}}
 
-  {{> tour}}
+  {{currentPage}}
 
   {{> footer}}
 
   <!--[if lt IE 9]></div><![endif]-->
-
-</body>
+</template>
 
 <template name="hello">
   <h1>Hello World!</h1>

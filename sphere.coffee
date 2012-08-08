@@ -13,8 +13,6 @@ if root.Meteor.is_client
       if (typeof console != 'undefined')
         console.log("You pressed the button")
 
-
-
   createPieChart = (containerSelector, percentValue) ->
 
     # config
