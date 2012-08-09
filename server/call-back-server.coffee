@@ -25,7 +25,7 @@ saveCallBackRequest= (name, telephone, email, company, newsletter, callBack, sou
   
   transport.sendMail( {
   from: "martin.gebert@about-local.com"
-  to: "martin.gebert@about-local.com"
+  to: "info@about-local.com"
   subject: "Kontaktanfrage"
   text: """Es gibt eine neue Kontaktanfrage:
   
