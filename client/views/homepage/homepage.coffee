@@ -5,7 +5,7 @@ Template.homepage.invokeAfterLoad = ->
 	    fx: 'fade'
 	    speed: 400
 	    easing: 'easeInOutSine'
-	    timeout: 5000
+	    timeout: 10000
 	    } )
 
 Template.homepage.events =

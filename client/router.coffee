@@ -3,7 +3,7 @@
   Router = Backbone.Router.extend
     routes:
       "": "main"
-      "tour": "tour"
+      "tour/*path": "tour"
       "kontakt": "contact"
       "datenschutz": "privacy"
       "impressum": "imprint"
