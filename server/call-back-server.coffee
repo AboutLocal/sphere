@@ -2,6 +2,7 @@ callBacks=new Meteor.Collection("callBack")
 
 
 saveCallBackRequest= (name, telephone, email, company, newsletter, callBack, source_url, source_slide) ->
+  
   callBacks.insert( {
   name: name
   telephone: telephone
@@ -29,10 +30,10 @@ saveCallBackRequest= (name, telephone, email, company, newsletter, callBack, sou
   text: """Es gibt eine neue Kontaktanfrage:
   
   Name: #{name}
-  Telefon: #{telefon}
-  Email: #{mail}
-  Unternehmen: #{unternehmen}
-  Rückruf gewünscht: #{ if (rueckruf) then "Ja" else "Nein" }
+  Telefon: #{telephone}
+  Email: #{email}
+  Unternehmen: #{company}
+  Rückruf gewünscht: #{ if (callBack) then "Ja" else "Nein" }
   """
   
   }, saveCallBackRequest_Callback )

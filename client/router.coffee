@@ -17,7 +17,7 @@
       Session.set("currentPage", "tour")
 
     contact: () ->
-      Session.set("currentPage", "kontakt")
+      Session.set("currentPage", "contact")
 
     privacy: () ->
       Session.set("currentPage", "privacyPolicy")
