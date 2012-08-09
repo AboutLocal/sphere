@@ -1,13 +1,13 @@
 <template name="tour">
 	<div class="whitebg tour-bg">
 		<div class="tour-navigation grid-wrapper">
-			<a href="#" class="pfeil-links tour-slider">
-				<div class="pfeil-container">
-					<img src="/img/tour/pfeil-links.png" alt="Pfeil nach links" class="pfeil">
+			<a href="#" class="arrow-left tour-slider">
+				<div class="arrow-container">
+					<img src="/img/tour/arrow-left.png" alt="Pfeil nach links" class="arrow">
 				</div>
 			</a>
 			<div class="ul-container">
-				<ul class="direktlinks">
+				<ul class="directlinks">
 					&nbsp;
 					<a href="#" class="tour-slider profile-slide">
 						&nbsp;
@@ -35,7 +35,7 @@
 						&nbsp;
 						<li>
 							Gutschein-Daten
-							<span class="aktion">
+							<span class="special">
 								SPECIAL
 							</span>
 						</li>
@@ -43,17 +43,17 @@
 					&nbsp;
 				</ul>
 			</div>
-			<a href="#" class="pfeil-rechts tour-slider">
-				<div class="pfeil-container pfeil-container-rechts">
-					<img src="/img/tour/pfeil-rechts.png" alt="Pfeil nach rechts" class="pfeil">
+			<a href="#" class="arrow-right tour-slider">
+				<div class="arrow-container arrow-container-right">
+					<img src="/img/tour/arrow-right.png" alt="Pfeil nach rechts" class="arrow">
 				</div>
 			</a>
 		</div>
 	</div>
 <div class="slideshow grid-wrapper">
   &nbsp;
-	<div class="tour-seite grid-wrapper profile-slide">
-		<div class="beschreibung-box">
+	<div class="tour-page grid-wrapper profile-slide">
+		<div class="description-box">
 			<h2>
 				Ausf&uuml;hrliche Firmenprofile
 			</h2>
@@ -72,8 +72,8 @@
 				</li>
 			</ul>
 			<a href="#" class="open-link">
-				<button class="mehrInfo button">
-					<div class="infoBild button-bild">
+				<button class="moreInfo button">
+					<div class="info-image button-image">
 						weitere Informationen
 					</div>
 				</button>
@@ -87,8 +87,8 @@
 		</div>
 	</div>
   &nbsp;
-	<div class="tour-seite grid-wrapper filter-slide">
-		<div class="beschreibung-box">
+	<div class="tour-page grid-wrapper filter-slide">
+		<div class="description-box">
 			<h2>
 				Zahlreiche Such- und Filterm&ouml;glichkeiten
 			</h2>
@@ -107,8 +107,8 @@
 				</li>
 			</ul>
 			<a href="#" class="open-link">
-				<button class="mehrInfo button">
-					<div class="infoBild button-bild">
+				<button class="moreInfo button">
+					<div class="info-image button-image">
 						weitere Informationen
 					</div>
 				</button>
@@ -122,8 +122,8 @@
 		</div>
 	</div>
   &nbsp;
-	<div class="tour-seite grid-wrapper export-slide">
-		<div class="beschreibung-box">
+	<div class="tour-page grid-wrapper export-slide">
+		<div class="description-box">
 			<h2>
 				Markierungs- und Export-
 				<br>
@@ -144,8 +144,8 @@
 				</li>
 			</ul>
 			<a href="#" class="open-link">
-				<button class="mehrInfo button">
-					<div class="infoBild button-bild">
+				<button class="moreInfo button">
+					<div class="info-image button-image">
 						weitere Informationen
 					</div>
 				</button>
@@ -165,8 +165,8 @@
 		</div>
 	</div>
   &nbsp;
-	<div class="tour-seite grid-wrapper deal-slide">
-		<div class="beschreibung-box">
+	<div class="tour-page grid-wrapper deal-slide">
+		<div class="description-box">
 			<h2>
 				Gutschein-Daten Special
 			</h2>
@@ -185,8 +185,8 @@
 				</li>
 			</ul>
 			<a href="#" class="open-link">
-				<button class="mehrInfo button">
-					<div class="infoBild button-bild">
+				<button class="moreInfo button">
+					<div class="info-image button-image">
 						weitere Informationen
 					</div>
 				</button>
@@ -218,51 +218,51 @@
 				  <form class="conversionbox-inner">
 					  <div class="checkbox-box">
 						  <input type="checkbox" name="newsletter" id="newsletter" value="yes">
-						  <label for="newsletter" class="checkboxLabel">
+						  <label for="newsletter" class="checkbox-label">
 							  Ich m&ouml;chte <strong>aktuelle Informationen</strong> von AboutLocal erhalten.
 						  </label>
 					  </div>
 					  <div class="checkbox-box">
-						  <input type="checkbox" name="rueckruf" id="rueckruf" value="yes" checked="checked">
-						  <label for="rueckruf" class="checkboxLabel">
+						  <input type="checkbox" name="call-back" id="call-back" value="yes" checked="checked">
+						  <label for="call-back" class="checkbox-label">
 							  Ich m&ouml;chte <strong>einen R&uuml;ckruf</strong> von AboutLocal erhalten.
 						  </label>
 					  </div>
-					  <div class="formular-zeile">
+					  <div class="form-line">
 						  <label for="name">
 							  Name
 						  </label>
-						  <span class="formular-feld">
+						  <span class="form-field">
 							  <input type="text" name="name" id="name">
 						  </span>
 					  </div>
-					  <div class="formular-zeile">
-						  <label for="telefon">
+					  <div class="form-line">
+						  <label for="telephone">
 							  Telefon
 						  </label>
-						  <span class="formular-feld">
-							  <input type="text" name="telefon" id="telefon">
+						  <span class="form-field">
+							  <input type="text" name="telephone" id="telephone">
 						  </span>
 					  </div>
-					  <div class="formular-zeile">
-						  <label for="mail">
+					  <div class="form-line">
+						  <label for="email">
 							  E-Mail
 						  </label>
-						  <span class="formular-feld">
-							  <input type="text" name="mail" id="mail">
+						  <span class="form-field">
+							  <input type="text" name="email" id="email">
 						  </span>
 					  </div>
-					  <div class="formular-zeile">
-						  <label for="unternehmen">
+					  <div class="form-line">
+						  <label for="company">
 							  Unternehmen
 						  </label>
-						  <span class="formular-feld">
-							  <input type="text" id="unternehmen" name="unternehmen">
+						  <span class="form-field">
+							  <input type="text" id="company" name="company">
 						  </span>
 					  </div>
-					  <div class="abschicken-box">
-						  <button class="rueckrufButton button">
-							  <div class="infoBild button-bild">
+					  <div class="submit-box">
+						  <button class="call-back-button button">
+							  <div class="conversionbox-info-image button-image">
 								  weitere Informationen anfordern
 							  </div>
 						  </button>
@@ -287,12 +287,12 @@
 						  Nehmen Sie Kontakt auf
 					  </h4>
 				  </div>
-				  <div class="conversionbox-inner vielen-dank-box">  		
+				  <div class="conversionbox-inner thankyou-box">  		
             <h2>
               Vielen Dank f&uuml;r ihre Anfrage!
             </h2>
             Ihre Nachricht ist bei uns eingegangen. Wir werden uns schnellstm&ouml;glich bei Ihnen melden.
-					  <div class="portrait-mark portrait-mark-danke">
+					  <div class="portrait-mark portrait-mark-thankyou">
 						  <img src="/img/mark.jpg" alt="Portrait Mark Reich" class="photo-mark">
 						  <br>
 						  Mark Reich, Gr&uuml;nder
@@ -313,7 +313,7 @@
 						  Nehmen Sie Kontakt auf
 					  </h4>
 				  </div>
-				  <div class="conversionbox-inner fehlermeldung-box">  		
+				  <div class="conversionbox-inner errormessage-box">  		
             <h2>
               Es ist ein Fehler aufgetreten!
             </h2>

@@ -986,7 +986,7 @@ myGray4 = #cacbcc
   padding-left 15px
 
 .tick
-  background url("img/homepage/haken.png") no-repeat 0% 50%
+  background url("img/homepage/tick.png") no-repeat 0% 50%
 
 .portrait
   padding 4px
@@ -1034,7 +1034,7 @@ myGray4 = #cacbcc
     margin-right gutter px
     float left
   
-  .lastItem /*! IE8 kennt kein :lastChild */
+  .last-item /*! IE8 kennt kein :lastChild */
     margin-right 0px
   
   h4
@@ -1071,10 +1071,10 @@ myGray4 = #cacbcc
 
 
   .headline-arrow
-    background url("img/homepage/pfeil.png") no-repeat 0% 50%
+    background url("img/homepage/arrow.png") no-repeat 0% 50%
   
   .headline-customer
-    background url("img/homepage/kunden.png") no-repeat 0% 50%
+    background url("img/homepage/customer.png") no-repeat 0% 50%
   
   .headline-deal
     background url("img/homepage/deal.png") no-repeat 0% 50%
@@ -1130,7 +1130,7 @@ myGray4 = #cacbcc
       background-position -250px -65px
     */
   
-.grayLine
+.gray-line
   padding-top ( line-height - 1 ) px
   padding-bottom line
   border-bottom 1px solid myGray4
@@ -1289,9 +1289,7 @@ overlay-duration = 0.2s
     line-height 25px
     margin-bottom lines2
     
-  h2
-    
-.fehlermeldung-box
+.errormessage-box
   text-align center
   font-size 17px
   margin-bottom 25px
@@ -1369,7 +1367,7 @@ overlay-duration = 0.2s
       float left
       margin-left 0px
 
-    .checkboxLabel
+    .checkbox-label
       display inline-block
       width 365px
     
@@ -1382,7 +1380,7 @@ overlay-duration = 0.2s
     width 278px
     padding-top line
     
-    .newsletterLabel
+    .newsletter-label
       display inline-block
       float right
       width 252px
@@ -1399,7 +1397,7 @@ overlay-duration = 0.2s
     background url("img/homepage/telButton.png") no-repeat 0% 50%
     padding-left 10px
 
-  .infoBild
+  .conversionbox-info-image
     background url("img/tour/info.png") no-repeat 0% 50%
     padding-left 10px
   
@@ -1445,16 +1443,16 @@ overlay-duration = 0.2s
     vertical-align bottom
 
 
-  .pfeil-container
+  .arrow-container
     vertical-align bottom
     width cols1
     display inline-block
     padding-top line
     
-  .pfeil-container-rechts
+  .arrow-container-right
     text-align right
   
-  .pfeil-links
+  .arrow-left
     visibility hidden
   
 .slideshow
@@ -1462,7 +1460,7 @@ overlay-duration = 0.2s
   margin-bottom 30px
 
 slideAbstand = 300
-.tour-seite
+.tour-page
   padding-top lines2
   background-color #f8f8f8
   width (12 * (column + gutter) - gutter + slideAbstand ) px
@@ -1498,7 +1496,7 @@ slideAbstand = 300
     margin-top -102px
     margin-left 40px
   
-  .beschreibung-box
+  .description-box
     float right
     width cols5
     padding-top lines2
@@ -1524,7 +1522,7 @@ slideAbstand = 300
       font-size 17px
       font-weight semibold
       list-style-type none
-      background url('img/tour/haken.png') no-repeat 0% 0%
+      background url('img/tour/tick.png') no-repeat 0% 0%
       padding-left 30px
       padding-bottom line
       line-height 25px
@@ -1532,19 +1530,19 @@ slideAbstand = 300
       &:first-child
         padding-top verticalFix
     
-  .mehrInfo
+  .moreInfo
     width cols4
     padding-left 3px
 
     
     
-  .infoBild
-    background url("img/tour/mehrInfo.png") no-repeat 0% 50%
+  .info-image
+    background url("img/tour/moreInfo.png") no-repeat 0% 50%
 
 
 //KONTAKT
 
-.kontakt
+.contact
   font-size 15px
   padding-top lines3
   text-align center
@@ -1562,18 +1560,18 @@ slideAbstand = 300
   strong
     font-weight semibold
 
-  .telefonnummer
+  .phonenumber
     font-size 30px
     font-weight semibold
     line-height lines2
 
-  .oder
+  .contact-or
     color gray3
     font-size 17px
     margin-top 5px
     margin-bottom 25px
   
-  .mail-bild
+  .mail-image
     margin-bottom 3px
   
   a
@@ -1604,7 +1602,7 @@ slideAbstand = 300
     width 450px
     display inline-block
 
-  .adresse
+  .address
     margin-top line
     margin-bottom lines3
 
@@ -1701,7 +1699,7 @@ slideAbstand = 300
     .slider-wrapper
       margin 79px 0 108px 0
     
-    .nivoSlider
+    .nivo-slider
       position absolute
       width 948px
       height 420px

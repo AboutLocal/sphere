@@ -1,61 +1,61 @@
 ( () ->
-  direktlink_Finder= (i,el) ->
-	  return $(".direktlinks")[0].childNodes[2*i+1]
+  directlink_Finder= (i,el) ->
+	  return $(".directlinks")[0].childNodes[2*i+1]
 
-  startSlideShow= (startSlide) ->
+  startSlideShow= (startingSlide) ->
 	  $('.slideshow').cycle( {
 	  fx: 'scrollHorz'
 	  speed: 400
 	  easing: 'easeInOutSine'
 	  timeout: 0
-	  pagerAnchorBuilder: direktlink_Finder
-	  prev: $(".pfeil-links")
-	  next: $(".pfeil-rechts")
-	  startingSlide: startSlide
+	  pagerAnchorBuilder: directlink_Finder
+	  prev: $(".arrow-left")
+	  next: $(".arrow-right")
+	  startingSlide: startingSlide
 	  } )
 
   myIndexOf= (array, element) ->
     (if array[i]==element then return i) for i in [0...array.length]
     return -1
 
-  ganzLinks= (marker) ->
+  leftmost= (marker) ->
 	  return not ( marker.parentNode.parentNode.previousSibling && marker.parentNode.parentNode.previousSibling.previousSibling ) #IE8 erzeugt zu wenige Text-Nodes im DOM
 
-  ganzRechts= (marker) ->
+  rightmost= (marker) ->
 	  return not ( marker.parentNode.parentNode.nextSibling && marker.parentNode.parentNode.nextSibling.nextSibling ) #IE8 erzeugt zu wenige Text-Nodes im DOM
 
   moveMarkerTo= (currentTarget) ->
 	  marker=$(".marker")[0]
 
-	  if(currentTarget.className.indexOf("pfeil-links") != -1)
-		  #nach links
-		  if( not ganzLinks(marker) )
+	  if(currentTarget.className.indexOf("arrow-left") != -1)
+		  #go left
+		  if( not leftmost(marker) )
 		    newParent=marker.parentNode.parentNode.previousSibling.previousSibling.childNodes[1]
 		  else
 		    ul=marker.parentNode.parentNode.parentNode
 		    newParent=ul.childNodes[ul.childNodes.length-2].childNodes[1]
 	  else
-		  if(currentTarget.className.indexOf("pfeil-rechts") != -1)
-		    #nach rechts
-		    if( not ganzRechts(marker) )
+		  if(currentTarget.className.indexOf("arrow-right") != -1)
+		    #go right
+		    if( not rightmost(marker) )
 		      newParent=marker.parentNode.parentNode.nextSibling.nextSibling.childNodes[1]
 		    else
 		      newParent=marker.parentNode.parentNode.parentNode.childNodes[1].childNodes[1]
 		  else
-		    #direkt
+		    #go directly to slide
 		    newParent=currentTarget.childNodes[1]
 
 	  marker.parentNode.removeChild(marker)
 	  newParent.insertBefore(marker, newParent.firstChild)
 
-	  if( ganzLinks(marker) )
-		  $('.pfeil-links')[0].style.visibility="hidden"
+	  if( leftmost(marker) )
+		  $('.arrow-left')[0].style.visibility="hidden"
 	  else
-		  $('.pfeil-links')[0].style.visibility="visible"
-	  if( ganzRechts(marker) )
-		  $('.pfeil-rechts')[0].style.visibility="hidden"
+		  $('.arrow-left')[0].style.visibility="visible"
+	  if( rightmost(marker) )
+		  $('.arrow-right')[0].style.visibility="hidden"
 	  else
-		  $('.pfeil-rechts')[0].style.visibility="visible"
+		  $('.arrow-right')[0].style.visibility="visible"
 
 
   Template.tour.invokeAfterLoad = ->
@@ -94,7 +94,7 @@
       evt.preventDefault()
       
       
-    "click .rueckrufButton": (evt) ->
+    "click .call-back-button": (evt) ->
       evt.preventDefault()
       requestCallBack()
 )()
