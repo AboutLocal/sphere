@@ -96,5 +96,5 @@
       
     "click .rueckrufButton": (evt) ->
       evt.preventDefault()
-      rueckrufAnfordern()
+      requestCallBack()
 )()

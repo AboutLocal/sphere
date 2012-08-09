@@ -964,7 +964,7 @@ myGray4 = #cacbcc
   background-image: -ms-linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 41px, #ffffff 70px); 
   background-image: linear-gradient(bottom , #f8f8f8, #f0f0f0 40px,#d7d7d7 40px,#f7f7f7 41px, #ffffff 70px)
 
-.aktion
+.special
   rand-padding = 3px
   padding-left rand-padding
   padding-right rand-padding
@@ -982,10 +982,10 @@ myGray4 = #cacbcc
   font-size 17.5px
   padding-right 0px
 
-.button-bild
+.button-image
   padding-left 15px
 
-.haken
+.tick
   background url("img/homepage/haken.png") no-repeat 0% 50%
 
 .portrait
@@ -1017,7 +1017,7 @@ myGray4 = #cacbcc
   .semi-bold
     font-weight semibold
 
-  .testzugang
+  .trialaccess
     width cols5
     margin-top 0.25 * line
     padding-left 2px
@@ -1070,10 +1070,10 @@ myGray4 = #cacbcc
         content ""
 
 
-  .headline-pfeil
+  .headline-arrow
     background url("img/homepage/pfeil.png") no-repeat 0% 50%
   
-  .headline-kunden
+  .headline-customer
     background url("img/homepage/kunden.png") no-repeat 0% 50%
   
   .headline-deal
@@ -1130,7 +1130,7 @@ myGray4 = #cacbcc
       background-position -250px -65px
     */
   
-.graueLinie
+.grayLine
   padding-top ( line-height - 1 ) px
   padding-bottom line
   border-bottom 1px solid myGray4
@@ -1140,14 +1140,14 @@ myGray4 = #cacbcc
     display inline-block
     vertical-align middle
   
-  .zitat-box
+  .quote-box
     display inline-block
     vertical-align middle
     width cols10
     line-height 30px
     
   
-  .zitat
+  .quote
     font-size 23px
     font-style italic
     font-weight light
@@ -1156,7 +1156,7 @@ myGray4 = #cacbcc
     &:after
       content "«"
   
-  .zitatautor
+  .quote-author
     font-size 14px
     font-style normal
     color gray1
@@ -1166,7 +1166,7 @@ myGray4 = #cacbcc
     padding-left 10px
     display inline-block
 
-.aktiv-werden
+.act-now
   text-align center
   padding-top lines4
   padding-bottom lines2
@@ -1183,7 +1183,7 @@ myGray4 = #cacbcc
     font-weight semibold
     padding-bottom lines2
   
-  .aktivwerden-button
+  .act-now-button
     background transparent no-repeat top left
     height 58px
     width 596px
@@ -1280,7 +1280,7 @@ overlay-duration = 0.2s
     font-weight semibold
     
 
-.vielen-dank-box
+.thankyou-box
   text-align center
   font-size 17px
   
@@ -1300,18 +1300,18 @@ overlay-duration = 0.2s
   margin-left (column + gutter) px
   margin-right (column + gutter) px
   
-  .telefon
+  .telephone
     padding-top line
     
-    .zeile1
+    .line1
       font-size 17px
 
-    .telNr
+    .telNo
       font-size 25px
       line-height 40px
       font-weight semibold
 
-    .zeile3
+    .line3
       font-size 17px
       font-style italic
   
@@ -1319,10 +1319,10 @@ overlay-duration = 0.2s
     text-align center
     font-size 12px
   
-  .portrait-mark-formular
+  .portrait-mark-form
       float right
   
-  .portrait-mark-danke
+  .portrait-mark-thankyou
       margin-top 30px
       margin-bottom 30px
   
@@ -1337,10 +1337,10 @@ overlay-duration = 0.2s
   
   h4
     font-size 17px
-    padding-top line
+    padding-top lines2
     font-weight semibold
   
-  .formular-zeile
+  .form-line
     margin-top 20px
   
     label
@@ -1349,7 +1349,7 @@ overlay-duration = 0.2s
       display inline-block
       padding-top 3px
   
-    .formular-feld
+    .form-field
       float right
       hintergrundFarbe = #e6e6e6
       border 3px solid hintergrundFarbe
@@ -1387,7 +1387,7 @@ overlay-duration = 0.2s
       float right
       width 252px
   
-  .rueckrufButton
+  .call-back-button
     width 271px
     line-height 27px
     font-size 14.5px
@@ -1395,7 +1395,7 @@ overlay-duration = 0.2s
     margin-top line
     margin-bottom line
 
-  .rueckrufBild
+  .call-back-image
     background url("img/homepage/telButton.png") no-repeat 0% 50%
     padding-left 10px
 
@@ -1403,7 +1403,7 @@ overlay-duration = 0.2s
     background url("img/tour/info.png") no-repeat 0% 50%
     padding-left 10px
   
-  .abschicken-box
+  .submit-box
     text-align right
     padding-bottom 20px
 
@@ -1607,6 +1607,149 @@ slideAbstand = 300
   .adresse
     margin-top line
     margin-bottom lines3
+
+//TEAM
+
+.openings-button
+  display block
+  background transparent no-repeat 0px 0px
+  background-image url('/img/team/job-fahnen.png')
+  width 91px
+  height 142px
+  position absolute
+  top 361px
+  right 80px
+
+  &:hover
+    background-position  0px -142px
+
+.team-page
+  .stage
+    height 315px
+    background #f8f8f8 url('/img/team/team-page-stage.jpg') 50% 0 no-repeat
+    border-bottom 1px solid #cdcdcd
+    margin-bottom 5 + 4 * line-height px
+    box-shadow 0 0 0 1px white, 0 0 100px 0 rgba(0,0,0,0.2)
+    //box-shadow inset 0 0 20px 20px rgba(0,0,0,0.5)
+  
+  .main
+    margin-bottom lines5
+  
+    h1
+      font-size 50px
+      line-height 60px
+      font-weight regular
+      margin-bottom line-height - 1 px
+      -webkit-font-smoothing antialiased
+
+      strong
+        font-weight semibold
+
+      & + p
+        font-size 25px
+        line-height 1.5 * line-height px
+        -webkit-font-smoothing antialiased
+        font-weight light
+        margin-bottom lines2
+      
+        strong
+          font-weight regular
+
+      &.join-us
+        font-size 50px
+        line-height lines4
+        font-style italic
+        margin-bottom line
+
+        strong
+          font-style italic
+
+   
+    article
+      padding 20px 0
+      
+      p
+        font-size 18px
+        line-height 26px
+        &:after
+          clear both
+          content  ""
+          display table
+
+    h2
+      font-size 28px
+      line-height 28px*2
+      font-weight regular
+
+      strong
+        font-weight bold
+
+    img
+      width 211px
+      height 146px
+      //border 4px solid white
+      //box-shadow 0px 0px 10px 0px rgba(0,0,0,0.3)
+      margin 3px 0px
+      &.left
+        float left
+        margin-right 20px
+
+      &.right
+        float right
+        margin-left 20px
+
+    .slider-wrapper
+      margin 79px 0 108px 0
+    
+    .nivoSlider
+      position absolute
+      width 948px
+      height 420px
+      border 6px solid white
+      box-shadow 0px 5px 10px 0px rgba(0,0,0,0.3)
+      img
+        position absolute
+        top 0
+        left 0
+        display none
+
+        &:after
+          content "WE ♥ CSS3"
+          text-indent -99999px
+          display table
+          width 948px
+          height 13px
+          position absolute
+          top 437px
+          border-radius 50%
+          margin-left -3px
+          padding 0 3px
+          box-shadow  0px -10px 5px #efeded
+
+    ul.jobs
+      > li > a
+        font-size 30px
+        line-height 60px
+        font-weight regular
+        -webkit-font-smoothing antialiased
+  
+        strong
+          font-weight bold
+
+        &:before
+          content  '·'
+          font-size 55px
+          margin-right 4px
+          position relative
+          top 4px
+
+          /*& after
+              content  '▾'
+              font-size 30px
+              margin-left 10px*/
+
+    li
+      height lines3
 
 
 /********************************************

@@ -8,6 +8,7 @@
       "kontakt": "contact"
       "datenschutz": "privacy"
       "impressum": "imprint"
+      "team": "team"
 
     main: () ->
       Session.set("currentPage", "homepage")
@@ -23,6 +24,8 @@
 
     imprint: () ->
       Session.set("currentPage", "imprint")
+    team: () ->
+      Session.set("currentPage", "team")
 
   router = new Router
 

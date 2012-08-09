@@ -1,16 +1,16 @@
-rueckrufe=new Meteor.Collection("rueckruf")
+callBacks=new Meteor.Collection("callBack")
 
 
-rueckrufAnforderungSpeichern= (name, telefon, mail, unternehmen, newsletter, rueckruf, quelle_url, quelle_slide) ->
-  rueckrufe.insert( {
+saveCallBackRequest= (name, telephone, email, company, newsletter, callBack, source_url, source_slide) ->
+  callBacks.insert( {
   name: name
-  telefon: telefon
-  mail: mail
-  unternehmen: unternehmen
+  telephone: telephone
+  email: email
+  company: company
   newsletter: newsletter
-  rueckruf: rueckruf
-  quelle_url: quelle_url
-  quelle_slide: quelle_slide
+  callBack: callBack
+  source_url: source_url
+  source_slide: source_slide
   } )
   
   nodemailer=require('nodemailer')
@@ -35,18 +35,18 @@ rueckrufAnforderungSpeichern= (name, telefon, mail, unternehmen, newsletter, rue
   Rückruf gewünscht: #{ if (rueckruf) then "Ja" else "Nein" }
   """
   
-  }, rueckrufAnforderungSpeichern_Callback )
+  }, saveCallBackRequest_Callback )
   
   transport.close()
 
 
-rueckrufAnforderungSpeichern_Callback= (error, responseStatus) ->
+saveCallBackRequest_Callback= (error, responseStatus) ->
   if error
     #console.log error
   else
     #console.log responseStatus.message
   
 
-Meteor.methods({rueckrufAnforderungSpeichern:rueckrufAnforderungSpeichern})
+Meteor.methods({saveCallBackRequest:saveCallBackRequest})
 
 
