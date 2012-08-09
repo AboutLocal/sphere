@@ -32,13 +32,17 @@
   Meteor.startup () ->
     Backbone.history.start pushState: true
 
+    scrollElement = $(document.body)
+
     jQuery(document.body).on "click", "a[href]", (evt) ->
       href = $(@).attr "href"
       protocol = @protocol + "//"
 
       if href and href.slice(0, protocol.length) isnt protocol and href isnt "#" and href.indexOf "javascript:" isnt 0
         evt.preventDefault()
+        scrollElement.animate {scrollTop: 0}, "100ms"
         router.navigate href, trigger: true
+
 
     document.body.appendChild Meteor.ui.render Template.layout
 
