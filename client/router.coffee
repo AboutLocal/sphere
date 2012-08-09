@@ -43,7 +43,7 @@
       href = $(@).attr "href"
       protocol = @protocol + "//"
 
-      if href and href.slice(0, protocol.length) isnt protocol and href isnt "#" and href.indexOf "javascript:" isnt 0
+      if href and href.slice(0, protocol.length) isnt protocol and href isnt "#" and href.indexOf("javascript:") isnt 0 and href.indexOf("mailto:") isnt 0
         evt.preventDefault()
         Meteor.defer (() ->
           scrollElement.animate {scrollTop: 0}, "100ms", "swing"
