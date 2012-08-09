@@ -5,6 +5,7 @@
       "": "main"
       "tour/*path": "tour"
       "kontakt": "contact"
+      "team": "team"
 
     main: () ->
       Session.set("currentPage", "homepage")
@@ -14,6 +15,9 @@
 
     contact: () ->
       Session.set("currentPage", "kontakt")
+
+    team: () ->
+      Session.set("currentPage", "team")
 
   router = new Router
 

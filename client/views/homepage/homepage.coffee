@@ -1,7 +1,7 @@
 Template.homepage.invokeAfterLoad = ->
   Meteor.defer () ->
 	    startOverlaySlideshow()
-    	$('.zitat-slideshow').cycle( {
+    	$('.quote-slideshow').cycle( {
 	    fx: 'fade'
 	    speed: 400
 	    easing: 'easeInOutSine'
@@ -17,8 +17,8 @@ Template.homepage.events =
     showOverlay()
     evt.preventDefault()
     
-  "click .rueckrufButton": (evt) ->
+  "click .call-back-button": (evt) ->
     evt.preventDefault()
-    rueckrufAnfordern()
+    requestCallBack()
 
 
