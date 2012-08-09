@@ -36,7 +36,7 @@
       href = $(@).attr "href"
       protocol = @protocol + "//"
 
-      if href and href.slice(0, protocol.length) isnt protocol and href.indexOf "javascript:" isnt 0
+      if href and href.slice(0, protocol.length) isnt protocol and href isnt "#" and href.indexOf "javascript:" isnt 0
         evt.preventDefault()
         router.navigate href, trigger: true
 
