@@ -5,7 +5,7 @@ Meteor.startup () ->
 class AuthN
 
   @COOKIE_TOKEN_KEY: "ABTLCLS"
-  @DEFAULT_TOKEN: "unknown"
+  @DEFAULT_TOKEN: "guest"
   @EXPIRES: 7
 
   @initializeSessionToken: () ->
