@@ -25,6 +25,7 @@ class Rpc
         tryCall = () ->
           Meteor.call "trackEvents", AuthN.getSessionToken(), evts, (error) ->
             if error? && tries-- > 0
+              console.error error
               tryCall()
             else
               isRunning = false

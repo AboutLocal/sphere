@@ -1,5 +1,10 @@
 (->
 
+  track = () ->
+    action = new TrackedAction.PageView
+    action.page = Session.get "currentPage"
+    Rpc.track action
+
   Router = Backbone.Router.extend
     routes:
       "": "main"
@@ -12,20 +17,27 @@
 
     main: () ->
       Session.set("currentPage", "homepage")
+      track()
 
     tour: () ->
       Session.set("currentPage", "tour")
+      track()
 
     contact: () ->
       Session.set("currentPage", "contact")
+      track()
 
     privacy: () ->
       Session.set("currentPage", "privacyPolicy")
+      track()
 
     imprint: () ->
       Session.set("currentPage", "imprint")
+      track()
+
     team: () ->
       Session.set("currentPage", "team")
+      track()
 
   router = new Router
 

@@ -9,7 +9,8 @@ EVENT_TYPE = {
   EXPORT_STARTED: 7,
   EXPORT_COMPLETED: 8,
   PROFILE_VIEW: 9,
-  PROFILE_DETAILS_VIEW: 10
+  PROFILE_DETAILS_VIEW: 10,
+  PAGE_VIEW: 11
 }
 
 TrackedAction = {};
@@ -66,5 +67,9 @@ TrackedAction = {};
     type: EVENT_TYPE.PROFILE_DETAILS_VIEW
     companyId: null
     sectionId: null
+
+  class _pkg.PageView extends _Event
+    type: EVENT_TYPE.PAGE_VIEW
+    page: null
 
 )()
