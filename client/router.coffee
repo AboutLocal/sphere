@@ -40,7 +40,7 @@
 
       if href and href.slice(0, protocol.length) isnt protocol and href isnt "#" and href.indexOf "javascript:" isnt 0
         evt.preventDefault()
-        scrollElement.animate {scrollTop: 0}, "100ms"
+        scrollElement.animate {scrollTop: 0}, "100ms", "swing"
         router.navigate href, trigger: true
 
 
