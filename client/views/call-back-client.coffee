@@ -25,10 +25,10 @@ requestCallBack= () ->
 
 requestCallBack_Callback= (error,result) ->
   if error
-    console.log("Fehler beim Speichern des Rückrufs!")
+    #console.log("Fehler beim Speichern des Rückrufs!")
     $('.overlay-slideshow').cycle(2) #show error message
   else
-    console.log("Rückruf erfolgreich gespeichert")
+    #console.log("Rückruf erfolgreich gespeichert")
     $('.overlay-slideshow').cycle(1) #show success message
 
 

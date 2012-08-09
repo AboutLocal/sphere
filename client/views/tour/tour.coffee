@@ -64,7 +64,7 @@
       startOverlaySlideshow()
       
       try
-        slideName=window.location.pathname.split('tour/')[1].split('/')[0] #"domain.tld/tour/SLIDENAME/" -> slidename herausparsen
+        slideName=window.location.href.split('tour/')[1].split('/')[0] #"domain.tld/tour/SLIDENAME/" -> slidename herausparsen
       catch e
         return startSlideShow 0
       
