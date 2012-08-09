@@ -12,7 +12,6 @@ class Rpc
     q = []
     timeoutId = null
     isRunning = false
-    console.log "built queue"
     (evt) ->
       evt.timestamp = Date.now()
       q.push evt

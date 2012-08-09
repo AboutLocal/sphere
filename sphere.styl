@@ -1,3 +1,6 @@
+@css {
+    @charset "UTF-8";
+}
 
 @import 'style/reset.css'
 
@@ -243,6 +246,9 @@ a
     -o-transition color duration ease-in-out
     transition color duration ease-in-out
 
+    &:hover
+        color orange2
+
 img.bordered
     border:4px solid white
     box-shadow 0 0 5px 0 #ccc
@@ -344,6 +350,12 @@ transition()
             font-style normal
             content "⟩ "
             font-weight bold
+
+.windows #dropdown-login-form a
+    &:before
+        content ""
+    background url(img/basic-sprites/chevron-login-box.gif) 0 50% no-repeat
+    padding-left 8px
 
 #top-nav
     position fixed
@@ -551,8 +563,10 @@ button, input[type="button"]
     -o-transition all duration ease-in-out
     transition all duration ease-in-out
     &:hover
-        border-color #72ad16
-        background-color green2 * 1.3
+        //border-color #72ad16
+        //background-color green2 * 1.3
+        background-color orange3
+        border-color orange1
     &:active
         background-image -moz-linear-gradient(top, rgba(0,0,0,intensity) 0%, rgba(255,255,255,intensity) 100%) /* FF3.6+ */
         background-image -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,intensity)), color-stop(100%,rgba(255,255,255,intensity))) /* Chrome,Safari4+ */
@@ -1037,7 +1051,6 @@ myGray4 = #cacbcc
     margin-bottom line
   
   a
-    color blue2
     font-size 14px
     font-weight semibold
     font-style italic
@@ -1049,9 +1062,12 @@ myGray4 = #cacbcc
       font-style normal
       font-weight bold
 
-    &:hover
-      color green2 * 1.3
-  
+.windows .functions a
+    background url(img/basic-sprites/chevron-blue-right.gif) 100% 50% no-repeat
+    padding-right 12px
+    &:after
+        content ""
+
 
   .headline-pfeil
     background url("img/homepage/pfeil.png") no-repeat 0% 50%

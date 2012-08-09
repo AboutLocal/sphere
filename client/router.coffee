@@ -4,6 +4,7 @@
     routes:
       "": "main"
       "tour/*path": "tour"
+      "tour": "tour"
       "kontakt": "contact"
       "datenschutz": "privacy"
       "impressum": "imprint"
@@ -32,10 +33,12 @@
     Backbone.history.start pushState: true
 
     jQuery(document.body).on "click", "a[href]", (evt) ->
-      evt.preventDefault()
-      evt.stopPropagation()
-      path = evt.currentTarget.href.replace(/^https?:\/\/[^/]+\//, "")
-      router.navigate path, trigger: true
+      href = $(@).attr "href"
+      protocol = @protocol + "//"
+
+      if href and href.slice(0, protocol.length) isnt protocol and href.indexOf "javascript:" isnt 0
+        evt.preventDefault()
+        router.navigate href, trigger: true
 
     document.body.appendChild Meteor.ui.render Template.layout
 

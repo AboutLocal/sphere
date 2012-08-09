@@ -13,6 +13,20 @@ if root.Meteor.is_client
       if (typeof console != 'undefined')
         console.log("You pressed the button")
 
+
+  osName = "unkown"
+  if navigator.appVersion.indexOf("Win") != -1
+    osName = "Windows"
+  if navigator.appVersion.indexOf("Mac") != -1
+    osName = "MacOS"
+  if navigator.appVersion.indexOf("X11") != -1
+    osName = "UNIX"
+  if navigator.appVersion.indexOf("Linux") != -1
+    osName = "Linux"
+
+  Meteor.startup () ->
+    $(document.body).addClass osName.toLowerCase()
+
   createPieChart = (containerSelector, percentValue) ->
 
     # config

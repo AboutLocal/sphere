@@ -63,7 +63,10 @@
     
       startOverlaySlideshow()
       
-      slideName=window.location.pathname.split('tour/')[1].split('/')[0] #"domain.tld/tour/SLIDENAME/" -> slidename herausparsen
+      try
+        slideName=window.location.pathname.split('tour/')[1].split('/')[0] #"domain.tld/tour/SLIDENAME/" -> slidename herausparsen
+      catch e
+        return startSlideShow 0
       
       if $('div.'+slideName).length > 0 and $('a.'+slideName).length > 0
         slideIndex=myIndexOf( $('.slideshow')[0].childNodes, $('div.'+slideName)[0] )
