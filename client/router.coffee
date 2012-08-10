@@ -1,9 +1,12 @@
 (->
 
   track = () ->
-    action = new TrackedAction.PageView
-    action.page = Session.get "currentPage"
-    Rpc.track action
+    try
+      action = new TrackedAction.PageView
+      action.page = Session.get "currentPage"
+      Rpc.track action
+    catch ignored
+      return
 
   Router = Backbone.Router.extend
     routes:
