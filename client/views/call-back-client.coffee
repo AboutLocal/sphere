@@ -1,5 +1,5 @@
 requestCallBack= () ->
-  name=document.getElementsByName('name')[0].value
+  name=document.getElementsByName('fullname')[0].value
   telephone=document.getElementsByName('telephone')[0].value
   email=document.getElementsByName('call-back-email')[0].value
   company=document.getElementsByName('company')[0].value
