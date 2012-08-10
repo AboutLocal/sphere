@@ -23,12 +23,21 @@ class Rpc
         evts = q
         q = []
         tryCall = () ->
-          Meteor.call "trackEvents", AuthN.getSessionToken(), evts, (error) ->
-            if error? && tries-- > 0
-              console.error error
-              tryCall()
-            else
-              isRunning = false
+          sessionToken = AuthN.getSessionToken()
+          if sessionToken is AuthN.DEFAULT_TOKEN or not sessionToken?
+            Meteor.call "trackAnonymousEvents", Session.get("fingerprint"), Session.get("trackingCookie"), evts, (error) ->
+              if error? && tries-- > 0
+                console.error error
+                tryCall()
+              else
+                isRunning = false
+          else
+            Meteor.call "trackEvents", AuthN.getSessionToken(), evts, (error) ->
+              if error? && tries-- > 0
+                console.error error
+                tryCall()
+              else
+                isRunning = false
         tryCall()
       ), 500
   )()

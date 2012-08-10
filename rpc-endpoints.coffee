@@ -69,8 +69,8 @@ Meteor.methods
   Tracking
   ###
   trackEvents: (sessionToken, evts) ->
-    console.log "tracking", evts, "for", sessionToken
     return if @is_simulation
+    console.log "tracking", evts, "for", sessionToken
     user = if @is_simulation then Users.findOne() else AuthN.getUserBySessionToken sessionToken
     console.log user
     throw new Meteor.Error(403, "You are not logged in") unless user?
@@ -84,6 +84,24 @@ Meteor.methods
         console.log(evt)
         evt.userId = user._id
         console.log(user._id)
+        eventId = TrackedEvents.insert evt
+      return true
+    catch e
+      console.error "Could not create trackedEvent: ", e
+
+    return false
+
+  trackAnonymousEvents: (fingerprint, cookie, evts) ->
+    return if @is_simulation
+    console.log "tracking", evts, "for", fingerprint, cookie
+    throw new Meteor.Error(403, "No fingerprint or cookie") unless fingerprint? and cookie?
+    try
+      # TODO don't use extend anymore once the data structure is settled upon,
+      # it's a security hole!
+      console.log(evts)
+      _.each evts, (evt) ->
+        evt.fingerprint = fingerprint
+        evt.cookie = cookie
         eventId = TrackedEvents.insert evt
       return true
     catch e
