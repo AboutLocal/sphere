@@ -92,11 +92,21 @@
               }
           };
       }
+
+      if ($.browser.msie) {
+        console = {};
+        console.log = function () {};
+        console.warn = function () {};
+        console.info = function () {};
+        console.error = function () {};
+        console.debug = function () {};
+      }
   </script>
 
 </head>
 
 <body>
+  <div id="flashcontent" style="height:0;overflow:hidden"></div>
 </body>
 
 <template name="layout">
