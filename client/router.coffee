@@ -20,10 +20,12 @@
 
     main: () ->
       Session.set("currentPage", "homepage")
+      Template.navigation.homepageActiveClass="current"
       track()
 
     tour: () ->
       Session.set("currentPage", "tour")
+      Template.navigation.tourActiveClass="current"
       track()
 
     contact: () ->
@@ -45,6 +47,8 @@
   router = new Router
 
   Template.layout.currentPage = ->
+    Template.navigation.homepageActiveClass=""
+    Template.navigation.tourActiveClass=""
     return new Handlebars.SafeString Meteor.ui.chunk Template[Session.get "currentPage"]
 
   Meteor.startup () ->
