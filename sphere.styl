@@ -71,6 +71,8 @@ line-height = 20
 line-height-px = 20px
 LEM = line-height/font-size em
 
+firefox-transition-factor = 1.1
+
 font-height(fsize)
     font-size (fsize/EM)
     line-height ((ceil(fsize/font-size) * line-height) px)
@@ -239,12 +241,12 @@ a
     color blue2
     text-decoration none
     cursor pointer
-    duration = 0.1s
+    duration = 0.1
 
-    -webkit-transition color duration ease-in-out
-    -moz-transition color duration ease-in-out
-    -o-transition color duration ease-in-out
-    transition color duration ease-in-out
+    -webkit-transition color unit(duration, 's') ease-in-out
+    -moz-transition color unit(firefox-transition-factor * duration, 's') ease-in-out
+    -o-transition color unit(duration, 's') ease-in-out
+    transition color unit(duration, 's') ease-in-out
 
     &:hover
         color orange2
@@ -281,9 +283,8 @@ a.details
     &.visible
         display block
 
-transition()
+transition-without-firefox()
     -webkit-transition arguments
-    -moz-transition arguments
     -ms-transition arguments
     -o-transition arguments
     transition arguments
@@ -291,9 +292,10 @@ transition()
 #dropdown-login-form
     opacity 0
     top 40px
-    duration = 0.1s
+    duration = 0.1
     pointer-events none
-    transition opacity duration ease-in-out, top duration ease-in-out
+    transition-without-firefox opacity unit(duration, 's') ease-in-out, top duration ease-in-out
+    -moz-transition opacity unit(firefox-transition-factor * duration, 's') ease-in-out, top duration-firefox ease-in-out
     &.visible
         top 70px
         opacity 1
@@ -404,7 +406,9 @@ transition()
             height bar-height
             display inline-block
             box-sizing border-box
-            transition background-color 250ms ease-in-out
+            my-duration = 250
+            transition-without-firefox background-color unit(my-duration, 'ms') ease-in-out
+            -moz-transition background-color unit(firefox-transition-factor * my-duration, 'ms') ease-in-out
             link-padding = 10px
             &:hover
                 background-color black
@@ -426,7 +430,9 @@ transition()
                     background url(img/key.png) link-padding 50% no-repeat
                     padding-left 31px + link-padding
             a
-                transition opacity 150ms ease-in-out
+                my-duration = 150
+                transition-without-firefox opacity unit(my-duration, 'ms') ease-in-out
+                -moz-transition opacity unit(firefox-transition-factor * my-duration, 'ms') ease-in-out
                 color white
                 opacity .5
                 padding 0 link-padding
@@ -563,12 +569,10 @@ button, input[type="button"]
     background-image -ms-linear-gradient(top, rgba(255,255,255,intensity) 0%,rgba(0,0,0,intensity) 100%) /* IE10+ */
     background-image linear-gradient(to bottom, rgba(255,255,255,intensity) 0%,rgba(0,0,0,intensity) 100%) /* W3C */
 
-    duration = 0.1s
+    duration = 0.1
 
-    -webkit-transition all duration ease-in-out
-    -moz-transition all duration ease-in-out
-    -o-transition all duration ease-in-out
-    transition all duration ease-in-out
+    transition-without-firefox all unit(duration, 's') ease-in-out
+    -moz-transition all unit(firefox-transition-factor * duration, 's') ease-in-out
     &:hover
         //border-color #72ad16
         //background-color green2 * 1.3
@@ -1058,8 +1062,9 @@ myGray4 = #cacbcc
     font-size 14px
     font-weight semibold
     font-style italic
-    duration = 0.1s
-    transition color duration ease-in-out
+    duration = 0.1
+    transition-without-firefox color unit(duration, 's') ease-in-out
+    -moz-transition color unit(firefox-transition-factor * duration, 's') ease-in-out
     
     &:after
       content " ⟩"
@@ -1203,7 +1208,8 @@ myGray4 = #cacbcc
       background-position 0 -116px
         
 
-overlay-duration = 0.2s
+overlay-duration = 0.2
+overlay-duration-firefox = 0.2s
 .overlay-outer
   background-color #000
   position fixed
@@ -1213,7 +1219,8 @@ overlay-duration = 0.2s
   left 0
   width 100%
   z-index 100
-  transition opacity overlay-duration ease 0s, height 0s ease overlay-duration
+  transition-without-firefox opacity unit(overlay-duration, 's') ease 0s, height 0s ease unit(overlay-duration, 's')
+  -moz-transition opacity unit(firefox-transition-factor * overlay-duration, 's') ease 0s, height 0s ease unit(firefox-transition-factor * overlay-duration, 's')
   opacity 0
   filter unquote('Alpha(opacity=0)')
   height 0%
@@ -1222,7 +1229,8 @@ overlay-duration = 0.2s
     opacity .5
     filter unquote('Alpha(opacity=50)')
     height 100%
-    transition opacity overlay-duration ease 0s, height 0s ease 0s
+    transition-without-firefox opacity unit(overlay-duration, 's') ease 0s, height 0s ease 0s
+    -moz-transition opacity unit(firefox-transition-factor * overlay-duration, 's') ease 0s, height 0s ease 0s
     
 .overlay-slideshow
   position fixed
@@ -1232,7 +1240,8 @@ overlay-duration = 0.2s
   margin-top -800px
   z-index 101
   opacity 0
-  transition all overlay-duration
+  transition-without-firefox all unit(overlay-duration, 's')
+  -moz-transition all unit(firefox-transition-factor * overlay-duration, 's')
 
   &.visible
     margin-top 0px

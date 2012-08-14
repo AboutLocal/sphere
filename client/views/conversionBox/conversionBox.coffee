@@ -9,9 +9,13 @@ Template.conversionBox.showOverlay= () ->
 
 
 Template.conversionBox.startOverlaySlideshow= () ->
+  speed=400
+  if($.browser.mozilla)
+    speed*=firefoxAnimspeedFactor
+  
   $('.overlay-slideshow').cycle( {
   fx: 'fade'
-  speed: 400
+  speed: speed
   easing: 'easeInOutSine'
   timeout: 0
   } )
@@ -38,16 +42,11 @@ Template.conversionBox.requestCallBack= () ->
       source_slide=$.trim( source_slide )
   else
     source_slide=null
-  
-  alert "call"
-  
+
   Meteor.call("saveCallBackRequest", name, telephone, email, company, callBack, source_url, source_slide, Template.conversionBox.requestCallBack_Callback)
 
 
 Template.conversionBox.requestCallBack_Callback= (error,result) ->
-
-  alert "CB"
-
   if error
     #console.log("Fehler beim Speichern des Rückrufs!")
     $('.overlay-slideshow').cycle(2) #show error message

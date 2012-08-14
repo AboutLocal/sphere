@@ -1,9 +1,13 @@
 Template.team.invokeAfterLoad = ->
   Meteor.defer () ->
+    speed=200
+    if($.browser.mozilla)
+      speed*=firefoxAnimspeedFactor
+    
     $("#team-slider").nivoSlider({
       pauseTime: 7000
       effect: "fade"
-      animSpeed: "200"
+      animSpeed: speed
     })
 
 
