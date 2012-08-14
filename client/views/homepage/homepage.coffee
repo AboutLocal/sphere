@@ -1,12 +1,16 @@
 Template.homepage.invokeAfterLoad = ->
   Meteor.defer () ->
-	    Template.conversionBox.startOverlaySlideshow()
-    	$('.quote-slideshow').cycle( {
-	    fx: 'fade'
-	    speed: 400
-	    easing: 'easeInOutSine'
-	    timeout: 10000
-	    } )
+      speed=400
+      
+      if($.browser.mozilla)
+        speed*=firefoxAnimspeedFactor
+      
+      $('.quote-slideshow').cycle( {
+      fx: 'fade'
+      speed: speed
+      easing: 'easeInOutSine'
+      timeout: 10000
+      } )
 
 Template.homepage.events =
   "click .close-link": (evt) ->
