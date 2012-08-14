@@ -61,7 +61,7 @@
   Template.tour.invokeAfterLoad = ->
     Meteor.defer () ->
     
-      startOverlaySlideshow()
+      Template.conversionBox.startOverlaySlideshow()
       
       try
         slideName=window.location.href.split('tour/')[1].split('/')[0] #"domain.tld/tour/SLIDENAME/" -> slidename herausparsen
@@ -85,16 +85,11 @@
 
       
     "click .close-link": (evt) ->
-      hideOverlay()
+      Template.conversionBox.hideOverlay()
       evt.preventDefault()
 
       
     "click .open-link": (evt) ->
-      showOverlay()
+      Template.conversionBox.showOverlay()
       evt.preventDefault()
-      
-      
-    "click .call-back-button": (evt) ->
-      evt.preventDefault()
-      requestCallBack()
 )()

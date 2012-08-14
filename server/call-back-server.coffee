@@ -1,14 +1,13 @@
 callBacks=new Meteor.Collection("callBack")
 
 
-saveCallBackRequest= (name, telephone, email, company, newsletter, callBack, source_url, source_slide) ->
+saveCallBackRequest= (name, telephone, email, company, callBack, source_url, source_slide) ->
   
   callBacks.insert( {
   name: name
   telephone: telephone
   email: email
   company: company
-  newsletter: newsletter
   callBack: callBack
   source_url: source_url
   source_slide: source_slide

@@ -1,6 +1,6 @@
 Template.homepage.invokeAfterLoad = ->
   Meteor.defer () ->
-	    startOverlaySlideshow()
+	    Template.conversionBox.startOverlaySlideshow()
     	$('.quote-slideshow').cycle( {
 	    fx: 'fade'
 	    speed: 400
@@ -10,15 +10,13 @@ Template.homepage.invokeAfterLoad = ->
 
 Template.homepage.events =
   "click .close-link": (evt) ->
-    hideOverlay()
+    Template.conversionBox.hideOverlay()
     evt.preventDefault()
     
   "click .open-link": (evt) ->
-    showOverlay()
+    Template.conversionBox.showOverlay()
     evt.preventDefault()
     
-  "click .call-back-button": (evt) ->
-    evt.preventDefault()
-    requestCallBack()
+
 
 
