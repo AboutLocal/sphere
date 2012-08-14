@@ -1,11 +1,6 @@
 <template name="tour">
 	<div class="whitebg tour-bg">
 		<div class="tour-navigation grid-wrapper">
-			<a href="#" class="arrow-left tour-slider">
-				<div class="arrow-container">
-					<img src="/img/tour/arrow-left.png" alt="Pfeil nach links" class="arrow">
-				</div>
-			</a>
 			<div class="ul-container">
 				<ul class="directlinks">
 					&nbsp;
@@ -43,160 +38,165 @@
 					&nbsp;
 				</ul>
 			</div>
-			<a href="#" class="arrow-right tour-slider">
-				<div class="arrow-container arrow-container-right">
-					<img src="/img/tour/arrow-right.png" alt="Pfeil nach rechts" class="arrow">
-				</div>
-			</a>
 		</div>
 	</div>
-<div class="slideshow grid-wrapper">
-  &nbsp;
-	<div class="tour-page grid-wrapper profile-slide">
-		<div class="description-box">
-			<h2>
-				Mehr Kundenwissen ohne zus&auml;tzlichen Aufwand
-			</h2>
-			<p>
-				Erfahren Sie mit einem Klick alles über Ihre Kunden. Unsere Firmenprofile enthalten s&auml;mtliche Informationen die Sie im Vertrieb benötigen. Verbringen Sie weniger Zeit mit Informationsbeschaffung und mehr Zeit beim Kunden.
-			</p>
-			<ul>
-				<li>
-					Kontaktdaten
-				</li>
-				<li>
-					Detaillierte Auflistung der Werbeaktivit&auml;ten
-				</li>
-				<li>
-					Kundenbewertungen und Social Media Daten
-				</li>
-			</ul>
-			<a href="#" class="open-link">
-				<button class="moreInfo button">
-					<div class="info-image button-image">
-						weitere Informationen
-					</div>
-				</button>
-			</a>
-		</div>
-		<div class="screen-box">
-			<img src="/img/tour/profile-screen.png" alt="Ausschnitt aus unseren Firmenprofilen">
-			<p>
-				Abschlussquoten erh&ouml;hen
-			</p>
-		</div>
-	</div>
-  &nbsp;
-	<div class="tour-page grid-wrapper filter-slide">
-		<div class="description-box">
-			<h2>
-				Zielgruppen eingrenzen und Abschlussquoten erh&ouml;hen
-			</h2>
-			<p>
-				Sprechen Sie nur die Unternehmen an die den gr&ouml;&szlig;ten Bedarf an Ihrem Produkt haben. Grenzen Sie Ihre Zielgruppe mit zahlreichen Filterm&ouml;glichkeiten pr&auml;zise ein:
-			</p>
-			<ul>
-				<li>
-					nach Branche &amp; Region
-				</li>
-				<li>
-					nach Werbeaktivit&auml;ten
-				</li>
-				<li>
-					nach Kundenbewertungen
-				</li>
-			</ul>
-			<a href="#" class="open-link">
-				<button class="moreInfo button">
-					<div class="info-image button-image">
-						weitere Informationen
-					</div>
-				</button>
-			</a>
-		</div>
-		<div class="screen-box">
-			<img src="/img/tour/filter-screen.png" alt="Unsere Filterfunktion">
-			<p>
-				Unsere Filterfunktion
-			</p>
-		</div>
-	</div>
-  &nbsp;
-	<div class="tour-page grid-wrapper export-slide">
-		<div class="description-box">
-			<h2>
-				Aktuelle Firmeninformationen in eigenes CRM übernehmen
-			</h2>
-			<p>
-				Importieren Sie unsere Daten direkt in Ihr eigenes CRM und beginnen Sie mit der Kundenansprache. 
-			</p>
-			<ul>
-				<li>
-					Daten im CSV-Format (andere Formate auf Anfrage)
-				</li>
-				<li>
-					Einfacher Import in jedes CRM-System
-				</li>
-				<li>
-					Sofortige Verwendung der Informationen im Verkaufsprozess
-				</li>
-			</ul>
-			<a href="#" class="open-link">
-				<button class="moreInfo button">
-					<div class="info-image button-image">
-						weitere Informationen
-					</div>
-				</button>
-			</a>
-		</div>
-		<div class="screen-box">
-			<img src="/img/tour/export-screen.png" alt="Export-Optionen">
-			<p>
-				&nbsp;
-			</p>
-		</div>
-		<div class="screen-box overlay-screenbox">
-				<img src="/img/tour/export-screen2.png" alt="Exportierte Exceldatei">
-			<p>
-				Exportierte Exceldatei
-			</p>
-		</div>
-	</div>
-  &nbsp;
-	<div class="tour-page grid-wrapper deal-slide">
-		<div class="description-box">
-			<h2>
-				Gutschein-Daten Special
-			</h2>
-			<p>
-				Identifizieren Sie neue &amp; alte Werbekunden &uuml;ber unsere umfangreiche Datenbank mit Gutscheinkampagnen von Groupon, DailyDeal und Co.
-			</p>
-			<ul>
-				<li>
-					&Uuml;ber 150.000 Gutscheinaktionen in Deutschland inkl. Unternehmen und Anzahl verkaufter Gutscheine
-				</li>
-				<li>
-					Anbieteradressen von 19 verschiedenen Gutschein-Plattformen
-				</li>
-				<li>
-					Weitere Details wie Branchenzugeh&ouml;rigkeit und zus&auml;tzliche Angebotsinformationen
-				</li>
-			</ul>
-			<a href="#" class="open-link">
-				<button class="moreInfo button">
-					<div class="info-image button-image">
-						weitere Informationen
-					</div>
-				</button>
-			</a>
-		</div>
-		<div class="screen-box">
-			<img src="/img/tour/deal-screen.png" alt="Gutschein-Daten als Exceldatei exportiert">
-			<p>
-				Gutschein-Daten als Exceldatei exportiert
-			</p>
-		</div>
-	</div>
+<div class="slideshow-container">
+
+  <a href="#" class="arrow-container arrow-left tour-slider">
+    <img src="/img/tour/arrow-left.png" alt="Pfeil nach links">
+  </a>
+  <a href="#" class="arrow-container arrow-right tour-slider">
+    <img src="/img/tour/arrow-right.png" alt="Pfeil nach rechts">
+  </a>
+
+  <div class="slideshow grid-wrapper">
+    &nbsp;
+	  <div class="tour-page grid-wrapper profile-slide">
+		  <div class="description-box">
+			  <h2>
+				  Mehr Kundenwissen ohne zus&auml;tzlichen Aufwand
+			  </h2>
+			  <p>
+				  Erfahren Sie mit einem Klick alles über Ihre Kunden. Unsere Firmenprofile enthalten s&auml;mtliche Informationen die Sie im Vertrieb benötigen. Verbringen Sie weniger Zeit mit Informationsbeschaffung und mehr Zeit beim Kunden.
+			  </p>
+			  <ul>
+				  <li>
+					  Kontaktdaten
+				  </li>
+				  <li>
+					  Detaillierte Auflistung der Werbeaktivit&auml;ten
+				  </li>
+				  <li>
+					  Kundenbewertungen und Social Media Daten
+				  </li>
+			  </ul>
+			  <a href="#" class="open-link">
+				  <button class="moreInfo button">
+					  <div class="info-image button-image">
+						  weitere Informationen
+					  </div>
+				  </button>
+			  </a>
+		  </div>
+		  <div class="screen-box">
+			  <img src="/img/tour/profile-screen.png" alt="Ausschnitt aus unseren Firmenprofilen">
+			  <p>
+				  Abschlussquoten erh&ouml;hen
+			  </p>
+		  </div>
+	  </div>
+    &nbsp;
+	  <div class="tour-page grid-wrapper filter-slide">
+		  <div class="description-box">
+			  <h2>
+				  Zielgruppen eingrenzen und Abschlussquoten erh&ouml;hen
+			  </h2>
+			  <p>
+				  Sprechen Sie nur die Unternehmen an die den gr&ouml;&szlig;ten Bedarf an Ihrem Produkt haben. Grenzen Sie Ihre Zielgruppe mit zahlreichen Filterm&ouml;glichkeiten pr&auml;zise ein:
+			  </p>
+			  <ul>
+				  <li>
+					  nach Branche &amp; Region
+				  </li>
+				  <li>
+					  nach Werbeaktivit&auml;ten
+				  </li>
+				  <li>
+					  nach Kundenbewertungen
+				  </li>
+			  </ul>
+			  <a href="#" class="open-link">
+				  <button class="moreInfo button">
+					  <div class="info-image button-image">
+						  weitere Informationen
+					  </div>
+				  </button>
+			  </a>
+		  </div>
+		  <div class="screen-box">
+			  <img src="/img/tour/filter-screen.png" alt="Unsere Filterfunktion">
+			  <p>
+				  Unsere Filterfunktion
+			  </p>
+		  </div>
+	  </div>
+    &nbsp;
+	  <div class="tour-page grid-wrapper export-slide">
+		  <div class="description-box">
+			  <h2>
+				  Aktuelle Firmeninformationen in eigenes CRM übernehmen
+			  </h2>
+			  <p>
+				  Importieren Sie unsere Daten direkt in Ihr eigenes CRM und beginnen Sie mit der Kundenansprache. 
+			  </p>
+			  <ul>
+				  <li>
+					  Daten im CSV-Format (andere Formate auf Anfrage)
+				  </li>
+				  <li>
+					  Einfacher Import in jedes CRM-System
+				  </li>
+				  <li>
+					  Sofortige Verwendung der Informationen im Verkaufsprozess
+				  </li>
+			  </ul>
+			  <a href="#" class="open-link">
+				  <button class="moreInfo button">
+					  <div class="info-image button-image">
+						  weitere Informationen
+					  </div>
+				  </button>
+			  </a>
+		  </div>
+		  <div class="screen-box">
+			  <img src="/img/tour/export-screen.png" alt="Export-Optionen">
+			  <p>
+				  &nbsp;
+			  </p>
+		  </div>
+		  <div class="screen-box overlay-screenbox">
+				  <img src="/img/tour/export-screen2.png" alt="Exportierte Exceldatei">
+			  <p>
+				  Exportierte Exceldatei
+			  </p>
+		  </div>
+	  </div>
+    &nbsp;
+	  <div class="tour-page grid-wrapper deal-slide">
+		  <div class="description-box">
+			  <h2>
+				  Gutschein-Daten Special
+			  </h2>
+			  <p>
+				  Identifizieren Sie neue &amp; alte Werbekunden &uuml;ber unsere umfangreiche Datenbank mit Gutscheinkampagnen von Groupon, DailyDeal und Co.
+			  </p>
+			  <ul>
+				  <li>
+					  &Uuml;ber 150.000 Gutscheinaktionen in Deutschland inkl. Unternehmen und Anzahl verkaufter Gutscheine
+				  </li>
+				  <li>
+					  Anbieteradressen von 19 verschiedenen Gutschein-Plattformen
+				  </li>
+				  <li>
+					  Weitere Details wie Branchenzugeh&ouml;rigkeit und zus&auml;tzliche Angebotsinformationen
+				  </li>
+			  </ul>
+			  <a href="#" class="open-link">
+				  <button class="moreInfo button">
+					  <div class="info-image button-image">
+						  weitere Informationen
+					  </div>
+				  </button>
+			  </a>
+		  </div>
+		  <div class="screen-box">
+			  <img src="/img/tour/deal-screen.png" alt="Gutschein-Daten als Exceldatei exportiert">
+			  <p>
+				  Gutschein-Daten als Exceldatei exportiert
+			  </p>
+		  </div>
+	  </div>
+  </div>
 </div>
 
 {{> conversionBox}}

@@ -1209,7 +1209,6 @@ myGray4 = #cacbcc
         
 
 overlay-duration = 0.2
-overlay-duration-firefox = 0.2s
 .overlay-outer
   background-color #000
   position fixed
@@ -1430,7 +1429,7 @@ overlay-duration-firefox = 0.2s
   
   li
     display inline-block
-    pad = 17 px
+    pad = 36 px
     padding-right pad
     padding-left pad
   
@@ -1453,24 +1452,37 @@ overlay-duration-firefox = 0.2s
     
   
   .ul-container
-    width cols12 - cols1 * 2 - 10 px
+    width 100%
     display inline-block
     text-align center
     vertical-align bottom
 
-
-  .arrow-container
-    vertical-align bottom
-    width cols1
-    display inline-block
-    padding-top line
-    
-  .arrow-container-right
-    text-align right
+.slideshow-container
   
+  duration = 0.15
+  .arrow-container
+    position relative
+    top 230px    
+    display inline-block
+    opacity 0
+    transition-without-firefox opacity unit(duration, 's') ease 0s
+    -moz-transition opacity unit(firefox-transition-factor * duration, 's') ease 0s
+    
+  .arrow-right
+    float right
+
   .arrow-left
+    float left
     visibility hidden
   
+  &:hover
+    .arrow-container
+      opacity 1
+      transition-without-firefox opacity unit(duration, 's') ease 0s
+      -moz-transition opacity unit(firefox-transition-factor * duration, 's') ease 0s
+      
+      
+
 .slideshow
   height 33 * line
   margin-bottom 30px
