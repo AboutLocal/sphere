@@ -79,7 +79,13 @@ Template.conversionBox.requestCallBack_Callback= (error,result) ->
     $('.overlay-slideshow').cycle(1) #show success message
 
 
+
 Template.conversionBox.events =
+    "click .close-link": (evt) ->
+      Template.conversionBox.hideOverlay()
+      evt.preventDefault()
+
+      
     "submit form": (evt) ->
       evt.preventDefault()
       return if Template.conversionBox.isSubmitting
@@ -119,7 +125,9 @@ Template.conversionBox.events =
       else
         source_slide=null
 
-      Meteor.call("saveCallBackRequest", name, telephone, email, company, callBack, source_url, source_slide, Template.conversionBox.requestCallBack_Callback)
+      lightbox=$('.variablecontent-headline')[0].innerHTML
+      
+      Meteor.call("saveCallBackRequest", name, telephone, email, company, callBack, source_url, source_slide, lightbox, Template.conversionBox.requestCallBack_Callback)
 
 
 

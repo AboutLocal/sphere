@@ -14,8 +14,8 @@
     easing: 'easeInOutSine'
     timeout: 0
     pagerAnchorBuilder: directlink_Finder
-    prev: $(".arrow-left")
-    next: $(".arrow-right")
+    prev: $(".slide-left")
+    next: $(".slide-right")
     startingSlide: startingSlide
     } )
 
@@ -32,7 +32,7 @@
   moveMarkerTo= (currentTarget) ->
     marker=$(".marker")[0]
 
-    if(currentTarget.className.indexOf("arrow-left") != -1)
+    if(currentTarget.className.indexOf("slide-left") != -1)
       #go left
       if( not leftmost(marker) )
         newParent=marker.parentNode.parentNode.previousSibling.previousSibling.childNodes[1]
@@ -40,7 +40,7 @@
         ul=marker.parentNode.parentNode.parentNode
         newParent=ul.childNodes[ul.childNodes.length-2].childNodes[1]
     else
-      if(currentTarget.className.indexOf("arrow-right") != -1)
+      if(currentTarget.className.indexOf("slide-right") != -1)
         #go right
         if( not rightmost(marker) )
           newParent=marker.parentNode.parentNode.nextSibling.nextSibling.childNodes[1]
@@ -50,17 +50,23 @@
         #go directly to slide
         newParent=currentTarget.childNodes[1]
 
+    marker.parentNode.className = marker.parentNode.className.split('current-navpoint')[0]
     marker.parentNode.removeChild(marker)
+    newParent.className += " current-navpoint"
     newParent.insertBefore(marker, newParent.firstChild)
 
     if( leftmost(marker) )
-      $('.arrow-left')[0].style.visibility="hidden"
+      for elem in $('.slide-left')
+        elem.style.visibility="hidden"
     else
-      $('.arrow-left')[0].style.visibility="visible"
+      for elem in $('.slide-left')
+        elem.style.visibility="visible"
     if( rightmost(marker) )
-      $('.arrow-right')[0].style.visibility="hidden"
+      for elem in $('.slide-right')
+        elem.style.visibility="hidden"
     else
-      $('.arrow-right')[0].style.visibility="visible"
+      for elem in $('.slide-right')
+        elem.style.visibility="visible"
 
 
   Template.tour.invokeAfterLoad = ->
@@ -85,11 +91,6 @@
       evt.preventDefault()
       evt.currentTarget.blur()
       moveMarkerTo(evt.currentTarget)
-
-      
-    "click .close-link": (evt) ->
-      Template.conversionBox.hideOverlay()
-      evt.preventDefault()
 
       
     "click .open-link": (evt) ->

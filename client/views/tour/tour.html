@@ -1,12 +1,17 @@
 <template name="tour">
 	<div class="whitebg tour-bg">
 		<div class="tour-navigation grid-wrapper">
+			<a href="#" class="arrow-top-left tour-slider slide-left">
+				<div class="arrow-top-container">
+					<img src="/img/tour/arrow-left-top.png" alt="Pfeil nach links">
+				</div>
+			</a>
 			<div class="ul-container">
 				<ul class="directlinks">
 					&nbsp;
 					<a href="#" class="tour-slider profile-slide">
 						&nbsp;
-						<li class="firstSlider">
+						<li class="firstSlider slider1 current-navpoint">
 						  	<img src="/img/tour/marker.png" alt="Marker" class="marker">
 						  	1.&nbsp; Kundenansprache verbessern
 						</li>
@@ -14,21 +19,21 @@
 					&nbsp;
 					<a href="#" class="tour-slider filter-slide">
 						&nbsp;
-						<li>
+						<li class="slider2">
 				  		2.&nbsp; Abschlussquoten erh&ouml;hen
 						</li>
 					</a>
 					&nbsp;
 					<a href="#" class="tour-slider export-slide">
 						&nbsp;
-						<li>
+						<li class="slider3">
 					  	3.&nbsp; CRM aufwerten
 						</li>
 					</a>
 					&nbsp;
 					<a href="#" class="tour-slider deal-slide">
 						&nbsp;
-						<li class="lastSlider">
+						<li class="lastSlider slider4">
 							4.&nbsp; Gutschein-Daten
 							<span class="special">
 								SPECIAL
@@ -38,14 +43,19 @@
 					&nbsp;
 				</ul>
 			</div>
+			<a href="#" class="arrow-top-right tour-slider slide-right">
+				<div class="arrow-top-container arrow-top-container-right">
+					<img src="/img/tour/arrow-right-top.png" alt="Pfeil nach rechts">
+				</div>
+			</a>
 		</div>
 	</div>
 <div class="slideshow-container">
 
-  <a href="#" class="arrow-container arrow-left tour-slider">
+  <a href="#" class="arrow-container arrow-left tour-slider slide-left">
     <img src="/img/tour/arrow-left.png" alt="Pfeil nach links">
   </a>
-  <a href="#" class="arrow-container arrow-right tour-slider">
+  <a href="#" class="arrow-container arrow-right tour-slider slide-right">
     <img src="/img/tour/arrow-right.png" alt="Pfeil nach rechts">
   </a>
 
@@ -198,8 +208,6 @@
 	  </div>
   </div>
 </div>
-
-{{> conversionBox}}
 
 {{invokeAfterLoad}}
 </template>

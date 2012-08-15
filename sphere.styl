@@ -1217,7 +1217,7 @@ overlay-duration = 0.2
   top 0
   left 0
   width 100%
-  z-index 100
+  z-index 300
   transition-without-firefox opacity unit(overlay-duration, 's') ease 0s, height 0s ease unit(overlay-duration, 's')
   -moz-transition opacity unit(firefox-transition-factor * overlay-duration, 's') ease 0s, height 0s ease unit(firefox-transition-factor * overlay-duration, 's')
   opacity 0
@@ -1236,8 +1236,8 @@ overlay-duration = 0.2
   top 0px
   left 0px
   width 100%
-  margin-top -850px
-  z-index 101
+  margin-top -940px
+  z-index 301
   opacity 0
   transition-without-firefox all unit(overlay-duration, 's')
   -moz-transition all unit(firefox-transition-factor * overlay-duration, 's')
@@ -1247,7 +1247,7 @@ overlay-duration = 0.2
     opacity 1
 
 .overlay-inner
-  z-index 102
+  z-index 302
   position fixed
   top 0
   left 0
@@ -1436,7 +1436,7 @@ overlay-duration = 0.2
   
   li
     display inline-block
-    pad = 25 px
+    pad = 0 px
     padding-right pad
     padding-left pad
   
@@ -1445,6 +1445,18 @@ overlay-duration = 0.2
     
   li.lastSlider
       padding-right 0px
+  
+  li.slider1
+    width 230px
+  
+  li.slider2
+    width 200px
+  
+  li.slider3
+    width 130px
+  
+  li.slider4
+    width 190px
   
   link-top-padding = 25px
   a.tour-slider
@@ -1457,12 +1469,28 @@ overlay-duration = 0.2
     margin-right auto
     padding-bottom 10px
     
-  
+  arrow-width = 12
   .ul-container
-    width 100%
+    width cols12 - arrow-width * 2 - 10 px
     display inline-block
     text-align center
     vertical-align bottom
+
+    .current-navpoint
+      font-weight semibold
+
+  .arrow-top-container
+    vertical-align bottom
+    width arrow-width
+    display inline-block
+    padding-top line
+    
+  .arrow-top-container-right
+    text-align right
+  
+  .arrow-top-left
+    visibility hidden
+    
 
 .slideshow-container
   
@@ -1474,7 +1502,7 @@ overlay-duration = 0.2
     opacity 0
     transition-without-firefox opacity unit(duration, 's') ease 0s
     -moz-transition opacity unit(firefox-transition-factor * duration, 's') ease 0s
-    
+  
   .arrow-right
     float right
 

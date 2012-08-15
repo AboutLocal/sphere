@@ -13,10 +13,6 @@ Template.homepage.invokeAfterLoad = ->
       } )
 
 Template.homepage.events =
-  "click .close-link": (evt) ->
-    Template.conversionBox.hideOverlay()
-    evt.preventDefault()
-    
   "click .open-link": (evt) ->
     Template.conversionBox.showOverlay('telephone')
     evt.preventDefault()
