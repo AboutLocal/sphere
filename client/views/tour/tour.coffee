@@ -93,6 +93,6 @@
 
       
     "click .open-link": (evt) ->
-      Template.conversionBox.showOverlay()
+      Template.conversionBox.showOverlay('telephone')
       evt.preventDefault()
 )()
