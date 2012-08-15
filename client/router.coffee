@@ -17,6 +17,7 @@
       "datenschutz": "privacy"
       "impressum": "imprint"
       "team": "team"
+      "team#*anchor": "team"
 
     main: () ->
       Session.set("currentPage", "homepage")
@@ -54,7 +55,7 @@
   Meteor.startup () ->
     Backbone.history.start pushState: true
 
-    $(document.body).css("min-height", $(window).height() + "px")
+    #$(document.body).css("min-height", $(window).height() + "px")
 
     scrollElement = $("html, body")
 

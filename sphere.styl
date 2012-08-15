@@ -1361,9 +1361,10 @@ overlay-duration = 0.2
     
     .form-input-field
       hintergrundFarbe = #e6e6e6
-      border 3px solid hintergrundFarbe
+      border 4px solid hintergrundFarbe
       background-color hintergrundFarbe
-      border-radius 3px 3px 3px 3px
+      border-radius 4px
+      display inline-block
 
     
     input
@@ -1692,7 +1693,7 @@ slideAbstand = 300
 
       &.join-us
         font-size 50px
-        line-height lines4
+        line-height lines2
         font-style italic
         margin-bottom line
 
@@ -1805,3 +1806,18 @@ slideAbstand = 300
 
 .theme-default .nivo-controlNav a
     background-image url(/img/nivo/bullets.png)
+
+//BANDEROLE
+
+.banderole
+    background url('/img/banderole.png') 0 0 no-repeat
+    width 121px
+    height 123px
+    display block
+    position fixed
+    top 0px
+    right 0px
+    z-index 200
+    
+    &:hover
+      background-position 0 -123px
