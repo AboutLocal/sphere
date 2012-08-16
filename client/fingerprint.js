@@ -501,17 +501,20 @@ function fontList(list) {
 
   Meteor.startup(function(){
 
-    $("#flashcontent").flash(
-      {
-        "src": "fingerprint/fonts2.swf",
-        "width": "1",
-        "height": "1",
-        "swliveconnect": "true",
-        "id": "flashfontshelper",
-        "name": "flashfontshelper"
-      },
-      { update: false }
-    );
+    if (!jQuery.browser.msie) {
+      // XXX breaks Meteor.call in IE 8
+      $("#flashcontent").flash(
+        {
+          "src": "fingerprint/fonts2.swf",
+          "width": "1",
+          "height": "1",
+          "swliveconnect": "true",
+          "id": "flashfontshelper",
+          "name": "flashfontshelper"
+        },
+        { update: false }
+      );
+    }
 
     // wait some time for the flash font detection:
     setTimeout(fetch_client_whorls,1000);
