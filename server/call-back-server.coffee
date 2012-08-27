@@ -1,7 +1,7 @@
 callBacks=new Meteor.Collection("callBack")
 
 
-saveCallBackRequest= (name, telephone, email, company, callBack, source_url, source_slide) ->
+saveCallBackRequest= (name, telephone, email, company, callBack, source_url, source_slide, lightbox) ->
   
   callBacks.insert( {
   name: name
@@ -11,6 +11,7 @@ saveCallBackRequest= (name, telephone, email, company, callBack, source_url, sou
   callBack: callBack
   source_url: source_url
   source_slide: source_slide
+  lightbox: lightbox
   } )
   
   nodemailer=require('nodemailer')
@@ -29,9 +30,10 @@ saveCallBackRequest= (name, telephone, email, company, callBack, source_url, sou
   text: """Es gibt eine neue Kontaktanfrage:
   
   Name: #{name}
+  Unternehmen: #{company}
   Telefon: #{telephone}
   Email: #{email}
-  Unternehmen: #{company}
+  Lightbox: \"#{lightbox}\"
   Rückruf gewünscht: #{ if (callBack) then "Ja" else "Nein" }
   """
   
